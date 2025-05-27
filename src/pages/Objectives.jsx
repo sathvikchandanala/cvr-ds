@@ -46,6 +46,7 @@ export default function Objectiv() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
           className="text-4xl font-bold text-center text-black mb-12"
         >
           Department Outcomes
@@ -57,6 +58,7 @@ export default function Objectiv() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="shadow-xl border border-gray-200">
               <CardContent className="p-6">
@@ -83,6 +85,7 @@ export default function Objectiv() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="shadow-xl border border-gray-200">
               <CardContent className="p-6">
@@ -109,6 +112,7 @@ export default function Objectiv() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <Card className="shadow-xl border border-gray-200">
               <CardContent className="p-6">

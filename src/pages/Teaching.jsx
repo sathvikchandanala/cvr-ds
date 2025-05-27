@@ -269,6 +269,7 @@ export default function Teaching() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 1 }}
                     className="text-4xl font-bold text-center text-black-800 mb-12"
+                    viewport={{ once: true, amount: 0.3 }}
                   >
                     Teaching Faculty
                   </motion.h1>
