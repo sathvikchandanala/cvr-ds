@@ -49,7 +49,7 @@ export default function Objectiv() {
           viewport={{ once: true, amount: 0.3 }}
           className="text-4xl font-bold text-center text-black mb-12"
         >
-          Department Outcomes
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Department Objectives</h1>
         </motion.h1>
 
         <div className="space-y-12">
@@ -63,15 +63,15 @@ export default function Objectiv() {
             <Card className="shadow-xl border border-gray-200">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <FaLightbulb className="text-black-500 text-3xl" />
+                  <FaLightbulb className="text-yellow-500 text-3xl" />
                   <h2 className="text-2xl font-bold text-blue-700">
                     Program Educational Objectives (PEOs)
                   </h2>
                 </div>
-                <ul className="space-y-3 text-gray-700">
+                <ul className="space-y-3 text-gray-700 text-justify">
                   {peos.map((peo, index) => (
                     <li key={index} className="flex gap-2">
-                      <span className="font-semibold text-blue-600">{`PEO${index + 1}:`}</span>
+                      <span className="font-semibold text-yellow-600">{`PEO${index + 1}:`}</span>
                       <span>{peo}</span>
                     </li>
                   ))}
@@ -90,15 +90,15 @@ export default function Objectiv() {
             <Card className="shadow-xl border border-gray-200">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <FaLaptopCode className="text-black-600 text-3xl" />
+                  <FaLaptopCode className="text-red-600 text-3xl" />
                   <h2 className="text-2xl font-bold text-blue-700">
                     Program Specific Outcomes (PSOs)
                   </h2>
                 </div>
-                <ul className="space-y-3 text-gray-700">
+                <ul className="space-y-3 text-gray-700 text-justify">
                   {psos.map((pso, index) => (
-                    <li key={index} className="flex gap-2">
-                      <span className="font-semibold text-blue-700">{`${index + 1}: `}</span>
+                    <li key={index} className="flex gap-2 ">
+                      <span className="font-semibold text-red-700">{`${index + 1}: `}</span>
                       {pso}
                     </li>
                   ))}
@@ -117,15 +117,15 @@ export default function Objectiv() {
             <Card className="shadow-xl border border-gray-200">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <MdOutlineChecklist className="text-black-600 text-3xl" />
+                  <MdOutlineChecklist className="text-green-600 text-3xl" />
                   <h2 className="text-2xl font-bold text-blue-700">
                     Program Outcomes (POs)
                   </h2>
                 </div>
-                <ul className="space-y-3 text-gray-700">
+                <ul className="space-y-3 text-gray-700 text-justify">
                   {pos.map((pos, index) => (
                     <li key={index} className="flex gap-2">
-                      <span className="font-semibold text-blue-700">{`PO${index + 1}: `}</span>
+                      <span className="font-semibold text-green-700">{`PO${index + 1}: `}</span>
                       {pos}
                     </li>
                   ))}

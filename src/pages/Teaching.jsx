@@ -7,6 +7,29 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import hod from "../assets/hod.webp";
 import { FaSearch } from "react-icons/fa";
+import nikitha_manne from "../assets/NikitaManne.jpg"
+import Yaseen_pasha from "../assets/Yaseen-PashaMoghal.jpg" 
+import Yasmeen_Aashu from "../assets/YasmeenAashu.jpeg"
+import AfreenMohammed from "../assets/AfreenMohammed.jpeg"
+import SrinivasaReddyA from "../assets/Srinivasa-ReddyA.jpg"
+import SrichandanaA from "../assets/SrichandanaA.jpg"
+import SatyanarayanaN from "../assets/SatyanarayanaN.jpg"
+import SabithaB from "../assets/SabithaB.jpg"
+import RanadheerKumarKS  from "../assets/Ranadheer-KumarK-S.jpeg"
+import RamyaT from "../assets/RamyaT.jpg"
+import RameshVankudoth from "../assets/RameshVankudoth.jpg"
+import RamaKrishnaB from "../assets/Rama-KrishnaB.jpg"
+import PraveenKumarV from "../assets/Praveen-KumarV.jpg"
+import PrashanthDonda from "../assets/PrashanthDonda.jpg"
+import PadmaParshapu from "../assets/PadmaParshapu.jpg"
+import NagasriArava from "../assets/NagasriArava.jpg"
+import NagaraniP from "../assets/NagaraniP.jpg"
+import LalithaS from "../assets/LalithaS.jpg"
+import KrishnaErugu from "../assets/KrishnaErugu.jpg"
+import HarishKumarK from "../assets/Harish-KumarK.jpg"
+import HariShankarP from "../assets/Hari-ShankarP.jpg"
+import BalakrishnaReddyS from "../assets/Balakrishna-ReddyS.jpg" 
+import AhmedShahebaaz from "../assets/AhmedShahebaaz.jpg"
 
 const facultyData = [
   {
@@ -22,7 +45,7 @@ const facultyData = [
         name: "Dr. N. Satyanarayana",
         degree: "M.Tech., Ph.D.",
         designation: "Professor",
-        image: "/faculty/satyanarayana.jpg"
+        image: SatyanarayanaN
       }
     ]
   },
@@ -39,7 +62,7 @@ const facultyData = [
         name: "Dr. A.Srinivasa Reddy",
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
-        image: "/faculty/srinivasa_reddy.jpg"
+        image: SrinivasaReddyA
       },
       {
         name: "Dr. Varaprasad Rao M",
@@ -51,7 +74,7 @@ const facultyData = [
         name: "Dr. Rama Krishna B",
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
-        image: "/faculty/rama_krishna.jpg"
+        image: RamaKrishnaB
       },
       {
         name: "Dr. Shaik Janbhasha",
@@ -80,7 +103,7 @@ const facultyData = [
         name: "Mrs. A Srichandana",
         degree: "M.Tech., (Ph.D.)",
         designation: "Sr. Assistant Professor",
-        image: "/faculty/srichandana.jpg"
+        image: SrichandanaA
       },
       {
         name: "Mrs. S. Vineela Krishna",
@@ -92,7 +115,7 @@ const facultyData = [
         name: "Mr. Ahmed Shahebaaz",
         degree: "M.Tech., (Ph.D.)",
         designation: "Sr. Assistant Professor",
-        image: "/faculty/ahmed_shahebaaz.jpg"
+        image: AhmedShahebaaz
       },
       {
         name: "Dr. Annapurna Gummadi",
@@ -104,7 +127,7 @@ const facultyData = [
         name: "Dr. Yasmeen",
         degree: "M.Tech., Ph.D.",
         designation: "Sr. Assistant Professor",
-        image: "/faculty/yasmeen.jpg"
+        image: Yasmeen_Aashu
       },
       {
         name: "Mrs. E.Nitya",
@@ -116,25 +139,25 @@ const facultyData = [
         name: "Mrs. P.Padma",
         degree: "M.Tech., (Ph.D.)",
         designation: "Sr. Assistant Professor",
-        image: "/faculty/padma.jpg"
+        image: PadmaParshapu
       },
       {
         name: "Mr. P.Hari Shankar",
         degree: "M.Tech., (Ph.D.)",
         designation: "Sr. Assistant Professor",
-        image: "/faculty/hari_shankar.jpg"
+        image: HariShankarP
       },
       {
         name: "Mr. K. Harish Kumar",
         degree: "M.Tech., (Ph.D.)",
         designation: "Sr. Assistant Professor",
-        image: "/faculty/harish_kumar.jpg"
+        image: HarishKumarK
       },
       {
         name: "Mr. K.S.Ranadheer Kumar",
         degree: "M.Tech., (Ph.D.)",
         designation: "Sr. Assistant Professor",
-        image: "/faculty/ranadheer_kumar.jpg"
+        image: RanadheerKumarKS
       }
     ]
   },
@@ -145,43 +168,43 @@ const facultyData = [
         name: "Mrs. S. Lalitha",
         degree: "M.Tech.",
         designation: "Assistant Professor",
-        image: "/faculty/lalitha.jpg"
+        image: LalithaS
       },
       {
         name: "Mrs. P Nagarani",
         degree: "M.Tech.",
         designation: "Assistant Professor",
-        image: "/faculty/nagarani.jpg"
+        image: NagaraniP
       },
       {
         name: "Mr. S.Balakrishna Reddy",
         degree: "M.Tech., (Ph.D.)",
         designation: "Assistant Professor",
-        image: "/faculty/balakrishna_reddy.jpg"
+        image: BalakrishnaReddyS
       },
       {
         name: "Mrs. M. Nikita",
         degree: "M.Tech., (Ph.D.)",
         designation: "Assistant Professor",
-        image: "/faculty/nikita.jpg"
+        image: nikitha_manne
       },
       {
         name: "Mr. Prashanth Donda",
         degree: "M.Tech.",
         designation: "Assistant Professor",
-        image: "/faculty/prashanth_donda.jpg"
+        image: PrashanthDonda
       },
       {
         name: "Mr. V.Ramesh",
         degree: "M.Tech., (Ph.D.)",
         designation: "Assistant Professor",
-        image: "/faculty/ramesh.jpg"
+        image: RameshVankudoth
       },
       {
         name: "Mrs. Arava Nagasri",
         degree: "M.Tech., (Ph.D.)",
         designation: "Assistant Professor",
-        image: "/faculty/nagasri.jpg"
+        image: NagasriArava
       },
       {
         name: "Mrs. M.Srivani",
@@ -193,19 +216,19 @@ const facultyData = [
         name: "Mrs. T. Ramya",
         degree: "M.Tech., (Ph.D.)",
         designation: "Assistant Professor",
-        image: "/faculty/ramya.jpg"
+        image: RamyaT
       },
       {
         name: "Mr. V.Praveen Kumar",
         degree: "M.Tech., (Ph.D.)",
         designation: "Assistant Professor",
-        image: "/faculty/praveen_kumar.jpg"
+        image: PraveenKumarV
       },
       {
         name: "Mrs. B.Sabitha",
         degree: "M.Tech.",
         designation: "Assistant Professor",
-        image: "/faculty/sabitha.jpg"
+        image: SabithaB
       },
       {
         name: "Mrs. K.Rajya Laxmi",
@@ -217,19 +240,19 @@ const facultyData = [
         name: "Mr. Moghal.Yaseen Pasha",
         degree: "M.Tech.",
         designation: "Assistant Professor",
-        image: "/faculty/yaseen_pasha.jpg"
+        image: Yaseen_pasha
       },
       {
         name: "Dr. Afreen Fatima Mohammed",
         degree: "M.Tech., Ph.D.",
         designation: "Assistant Professor",
-        image: "/faculty/afreen_fatima.jpg"
+        image: AfreenMohammed
       },
       {
         name: "Mr. Erugu Krishna",
         degree: "M.Tech., (Ph.D.)",
         designation: "Assistant Professor",
-        image: "/faculty/erugu_krishna.jpg"
+        image: KrishnaErugu
       },
       {
         name: "Mrs. V.Swathi",
@@ -271,7 +294,7 @@ export default function Teaching() {
                     className="text-4xl font-bold text-center text-black-800 mb-12"
                     viewport={{ once: true, amount: 0.3 }}
                   >
-                    Teaching Faculty
+                    <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Teaching Faculty</h1>
                   </motion.h1>
             <div className="flex w-full sm:w-auto gap-2 items-center">
               <Input
@@ -309,7 +332,8 @@ className="mb-12"
                         <img
                           src={member.image}
                           alt={member.name}
-                          className="w-50 h-50 rounded-full object-cover mb-4 shadow"
+                          className="w-40 h-40 object-cover object-top mb-4 shadow rounded-full"
+
                         />
                         <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
                         <p className="text-sm text-gray-600">{member.degree}</p>
