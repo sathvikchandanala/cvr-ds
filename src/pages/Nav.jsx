@@ -84,10 +84,11 @@ export default function Nav() {
              bg-gradient-to-r from-blue-600 to-blue-800 
              bg-clip-text text-transparent 
              drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] 
-             whitespace-nowrap cursor-pointer hide-below-362"
+             whitespace-nowrap cursor-pointer smaller-below-360 hide-below-355"
 >
   Department of CSE (Data Science)
 </motion.span>
+
 
 
 

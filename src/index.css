@@ -9,6 +9,13 @@
   }
 }
 
+@media (max-width: 360px) {
+  .smaller-below-360 {
+    font-size: 0.75rem !important; 
+  }
+}
+
+
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
