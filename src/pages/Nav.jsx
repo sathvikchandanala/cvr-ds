@@ -76,18 +76,20 @@ export default function Nav() {
               transition={{ duration: 1 }}
               className="h-14 w-auto drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] "
             />
-          <motion.span
+<motion.span
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ duration: 0.8, ease: 'easeOut' }}
-  className="text-lg sm:text-xl md:text-xl font-bold tracking-tight 
+  className="text-sm sm:text-base md:text-lg lg:text-xl font-bold tracking-tight 
              bg-gradient-to-r from-blue-600 to-blue-800 
              bg-clip-text text-transparent 
              drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] 
-             whitespace-nowrap cursor-pointer"
+             whitespace-nowrap cursor-pointer hide-below-362"
 >
   Department of CSE (Data Science)
 </motion.span>
+
+
 
 
 
