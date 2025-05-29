@@ -3,9 +3,6 @@ import { Menu, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Card } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Link } from "react-router-dom";
 import logo from "../assets/cvr-logo.png";
@@ -67,21 +64,36 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white font-sans">
+    <div className="font-sans">
       <header className="w-full shadow-md sticky top-0 z-50 bg-white">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <motion.img
-            src={logo}
-            alt="CVR Logo"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="h-15 w-auto"
-          />
+          <div className="flex items-center gap-3">
+            <motion.img
+              src={logo}
+              alt="CVR Logo"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="h-14 w-auto drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] "
+            />
+          <motion.span
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.8, ease: 'easeOut' }}
+  className="text-lg sm:text-xl md:text-xl font-bold tracking-tight 
+             bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent 
+             drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] 
+             whitespace-nowrap cursor-pointer"
+>
+  Department of CSE (Data Science)
+</motion.span>
 
-          <div className="sm:hidden" />
 
-          <div className="sm:hidden">
+
+          </div>
+
+          <div className="xl:hidden">
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -129,7 +141,7 @@ export default function Nav() {
             </Sheet>
           </div>
 
-          <nav className="hidden sm:flex gap-4">
+          <nav className="hidden xl:flex gap-4">
             {navItems.map((item, idx) =>
               item.subItems ? (
                 <Popover key={idx}>
@@ -171,5 +183,5 @@ export default function Nav() {
         </div>
       </header>
     </div>
-  )
+  );
 }

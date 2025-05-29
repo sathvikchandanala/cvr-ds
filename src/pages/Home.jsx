@@ -63,12 +63,13 @@ export default function HomePage() {
         className="py-40 px-6 flex flex-col items-center justify-center text-center space-y-12"
       >
         <div>
-          <h2 className="text-6xl font-extrabold leading-tight px-4 animate-fade-in-up
+          <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight px-2 sm:px-4 animate-fade-in-up
                text-black 
                dark:text-transparent dark:bg-gradient-to-b dark:from-white dark:to-white/70 dark:bg-clip-text
-               drop-shadow-md">
+               drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-center">
   Welcome to the Department of <br /> CSE (Data Science)
 </h2>
+
         </div>
 
         <Button
@@ -113,7 +114,9 @@ export default function HomePage() {
               We aim to provide students with the technical expertise and ethical values required to thrive in a data-driven world.
             </motion.p>
             <motion.p
-              className="mt-6 font-bold text-blue-700"
+              className="mt-6 font-bold tracking-tight 
+             bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent "
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
@@ -147,7 +150,9 @@ export default function HomePage() {
         <h3 className="text-4xl font-bold mb-2">
           <Counter target={item.count} />
         </h3>
-        <p className="font-medium text-blue-700">{item.title}</p>
+        <p className="font-medium tracking-tight 
+             bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent ">{item.title}</p>
       </Link>
     </Card>
   ))}

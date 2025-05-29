@@ -55,7 +55,8 @@ const Objectives = () => {
             <Card className="hover:shadow-xl transition duration-300">
               <CardHeader className="flex items-center gap-3">
                 <FaEye className="text-blue-700 text-3xl" />
-                <h2 className="text-2xl font-semibold text-blue-700">Vision</h2>
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent">Vision</h2>
               </CardHeader>
               <Separator />
               <CardContent className="text-gray-700 text-md mt-4 text-justify">
@@ -74,14 +75,19 @@ const Objectives = () => {
             <Card className="hover:shadow-xl transition duration-300">
               <CardHeader className="flex items-center gap-3">
                 <FaBullseye className="text-blue-700 text-3xl" />
-                <h2 className="text-2xl font-semibold text-blue-700">Mission</h2>
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent">Mission</h2>
               </CardHeader>
               <Separator />
               <CardContent className="text-gray-700 text-md mt-4 space-y-3 text-justify">
-                <p><span className="font-semibold text-blue-600">M1:</span> To offer a comprehensive educational program that integrates academic training with a solid foundation in data science concepts, techniques and applications.</p>
-                <p><span className="font-semibold text-blue-600">M2:</span> To encourage students for applying the tools of data analytics and conceptual knowledge for solving societal problems.</p>
-                <p><span className="font-semibold text-blue-600">M3:</span> To enable researchers and students to discover implicit patterns in large and complex data sets.</p>
-                <p><span className="font-semibold text-blue-600">M4:</span> To accustom the students with current industry practices, environment and entrepreneurship.</p>
+                <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent">M1:</span> To offer a comprehensive educational program that integrates academic training with a solid foundation in data science concepts, techniques and applications.</p>
+                <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent">M2:</span> To encourage students for applying the tools of data analytics and conceptual knowledge for solving societal problems.</p>
+                <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent">M3:</span> To enable researchers and students to discover implicit patterns in large and complex data sets.</p>
+                <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent">M4:</span> To accustom the students with current industry practices, environment and entrepreneurship.</p>
               </CardContent>
             </Card>
           </motion.div>
@@ -97,15 +103,19 @@ const Objectives = () => {
           >
             <Card className="hover:shadow-xl transition duration-300">
               <CardHeader>
-                <h2 className="text-3xl font-bold text-blue-700 text-left">
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent text-left">
                   Program Educational Objectives (PEOs)
                 </h2>
               </CardHeader>
               <Separator />
               <CardContent className="text-gray-700 text-md space-y-4 mt-4 text-justify">
-                <p><span className="font-bold text-blue-600">PEO 1: Professional Excellence –</span> Graduates will establish themselves as competent professionals in Data Science and related fields, applying analytical, computational, and domain-specific knowledge to address complex problems in industry and research.</p>
-                <p><span className="font-bold text-blue-600">PEO 2: Lifelong Learning and Innovation –</span> Graduates will continuously learn and stay updated with emerging technologies, methodologies, and tools in Data Science, contributing to innovation and knowledge advancement.</p>
-                <p><span className="font-bold text-blue-600">PEO 3: Ethical and Social Responsibility –</span> Graduates will demonstrate ethical behaviour, effective communication, and leadership skills while contributing to data-driven decision-making in a socially responsible and inclusive manner.</p>
+                <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent">PEO 1: Professional Excellence –</span> Graduates will establish themselves as competent professionals in Data Science and related fields, applying analytical, computational, and domain-specific knowledge to address complex problems in industry and research.</p>
+                <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent">PEO 2: Lifelong Learning and Innovation –</span> Graduates will continuously learn and stay updated with emerging technologies, methodologies, and tools in Data Science, contributing to innovation and knowledge advancement.</p>
+                <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent">PEO 3: Ethical and Social Responsibility –</span> Graduates will demonstrate ethical behaviour, effective communication, and leadership skills while contributing to data-driven decision-making in a socially responsible and inclusive manner.</p>
               </CardContent>
             </Card>
           </motion.div>
@@ -121,14 +131,17 @@ const Objectives = () => {
           >
             <Card className="hover:shadow-xl transition duration-300">
               <CardHeader>
-                <h2 className="text-3xl font-bold text-blue-700 text-center text-justify">
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent text-center text-left">
                   Program Specific Outcomes (PSOs)
                 </h2>
               </CardHeader>
               <Separator />
-              <CardContent className="text-gray-700 text-md space-y-4 mt-4">
-                <p><span className="font-bold text-blue-600">PSO 1: Data Analysis and Modeling –</span> Apply statistical, machine learning, and data mining techniques to analyze complex datasets and develop predictive and prescriptive models for solving real-world problems.</p>
-                <p><span className="font-bold text-blue-600">PSO 2: Data Engineering and Visualization –</span> Design and implement efficient data pipelines, manage large-scale data using appropriate tools and technologies, and create insightful visualizations to support data-driven decision-making.</p>
+              <CardContent className="text-gray-700 text-md space-y-4 mt-4 text-justify">
+                <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent">PSO 1: Data Analysis and Modeling –</span> Apply statistical, machine learning, and data mining techniques to analyze complex datasets and develop predictive and prescriptive models for solving real-world problems.</p>
+                <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent">PSO 2: Data Engineering and Visualization –</span> Design and implement efficient data pipelines, manage large-scale data using appropriate tools and technologies, and create insightful visualizations to support data-driven decision-making.</p>
               </CardContent>
             </Card>
           </motion.div>

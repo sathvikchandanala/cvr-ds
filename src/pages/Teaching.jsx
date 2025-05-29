@@ -34,6 +34,7 @@ import AhmedShahebaaz from "../assets/AhmedShahebaaz.jpg"
 const facultyData = [
   {
     title: "Professors",
+    count:2,
     members: [
       {
         name: "Dr. S.V.Suryanarayana",
@@ -51,6 +52,7 @@ const facultyData = [
   },
   {
     title: "Associate Professors",
+    count:7,
     members: [
       {
         name: "Dr. LNC Prakash K",
@@ -98,6 +100,7 @@ const facultyData = [
   },
   {
     title: "Sr. Assistant Professors",
+    count:10,
     members: [
       {
         name: "Mrs. A Srichandana",
@@ -163,6 +166,7 @@ const facultyData = [
   },
   {
     title: "Assistant Professors",
+    count:17,
     members: [
       {
         name: "Mrs. S. Lalitha",
@@ -317,8 +321,9 @@ viewport={{ once: true }}
 transition={{ delay: 0.4, duration: 1 }}
 className="mb-16"
             >
-              <h2 className="text-2xl font-bold text-blue-700 mb-6 text-left">
-                {group.title}
+              <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent mb-6 text-left">
+                {group.title} - {group.count}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {group.members.map((member, i) => (
