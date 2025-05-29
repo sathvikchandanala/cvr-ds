@@ -17,7 +17,7 @@ const stats = [
   { title: "Associate Professors", count: 7 },
   { title: "Sr. Assistant Professors", count: 10 },
   { title: "Assistant Professors", count: 17 },
-  { title: "Programmers & Admin", count: 5 },
+  { title: "Programmers & Admin", count: 3 },
 ];
 
 function Counter({ target }) {
@@ -63,12 +63,12 @@ export default function HomePage() {
         className="py-40 px-6 flex flex-col items-center justify-center text-center space-y-12"
       >
         <div>
-          <h2 className="text-4xl sm:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
-            Welcome to the Department of <br /> CSE - Data Science
-          </h2>
-          <p className="max-w-4xl text-gray-600 text-lg mb-6">
-            Empowering innovation through data-driven education and research at CVR College of Engineering.
-          </p>
+          <h2 className="text-6xl font-extrabold leading-tight px-4 animate-fade-in-up
+               text-black 
+               dark:text-transparent dark:bg-gradient-to-b dark:from-white dark:to-white/70 dark:bg-clip-text
+               drop-shadow-md">
+  Welcome to the Department of <br /> CSE (Data Science)
+</h2>
         </div>
 
         <Button
@@ -108,7 +108,7 @@ export default function HomePage() {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              Welcome to the Department of Computer Science and Engineering - Data Science at CVR College of Engineering.
+              Welcome to the Department of Computer Science and Engineering (Data Science) at CVR College of Engineering.
               Our department is committed to academic excellence, research innovation, and nurturing the next generation of data professionals.
               We aim to provide students with the technical expertise and ethical values required to thrive in a data-driven world.
             </motion.p>
@@ -138,17 +138,19 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-          {stats.map((item, index) => (
-            <Card
-              key={index}
-              className="p-6 text-center shadow-md rounded-2xl bg-white text-black hover:scale-105 transition-transform duration-300"
-            >
-              <h3 className="text-4xl font-bold mb-2">
-                <Counter target={item.count} />
-              </h3>
-              <p className="font-medium text-blue-700">{item.title}</p>
-            </Card>
-          ))}
+            {stats.map((item, index) => (
+    <Card
+      key={index}
+      className="p-6 text-center shadow-md rounded-2xl bg-white text-black hover:scale-105 transition-transform duration-300 cursor-pointer"
+    >
+      <Link to={`/faculty/${encodeURIComponent(item.title)}`} className="block">
+        <h3 className="text-4xl font-bold mb-2">
+          <Counter target={item.count} />
+        </h3>
+        <p className="font-medium text-blue-700">{item.title}</p>
+      </Link>
+    </Card>
+  ))}
         </div>
       </motion.section>
 

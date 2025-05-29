@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+import { useParams, Link } from "react-router-dom";
 import Nav from "./Nav";
 import Footer from "./Footer";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Card , CardContent} from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import hod from "../assets/hod.webp";
-import { FaSearch } from "react-icons/fa";
 import nikitha_manne from "../assets/NikitaManne.jpg"
 import Yaseen_pasha from "../assets/Yaseen-PashaMoghal.jpg" 
 import Yasmeen_Aashu from "../assets/YasmeenAashu.jpeg"
@@ -30,6 +29,8 @@ import HarishKumarK from "../assets/Harish-KumarK.jpg"
 import HariShankarP from "../assets/Hari-ShankarP.jpg"
 import BalakrishnaReddyS from "../assets/Balakrishna-ReddyS.jpg" 
 import AhmedShahebaaz from "../assets/AhmedShahebaaz.jpg"
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const facultyData = [
   {
@@ -270,58 +271,26 @@ const facultyData = [
   }
 ];
 
-export default function Teaching() {
-  const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("");
+export default function FacultyPage() {
+  const { category } = useParams();
+    const navigate = useNavigate();
 
-  const filteredData = facultyData.map((group) => ({
-    ...group,
-    members: group.members.filter((member) =>
-      member.name.toLowerCase().includes(query.toLowerCase())
-    )
-  })).filter((group) => group.members.length > 0);
+  const categoryData = facultyData.find(
+    (f) => f.title.toLowerCase() === decodeURIComponent(category || "").toLowerCase()
+  );
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+     <div className="min-h-screen font-sans">
       <Nav />
-      <div className="flex flex-col items-center justify-center text-center py-24 px-4 sm:px-6 bg-gradient-to-b from-blue-50 to-white space-y-12">
-        <div className="w-full max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
-              <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 1 }}
-                    className="text-4xl font-bold text-center text-black-800 mb-12"
-                    viewport={{ once: true, amount: 0.3 }}
-                  >
-                    <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Teaching Faculty</h1>
-                  </motion.h1>
-            <div className="flex w-full sm:w-auto gap-2 items-center">
-              <Input
-                placeholder="Search by name"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="w-full sm:w-64"
-              />
-              <Button onClick={() => setQuery(search)} className="flex items-center gap-2">
-                <FaSearch /> Search
-              </Button>
-            </div>
-          </div>
-          {filteredData.map((group, index) => (
-            <motion.div
-           key={index}
-initial={{ opacity: 0, y: 20 }}
-whileInView={{ opacity: 1, y: 0 }}
-viewport={{ once: true }}
-transition={{ delay: 0.4, duration: 1 }}
-className="mb-16"
-            >
-              <h2 className="text-2xl font-bold text-blue-700 mb-6 text-left">
-                {group.title}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {group.members.map((member, i) => (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-7xl mx-auto py-24 px-4 md:p-8"
+      >
+        <h1 className="text-2xl font-bold text-black-700 mb-6 text-center">{categoryData ? categoryData.title : "Faculty"}</h1>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {categoryData && categoryData.members.map((member, i) => (
                   <motion.div
                     key={i}
                     whileHover={{ scale: 1.05 }}
@@ -329,24 +298,28 @@ className="mb-16"
                   >
                     <Card className="rounded-2xl shadow-md bg-white border border-gray-200 hover:shadow-lg transition-shadow">
                       <CardContent className="flex flex-col items-center text-center p-4">
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-40 h-40 object-cover object-top mb-4 shadow rounded-full"
+  <img
+    src={member.image}
+    alt={member.name}
+    className="w-40 h-40 object-cover object-top mb-4 shadow rounded-full"
+  />
+  <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
+  <p className="text-sm text-gray-600">{member.degree}</p>
+  <p className="text-sm text-gray-500">{member.designation}</p>
+</CardContent>
 
-                        />
-                        <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
-                        <p className="text-sm text-gray-600">{member.degree}</p>
-                        <p className="text-sm text-black-600 mt-1">{member.designation}</p>
-                      </CardContent>
                     </Card>
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+        <div className="mt-10 text-center">
+    <Button onClick={() => navigate(-1)} className="text-base inline-flex items-center gap-2 px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+      <ArrowLeft className="w-4 h-4" />
+      Back to Homepage
+    </Button>
+</div>
+
+      </motion.div>
       <Footer />
     </div>
   );

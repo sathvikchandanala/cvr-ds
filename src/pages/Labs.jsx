@@ -44,9 +44,9 @@ export default function DepartmentLaboratories() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
         viewport={{ once: true, amount: 0.5 }}
-        className="text-center py-12 px-4 sm:px-8 lg:px-16"
+        className="text-center py-24 px-4 sm:px-8 lg:px-16"
       >
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">
+        <h1 className="text-4xl sm:text-5xl font-bold text-black mb-6">
           Department Laboratories
         </h1>
         <p className="text-gray-600 max-w-3xl mx-auto text-lg">

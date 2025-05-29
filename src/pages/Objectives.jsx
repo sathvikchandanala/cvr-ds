@@ -1,141 +1,142 @@
 import React from "react";
-import { Accordion, AccordionItem } from "@/components/ui/accordion";
-import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { FaLightbulb, FaLaptopCode } from "react-icons/fa";
-import { MdOutlineChecklist } from "react-icons/md";
-import { IoIosArrowDown } from "react-icons/io";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { FaBullseye, FaEye } from "react-icons/fa";
 import Nav from "./Nav";
 import Footer from "./Footer";
 
-const peos = [
-  "Graduates will acquire capability to apply their knowledge and skills to solve various kinds of computational engineering problems.",
-  "Graduates will exhibit the ability to apply the acquired skills in various domains and multi-disciplinary areas, to function ethically and meet the ever-increasing technological and social challenges.",
-  "To evolve as resourceful engineers catering to dynamic industrial needs and engage in life-long learning.",
-  "Graduates will acquire soft skills to adapt and excel in diverse global environment.",
-];
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
 
-const psos = [
-  "Make critical evaluation of the theories, techniques, tools and systems that are used to build data science based solutions in different domains.",
-  "Apply analytic techniques and algorithms (including statistical, data mining, machine learning, Artificial Intelligence and soft computing approaches) to large data sets to extract meaningful insights by using relevant software tools, languages, data models, and environments for data analysis and visualization.",
-  "Formalize data analysis problems in terms of the underlying statistical and computational principles and then provide technological pipeline to ingest, stage, transform and design solutions to the problems encountered in industry or academia.",
-  "Interpret results of analysis, assess their credibility and communicate the results effectively (visually and verbally) to a broad audience within an organization.",
-];
-
-const pos = [
-  "Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.",
-  "Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.",
-  "Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for public health, safety, cultural, societal, and environmental considerations.",
-  "Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.",
-  "Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.",
-  "The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to professional engineering practice.",
-  "Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.",
-  "Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of engineering practice.",
-  "Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.",
-  "Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large.",
-  "Project management and finance: Demonstrate knowledge and understanding of engineering and management principles and apply these to one’s own work to manage projects and in multidisciplinary environments.",
-  "Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the context of technological change.",
-];
-
-export default function Objectiv() {
+const Objectives = () => {
   return (
-    <div>
+    <>
       <Nav />
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-20 px-4 md:px-20">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, amount: 0.3 }}
-          className="text-4xl font-bold text-center text-black mb-12"
-        >
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Department Objectives</h1>
-        </motion.h1>
-
-        <div className="space-y-12">
-          {/* PEOs */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+      <main className="min-h-screen py-24 px-4 md:px-16 space-y-16">
+        <section className="text-center max-w-3xl mx-auto">
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold text-black mb-4"
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
           >
-            <Card className="shadow-xl border border-gray-200">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <FaLightbulb className="text-yellow-500 text-3xl" />
-                  <h2 className="text-2xl font-bold text-blue-700">
-                    Program Educational Objectives (PEOs)
-                  </h2>
-                </div>
-                <ul className="space-y-3 text-gray-700 text-justify">
-                  {peos.map((peo, index) => (
-                    <li key={index} className="flex gap-2">
-                      <span className="font-semibold text-yellow-600">{`PEO${index + 1}:`}</span>
-                      <span>{peo}</span>
-                    </li>
-                  ))}
-                </ul>
+            Department Objectives
+          </motion.h1>
+          <motion.p
+            className="text-lg text-gray-700"
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            custom={1}
+          >
+            Our department is committed to excellence in teaching, research, and innovation in Computer Science and Engineering with a specialization in Data Science.
+          </motion.p>
+        </section>
+
+        <section className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={2}
+          >
+            <Card className="hover:shadow-xl transition duration-300">
+              <CardHeader className="flex items-center gap-3">
+                <FaEye className="text-blue-700 text-3xl" />
+                <h2 className="text-2xl font-semibold text-blue-700">Vision</h2>
+              </CardHeader>
+              <Separator />
+              <CardContent className="text-gray-700 text-md mt-4 text-justify">
+                To nurture pioneering Computer Science Engineers with a focus on Data Science by providing them with an outstanding educational experience that fosters all-round development, academic excellence and creative thinking, thereby propelling advancements in technology and society.
               </CardContent>
             </Card>
           </motion.div>
 
-          {/* PSOs */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={3}
           >
-            <Card className="shadow-xl border border-gray-200">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <FaLaptopCode className="text-red-600 text-3xl" />
-                  <h2 className="text-2xl font-bold text-blue-700">
-                    Program Specific Outcomes (PSOs)
-                  </h2>
-                </div>
-                <ul className="space-y-3 text-gray-700 text-justify">
-                  {psos.map((pso, index) => (
-                    <li key={index} className="flex gap-2 ">
-                      <span className="font-semibold text-red-700">{`${index + 1}: `}</span>
-                      {pso}
-                    </li>
-                  ))}
-                </ul>
+            <Card className="hover:shadow-xl transition duration-300">
+              <CardHeader className="flex items-center gap-3">
+                <FaBullseye className="text-blue-700 text-3xl" />
+                <h2 className="text-2xl font-semibold text-blue-700">Mission</h2>
+              </CardHeader>
+              <Separator />
+              <CardContent className="text-gray-700 text-md mt-4 space-y-3 text-justify">
+                <p><span className="font-semibold text-blue-600">M1:</span> To offer a comprehensive educational program that integrates academic training with a solid foundation in data science concepts, techniques and applications.</p>
+                <p><span className="font-semibold text-blue-600">M2:</span> To encourage students for applying the tools of data analytics and conceptual knowledge for solving societal problems.</p>
+                <p><span className="font-semibold text-blue-600">M3:</span> To enable researchers and students to discover implicit patterns in large and complex data sets.</p>
+                <p><span className="font-semibold text-blue-600">M4:</span> To accustom the students with current industry practices, environment and entrepreneurship.</p>
               </CardContent>
             </Card>
           </motion.div>
+        </section>
 
-          {/* POs */}
+        <section className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={4}
           >
-            <Card className="shadow-xl border border-gray-200">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <MdOutlineChecklist className="text-green-600 text-3xl" />
-                  <h2 className="text-2xl font-bold text-blue-700">
-                    Program Outcomes (POs)
-                  </h2>
-                </div>
-                <ul className="space-y-3 text-gray-700 text-justify">
-                  {pos.map((pos, index) => (
-                    <li key={index} className="flex gap-2">
-                      <span className="font-semibold text-green-700">{`PO${index + 1}: `}</span>
-                      {pos}
-                    </li>
-                  ))}
-                </ul>
+            <Card className="hover:shadow-xl transition duration-300">
+              <CardHeader>
+                <h2 className="text-3xl font-bold text-blue-700 text-left">
+                  Program Educational Objectives (PEOs)
+                </h2>
+              </CardHeader>
+              <Separator />
+              <CardContent className="text-gray-700 text-md space-y-4 mt-4 text-justify">
+                <p><span className="font-bold text-blue-600">PEO 1: Professional Excellence –</span> Graduates will establish themselves as competent professionals in Data Science and related fields, applying analytical, computational, and domain-specific knowledge to address complex problems in industry and research.</p>
+                <p><span className="font-bold text-blue-600">PEO 2: Lifelong Learning and Innovation –</span> Graduates will continuously learn and stay updated with emerging technologies, methodologies, and tools in Data Science, contributing to innovation and knowledge advancement.</p>
+                <p><span className="font-bold text-blue-600">PEO 3: Ethical and Social Responsibility –</span> Graduates will demonstrate ethical behaviour, effective communication, and leadership skills while contributing to data-driven decision-making in a socially responsible and inclusive manner.</p>
               </CardContent>
             </Card>
           </motion.div>
-        </div>
-      </div>
+        </section>
+
+        <section className="max-w-4xl mx-auto">
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={5}
+          >
+            <Card className="hover:shadow-xl transition duration-300">
+              <CardHeader>
+                <h2 className="text-3xl font-bold text-blue-700 text-center text-justify">
+                  Program Specific Outcomes (PSOs)
+                </h2>
+              </CardHeader>
+              <Separator />
+              <CardContent className="text-gray-700 text-md space-y-4 mt-4">
+                <p><span className="font-bold text-blue-600">PSO 1: Data Analysis and Modeling –</span> Apply statistical, machine learning, and data mining techniques to analyze complex datasets and develop predictive and prescriptive models for solving real-world problems.</p>
+                <p><span className="font-bold text-blue-600">PSO 2: Data Engineering and Visualization –</span> Design and implement efficient data pipelines, manage large-scale data using appropriate tools and technologies, and create insightful visualizations to support data-driven decision-making.</p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </section>
+      </main>
       <Footer />
-    </div>
+    </>
   );
-}
+};
+
+export default Objectives;

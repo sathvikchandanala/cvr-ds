@@ -66,7 +66,7 @@ const Footer = () => {
         </div>
 
         <div className="text-center text-xs text-gray-500 mt-10">
-          &copy; {new Date().getFullYear()} CVR College of Engineering — Department of CSE - Data Science. All rights reserved.
+          &copy; {new Date().getFullYear()} CVR College of Engineering — Department of CSE (Data Science).
         </div>
       </footer>
     </div>

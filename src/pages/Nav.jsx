@@ -17,8 +17,6 @@ const navItems = [
     subItems: [
       { name: "Objectives", path: "/academics/objectives" },
       { name: "Academic Calendar", path: "/academics/calendar" },
-      { name: "Syllabus Books", path: "/academics/syllabus" },
-      { name: "Time Tables", path: "/academics/timetables" },
     ],
   },
   {
@@ -48,8 +46,7 @@ const navItems = [
   {
     name: "Publications Hub",
     subItems: [
-      { name: "Technical", path: "/publications/technical" },
-      { name: "Non-Technical", path: "/publications/non-technical" },
+      { name: "Magazines", path: "/publications/Magazines" },
       { name: "News Letter", path: "/publications/newsletter" },
     ],
   },
@@ -63,7 +60,6 @@ const navItems = [
       { name: "Publications", path: "/research/publications" },
     ],
   },
-  { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
 ];
 
