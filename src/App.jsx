@@ -11,6 +11,7 @@ import ConferencePage from "./pages/ConferencePage";
 import FDPsPage from "./pages/FDPPage";
 import JournalsPage from "./pages/JournalsPage";
 import BookChapter from "./pages/BookChapter";
+import Contact from "./pages/Contact";
 function App() {
   return (
   <Router>
@@ -26,6 +27,7 @@ function App() {
         <Route path="/research/fdps" element={<FDPsPage/>}/>
         <Route path="/research/journalpublications" element={<JournalsPage/>}/>
         <Route path="/research/bookchapterpublications" element={<BookChapter/>}/>
+        <Route path="/contact" element={<Contact/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
   </Router>
