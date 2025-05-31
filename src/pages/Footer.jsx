@@ -12,8 +12,6 @@ const Footer = () => {
             <ul className="space-y-1">
               <li><Link to="/academics/objectives" className="hover:text-blue-600">Objectives</Link></li>
               <li><Link to="/academics/calendar" className="hover:text-blue-600">Academic Calendar</Link></li>
-              <li><Link to="/academics/syllabus" className="hover:text-blue-600">Syllabus Books</Link></li>
-              <li><Link to="/academics/timetables" className="hover:text-blue-600">Time Tables</Link></li>
             </ul>
           </div>
 
@@ -47,8 +45,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-gray-900 mb-2">Publications Hub</h4>
             <ul className="space-y-1">
-              <li><Link to="/publications/technical" className="hover:text-blue-600">Technical</Link></li>
-              <li><Link to="/publications/non-technical" className="hover:text-blue-600">Non-Technical</Link></li>
+              <li><Link to="/publications/magazines" className="hover:text-blue-600">Magazines</Link></li>
               <li><Link to="/publications/newsletter" className="hover:text-blue-600">News Letter</Link></li>
             </ul>
           </div>
@@ -56,11 +53,11 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-gray-900 mb-2">Research</h4>
             <ul className="space-y-1">
-              <li><Link to="/research/conferences" className="hover:text-blue-600">Conferences</Link></li>
-              <li><Link to="/research/workshops" className="hover:text-blue-600">Workshops</Link></li>
+              <li><Link to="/research/conferencepublications" className="hover:text-blue-600">Conference Publications</Link></li>
+              <li><Link to="/research/journalpublications" className="hover:text-blue-600">Journal Publications</Link></li>
+              <li><Link to="/research/bookchapterpublications" className="hover:text-blue-600">Book chapter Publications</Link></li>
               <li><Link to="/research/fdps" className="hover:text-blue-600">FDPs</Link></li>
               <li><Link to="/research/patents" className="hover:text-blue-600">Patents</Link></li>
-              <li><Link to="/research/publications" className="hover:text-blue-600">Publications</Link></li>
             </ul>
           </div>
         </div>

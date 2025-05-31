@@ -285,6 +285,19 @@ export default function Teaching() {
     )
   })).filter((group) => group.members.length > 0);
 
+    const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
+
   return (
     <div className="min-h-screen bg-white font-sans">
       <Nav />
@@ -292,11 +305,12 @@ export default function Teaching() {
         <div className="w-full max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
               <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 1 }}
+                   
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
                     className="text-4xl font-bold text-center text-black-800 mb-12"
-                    viewport={{ once: true, amount: 0.3 }}
+                    
                   >
                     <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Teaching Faculty</h1>
                   </motion.h1>

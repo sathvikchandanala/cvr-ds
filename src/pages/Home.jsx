@@ -53,7 +53,7 @@ export default function HomePage() {
   const hodRef = useRef(null);
 
   return (
-    <div className="min-h-screen font-sans">
+    <div className="min-h-screen">
       <Nav />
 
       <motion.section
@@ -67,7 +67,8 @@ export default function HomePage() {
                text-black 
                dark:text-transparent dark:bg-gradient-to-b dark:from-white dark:to-white/70 dark:bg-clip-text
                drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-center">
-  Welcome to the Department of <br /> CSE (Data Science)
+  Welcome to the <br /> <span className="bg-gradient-to-r from-blue-600 to-blue-800 
+             bg-clip-text text-transparent ">Department of  CSE (Data Science)</span>
 </h2>
 
         </div>
@@ -100,7 +101,7 @@ export default function HomePage() {
               transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              Message from the Head of Department
+              Message from the Head of the Department
             </motion.h2>
             <motion.p
               className="text-gray-700 leading-relaxed text-lg text-justify"

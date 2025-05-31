@@ -50,11 +50,12 @@ const navItems = [
   {
     name: "Research",
     subItems: [
-      { name: "Conferences", path: "/research/conferences" },
-      { name: "Workshops", path: "/research/workshops" },
+      { name: "Conference Publications", path: "/research/conferencepublications" },
+      { name: "Journal Publications", path: "/research/journalpublications" },
+      { name: "Book chapter Publications ", path: "/research/bookchapterpublications" },
       { name: "FDPs", path: "/research/fdps" },
       { name: "Patents", path: "/research/patents" },
-      { name: "Publications", path: "/research/publications" },
+      
     ],
   },
   { name: "Contact", path: "/contact" },
