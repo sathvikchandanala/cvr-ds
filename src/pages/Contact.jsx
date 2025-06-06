@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Landmark, Building2, Mail } from "lucide-react";
 import Nav from "./Nav";
 import Footer from "./Footer";
+import { ArrowUp } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -17,6 +18,10 @@ const fadeInUp = {
     },
   }),
 };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
 export default function Contact() {
   const [showModal, setShowModal] = useState(false);
@@ -188,7 +193,13 @@ export default function Contact() {
           </motion.div>
         )}
       </AnimatePresence>
-
+         <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </button>
       <Footer />
     </div>
   );

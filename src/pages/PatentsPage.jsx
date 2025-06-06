@@ -196,16 +196,16 @@ export default function PatentsPage() {
               </tbody>
             </table>
           </div>
-          <button
+        </div>
+      </div>
+      </motion.div>
+      <button
             onClick={scrollToTop}
             className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-primary text-white shadow-lg hover:bg-primary/90 transition-all"
             aria-label="Scroll to top"
           >
             <ArrowUp className="w-5 h-5" />
           </button>
-        </div>
-      </div>
-      </motion.div>
       </main>
       <Footer />
     </div>

@@ -38,11 +38,6 @@ const navItems = [
       { name: "E-Resources", path: "/student-corner/eresources" },
       { name: "Gallery", path: "/student-corner/gallery" },
       { name: "Placements", path: "/student-corner/placements" },
-    ],
-  },
-  {
-    name: "Publications Hub",
-    subItems: [
       { name: "Magazines", path: "/publications/Magazines" },
       { name: "News Letter", path: "/publications/newsletter" },
     ],

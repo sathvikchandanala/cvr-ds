@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import hod from "../assets/hod.webp";
+import { ArrowUp } from "lucide-react";
 import { FaSearch } from "react-icons/fa";
 import nikitha_manne from "../assets/NikitaManne.jpg"
 import Yaseen_pasha from "../assets/Yaseen-PashaMoghal.jpg" 
@@ -30,6 +31,15 @@ import HarishKumarK from "../assets/Harish-KumarK.jpg"
 import HariShankarP from "../assets/Hari-ShankarP.jpg"
 import BalakrishnaReddyS from "../assets/Balakrishna-ReddyS.jpg" 
 import AhmedShahebaaz from "../assets/AhmedShahebaaz.jpg"
+import Annapurna from "../assets/Annapurna.jpg"
+import baswaraj from "../assets/baswaraj.jpeg"
+import jhanbhasha from "../assets/jhan bhasha.jpeg"
+import klncprakash from "../assets/klnc prakash.jpg"
+import Ravikiran from "../assets/Ravikiran.jpeg"
+import Sreenu from "../assets/Sreenu.jpg"
+import swathi from "../assets/swathi.jpg"
+import varaprasad from "../assets/varaprasad.jpeg"
+import sreevani from "../assets/sreevani.jpeg"
 
 const facultyData = [
   {
@@ -58,7 +68,7 @@ const facultyData = [
         name: "Dr. LNC Prakash K",
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
-        image: "/faculty/prakash.jpg"
+        image: klncprakash
       },
       {
         name: "Dr. A.Srinivasa Reddy",
@@ -70,7 +80,7 @@ const facultyData = [
         name: "Dr. Varaprasad Rao M",
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
-        image: "/faculty/varaprasad.jpg"
+        image: varaprasad
       },
       {
         name: "Dr. Rama Krishna B",
@@ -82,19 +92,19 @@ const facultyData = [
         name: "Dr. Shaik Janbhasha",
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
-        image: "/faculty/shaik_janbhasha.jpg"
+        image: jhanbhasha
       },
       {
         name: "Dr. Basavaraj Chunchure",
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
-        image: "/faculty/basavaraj.jpg"
+        image: baswaraj
       },
       {
         name: "Dr. M.Sreenu",
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
-        image: "/faculty/sreenu.jpg"
+        image: Sreenu
       }
     ]
   },
@@ -104,19 +114,19 @@ const facultyData = [
     members: [
       {
         name: "Mrs. A Srichandana",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Sr. Assistant Professor",
         image: SrichandanaA
       },
       {
         name: "Mrs. S. Vineela Krishna",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Sr. Assistant Professor",
         image: "/faculty/vineela_krishna.jpg"
       },
       {
         name: "Mr. Ahmed Shahebaaz",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Sr. Assistant Professor",
         image: AhmedShahebaaz
       },
@@ -124,7 +134,7 @@ const facultyData = [
         name: "Dr. Annapurna Gummadi",
         degree: "M.Tech., Ph.D.",
         designation: "Sr. Assistant Professor",
-        image: "/faculty/annapurna.jpg"
+        image: Annapurna
       },
       {
         name: "Dr. Yasmeen",
@@ -134,31 +144,31 @@ const facultyData = [
       },
       {
         name: "Mrs. E.Nitya",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Sr. Assistant Professor",
         image: "/faculty/nitya.jpg"
       },
       {
         name: "Mrs. P.Padma",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Sr. Assistant Professor",
         image: PadmaParshapu
       },
       {
         name: "Mr. P.Hari Shankar",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Sr. Assistant Professor",
         image: HariShankarP
       },
       {
         name: "Mr. K. Harish Kumar",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Sr. Assistant Professor",
         image: HarishKumarK
       },
       {
         name: "Mr. K.S.Ranadheer Kumar",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Sr. Assistant Professor",
         image: RanadheerKumarKS
       }
@@ -182,13 +192,13 @@ const facultyData = [
       },
       {
         name: "Mr. S.Balakrishna Reddy",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Assistant Professor",
         image: BalakrishnaReddyS
       },
       {
         name: "Mrs. M. Nikita",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Assistant Professor",
         image: nikitha_manne
       },
@@ -200,13 +210,13 @@ const facultyData = [
       },
       {
         name: "Mr. V.Ramesh",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Assistant Professor",
         image: RameshVankudoth
       },
       {
         name: "Mrs. Arava Nagasri",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Assistant Professor",
         image: NagasriArava
       },
@@ -214,17 +224,17 @@ const facultyData = [
         name: "Mrs. M.Srivani",
         degree: "M.Tech.",
         designation: "Assistant Professor",
-        image: "/faculty/srivani.jpg"
+        image: sreevani
       },
       {
         name: "Mrs. T. Ramya",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Assistant Professor",
         image: RamyaT
       },
       {
         name: "Mr. V.Praveen Kumar",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Assistant Professor",
         image: PraveenKumarV
       },
@@ -254,25 +264,29 @@ const facultyData = [
       },
       {
         name: "Mr. Erugu Krishna",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Assistant Professor",
         image: KrishnaErugu
       },
       {
         name: "Mrs. V.Swathi",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Assistant Professor",
-        image: "/faculty/swathi.jpg"
+        image: swathi
       },
       {
         name: "Mr. K.Ravikiran Reddy",
-        degree: "M.Tech., (Ph.D.)",
+        degree: "M.Tech., Ph.D.",
         designation: "Assistant Professor",
-        image: "/faculty/ravikiran_reddy.jpg"
+        image: Ravikiran
       }
     ]
   }
 ];
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
 export default function Teaching() {
   const [search, setSearch] = useState("");
@@ -285,7 +299,7 @@ export default function Teaching() {
     )
   })).filter((group) => group.members.length > 0);
 
-    const fadeInUp = {
+const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: (i = 1) => ({
     opacity: 1,
@@ -306,15 +320,19 @@ export default function Teaching() {
           <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
               <motion.h1
                    
-            initial="hidden"
+               initial="hidden"
             animate="visible"
             variants={fadeInUp}
-                    className="text-4xl font-bold text-center text-black-800 mb-12"
+                    className="text-4xl md:text-5xl font-bold text-black mb-4"
                     
                   >
                     <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Teaching Faculty</h1>
                   </motion.h1>
-            <div className="flex w-full sm:w-auto gap-2 items-center">
+            <motion.div className="flex w-full sm:w-auto gap-2 items-center" variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={2}>
               <Input
                 placeholder="Search by name"
                 value={search}
@@ -324,15 +342,16 @@ export default function Teaching() {
               <Button onClick={() => setQuery(search)} className="flex items-center gap-2">
                 <FaSearch /> Search
               </Button>
-            </div>
+            </motion.div>
           </div>
           {filteredData.map((group, index) => (
             <motion.div
            key={index}
-initial={{ opacity: 0, y: 20 }}
-whileInView={{ opacity: 1, y: 0 }}
-viewport={{ once: true }}
-transition={{ delay: 0.4, duration: 1 }}
+variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={2}
 className="mb-16"
             >
               <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 
@@ -365,6 +384,13 @@ className="mb-16"
             </motion.div>
           ))}
         </div>
+         <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </button>
       </div>
       <Footer />
     </div>

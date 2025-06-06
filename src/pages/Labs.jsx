@@ -10,12 +10,17 @@ import { HiComputerDesktop } from "react-icons/hi2";
 import { FaMicrosoft } from "react-icons/fa";
 import { SiOracle, SiLinux } from "react-icons/si";
 import { HiArrowRight } from "react-icons/hi";
+import { ArrowUp } from "lucide-react";
 
 const labImages = [
   { src: CM103, location: "CM-103" },
   { src: CM_216_217, location: "CM-216_217" },
   { src: CM_218_220, location: "CM-218_220" },
 ];
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
 export default function DepartmentLaboratories() {
   const [viewerOpen, setViewerOpen] = useState(false);
@@ -199,6 +204,13 @@ export default function DepartmentLaboratories() {
           </motion.div>
         </motion.div>
       </section>
+       <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </button>
       <Footer />
     </div>
   );

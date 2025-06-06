@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="bg-white">
       <footer className="bg-gray-100 border-t mt-16 px-6 py-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 text-sm text-gray-700">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 text-sm text-gray-700">
           
           <div>
             <h4 className="font-semibold text-gray-900 mb-2">Academics</h4>
@@ -39,17 +39,10 @@ const Footer = () => {
               <li><Link to="/student-corner/e-resources" className="hover:text-blue-600">E-Resources</Link></li>
               <li><Link to="/student-corner/gallery" className="hover:text-blue-600">Gallery</Link></li>
               <li><Link to="/student-corner/placements" className="hover:text-blue-600">Placements</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-2">Publications Hub</h4>
-            <ul className="space-y-1">
               <li><Link to="/publications/magazines" className="hover:text-blue-600">Magazines</Link></li>
               <li><Link to="/publications/newsletter" className="hover:text-blue-600">News Letter</Link></li>
             </ul>
           </div>
-
           <div>
             <h4 className="font-semibold text-gray-900 mb-2">Research</h4>
             <ul className="space-y-1">

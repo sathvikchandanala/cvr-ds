@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import hod from "../assets/hod.webp";
 import Nav from "./Nav";
 import Footer from "./Footer";
+import { ArrowUp } from "lucide-react";
 
 const stats = [
   { title: "Professors", count: 2 },
@@ -49,6 +50,36 @@ function Counter({ target }) {
   return <span ref={ref}>{count}</span>;
 }
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
+
+const fadeInUpSlow = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 1.5,
+      ease: "easeOut",
+    },
+  }),
+};
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
 export default function HomePage() {
   const hodRef = useRef(null);
 
@@ -57,9 +88,9 @@ export default function HomePage() {
       <Nav />
 
       <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 2 }}
+        initial="hidden"
+            animate="visible"
+            variants={fadeInUpSlow}
         className="py-40 px-6 flex flex-col items-center justify-center text-center space-y-12"
       >
         <div>
@@ -88,27 +119,30 @@ export default function HomePage() {
             src={hod}
             alt="HOD - CSE Data Science"
             className="rounded-lg w-full h-auto shadow-lg object-cover"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.3 }}
+                variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={2}
           />
           <div>
             <motion.h2
               className="text-3xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
-              viewport={{ once: true, amount: 0.3 }}
+               variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={2}
             >
               Message from the Head of the Department
             </motion.h2>
             <motion.p
               className="text-gray-700 leading-relaxed text-lg text-justify"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
-              viewport={{ once: true, amount: 0.3 }}
+                  variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={2}
             >
               Welcome to the Department of Computer Science and Engineering (Data Science) at CVR College of Engineering.
               Our department is committed to academic excellence, research innovation, and nurturing the next generation of data professionals.
@@ -118,10 +152,11 @@ export default function HomePage() {
               className="mt-6 font-bold tracking-tight 
              bg-gradient-to-r from-blue-600 to-blue-800 
              bg-clip-text text-transparent "
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-              viewport={{ once: true, amount: 0.3 }}
+                 variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={2}
             >
               Dr. S.V.Suryanarayana
             </motion.p>
@@ -130,10 +165,11 @@ export default function HomePage() {
       </motion.section>
 
       <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
+          variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={2}
         className="py-24 px-6"
       >
         <div className="max-w-7xl mx-auto text-center mb-12">
@@ -159,6 +195,13 @@ export default function HomePage() {
   ))}
         </div>
       </motion.section>
+       <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </button>
 
       <Footer />
     </div>
