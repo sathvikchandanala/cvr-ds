@@ -114,19 +114,19 @@ const facultyData = [
     members: [
       {
         name: "Mrs. A Srichandana",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Sr. Assistant Professor",
         image: SrichandanaA
       },
       {
         name: "Mrs. S. Vineela Krishna",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Sr. Assistant Professor",
         image: "/faculty/vineela_krishna.jpg"
       },
       {
         name: "Mr. Ahmed Shahebaaz",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Sr. Assistant Professor",
         image: AhmedShahebaaz
       },
@@ -144,31 +144,31 @@ const facultyData = [
       },
       {
         name: "Mrs. E.Nitya",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Sr. Assistant Professor",
         image: "/faculty/nitya.jpg"
       },
       {
         name: "Mrs. P.Padma",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Sr. Assistant Professor",
         image: PadmaParshapu
       },
       {
         name: "Mr. P.Hari Shankar",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Sr. Assistant Professor",
         image: HariShankarP
       },
       {
         name: "Mr. K. Harish Kumar",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Sr. Assistant Professor",
         image: HarishKumarK
       },
       {
         name: "Mr. K.S.Ranadheer Kumar",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Sr. Assistant Professor",
         image: RanadheerKumarKS
       }
@@ -192,13 +192,13 @@ const facultyData = [
       },
       {
         name: "Mr. S.Balakrishna Reddy",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
         image: BalakrishnaReddyS
       },
       {
         name: "Mrs. M. Nikita",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
         image: nikitha_manne
       },
@@ -210,13 +210,13 @@ const facultyData = [
       },
       {
         name: "Mr. V.Ramesh",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
         image: RameshVankudoth
       },
       {
         name: "Mrs. Arava Nagasri",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
         image: NagasriArava
       },
@@ -228,13 +228,13 @@ const facultyData = [
       },
       {
         name: "Mrs. T. Ramya",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
         image: RamyaT
       },
       {
         name: "Mr. V.Praveen Kumar",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
         image: PraveenKumarV
       },
@@ -264,19 +264,19 @@ const facultyData = [
       },
       {
         name: "Mr. Erugu Krishna",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
         image: KrishnaErugu
       },
       {
         name: "Mrs. V.Swathi",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
         image: swathi
       },
       {
         name: "Mr. K.Ravikiran Reddy",
-        degree: "M.Tech., Ph.D.",
+        degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
         image: Ravikiran
       }
