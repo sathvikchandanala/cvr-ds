@@ -76,7 +76,7 @@ const facultyData = [
       },
       {
         name: "Dr. A.Srinivasa Reddy",
-        degree: "M.Tech., Ph.D.",
+        degree: "Ph.D., Diploma in Data Science (IIT Madras)",
         designation: "Associate Professor",
         image: SrinivasaReddyA
       },
