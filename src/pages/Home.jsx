@@ -94,6 +94,39 @@ export default function HomePage() {
         className="py-40 px-6 flex flex-col items-center justify-center text-center space-y-12"
       >
         <div>
+
+<div id="carouselWithIndicators" class="carousel slide" data-bs-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-bs-target="#carouselWithIndicators" data-bs-slide-to="0" class="active"></li>
+    <li data-bs-target="#carouselWithIndicators" data-bs-slide-to="1"></li>
+    <li data-bs-target="#carouselWithIndicators" data-bs-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/images/bs-images/carousel-slide-1.png" class="d-block w-100" alt="Slide 1">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/bs-images/carousel-slide-2.png" class="d-block w-100" alt="Slide 2">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/bs-images/carousel-slide-3.png" class="d-block w-100" alt="Slide 3">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselWithIndicators" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselWithIndicators" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+
+
+
+          
+
+          
           <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight px-2 sm:px-4 animate-fade-in-up
                text-black 
                dark:text-transparent dark:bg-gradient-to-b dark:from-white dark:to-white/70 dark:bg-clip-text
