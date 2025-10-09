@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import hod from "../assets/hod.webp";
-import heroImage from "../assets/IMG-20251008-WA0004.jpg"; // Added your own image file
+import heroImage from "../assets/IMG-20251008-WA0004.jpg"; // Your hero image
 import Nav from "./Nav";
 import Footer from "./Footer";
 import { ArrowUp } from "lucide-react";
@@ -84,7 +84,7 @@ export default function HomePage() {
     <div className="min-h-screen">
       <Nav />
 
-      {/* Hero Section with Your Own Image */}
+      {/* Hero Section with Image Only */}
       <motion.section
         initial="hidden"
         animate="visible"
@@ -96,13 +96,8 @@ export default function HomePage() {
           alt="Hero Section"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-center text-white space-y-8">
-          { /*
-          <h4 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight px-2 sm:px-4">
-            Welcome to Department of CSE (Data Science)
-          </h4>
-        */}
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 text-center">
           <Button
             onClick={() => hodRef.current?.scrollIntoView({ behavior: "smooth" })}
             className="group px-8 py-3 text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3"
