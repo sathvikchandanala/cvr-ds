@@ -98,9 +98,11 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center text-white space-y-8">
+          { /*
           <h4 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight px-2 sm:px-4">
             Welcome to Department of CSE (Data Science)
           </h4>
+        */}
           <Button
             onClick={() => hodRef.current?.scrollIntoView({ behavior: "smooth" })}
             className="group px-8 py-3 text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3"
