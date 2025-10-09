@@ -14,7 +14,7 @@ import BookChapter from "./pages/BookChapter";
 import Contact from "./pages/Contact";
 
 import React from "react";
-import DynamicCarousel from "./DynamicCarousel";
+import DynamicCarousel from "./sample";
 
 
 function App() {
