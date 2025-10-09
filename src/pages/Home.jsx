@@ -1,12 +1,11 @@
 import { useState, useRef, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
 import { motion, useInView } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
 import hod from "../assets/hod.webp";
-import heroImage1 from "../assets/IMG-20251008-WA0004.jpg";
-import heroImage2 from "https://via.placeholder.com/1920x800.png?text=Slide+2";
-import heroImage3 from "https://via.placeholder.com/1920x800.png?text=Slide+3";
+import heroImage from "../assets/IMG-20251008-WA0004.jpg"; // Your hero image
 import Nav from "./Nav";
 import Footer from "./Footer";
 import { ArrowUp } from "lucide-react";
@@ -85,38 +84,28 @@ export default function HomePage() {
     <div className="min-h-screen">
       <Nav />
 
-      {/* Hero Section with Carousel */}
+      {/* Hero Section with Image Only */}
       <motion.section
         initial="hidden"
         animate="visible"
         variants={fadeInUpSlow}
-        className="relative h-[70vh] w-full"
+        className="relative h-[70vh] w-full flex items-center justify-center"
       >
-        <Carousel className="w-full h-full">
-          <CarouselContent>
-            <CarouselItem>
-              <img
-                src={heroImage1}
-                alt="Slide 1"
-                className="w-full h-[70vh] object-cover"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <img
-                src={heroImage2}
-                alt="Slide 2"
-                className="w-full h-[70vh] object-cover"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <img
-                src={heroImage3}
-                alt="Slide 3"
-                className="w-full h-[70vh] object-cover"
-              />
-            </CarouselItem>
-          </CarouselContent>
-        </Carousel>
+        <img
+          src={heroImage}
+          alt="Hero Section"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 text-center">
+          <Button
+            onClick={() => hodRef.current?.scrollIntoView({ behavior: "smooth" })}
+            className="group px-8 py-3 text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3"
+          >
+            Explore
+            <ChevronDown className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1" />
+          </Button>
+        </div>
       </motion.section>
 
       <motion.section className="py-24 px-6" ref={hodRef}>
