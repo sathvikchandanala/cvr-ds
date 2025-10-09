@@ -44,7 +44,7 @@ function App() {
 function App() {
   return (
     <div className="App">
-      <DynamicCarousel />
+      <sample/>
     </div>
   );
 }
