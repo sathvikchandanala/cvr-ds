@@ -1,12 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { Card } from "@/components/ui/card";
+// ✅ Use Carousel only if the component exists in your project
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
 import hod from "../assets/hod.webp";
 import heroImage1 from "../assets/IMG-20251008-WA0004.jpg";
-import heroImage2 from "https://via.placeholder.com/1920x800.png?text=Slide+2";
-import heroImage3 from "https://via.placeholder.com/1920x800.png?text=Slide+3";
+// ✅ Fixed external image imports
+const heroImage2 = "https://via.placeholder.com/1920x800.png?text=Slide+2";
+const heroImage3 = "https://via.placeholder.com/1920x800.png?text=Slide+3";
+
 import Nav from "./Nav";
 import Footer from "./Footer";
 import { ArrowUp } from "lucide-react";
@@ -85,7 +88,7 @@ export default function HomePage() {
     <div className="min-h-screen">
       <Nav />
 
-      {/* Hero Section with Carousel */}
+      {/* ✅ Hero Section with Carousel */}
       <motion.section
         initial="hidden"
         animate="visible"
@@ -98,21 +101,21 @@ export default function HomePage() {
               <img
                 src={heroImage1}
                 alt="Slide 1"
-                className="w-full h-[70vh] object-cover"
+                className="w-full min-h-[400px] h-[70vh] object-cover"
               />
             </CarouselItem>
             <CarouselItem>
               <img
                 src={heroImage2}
                 alt="Slide 2"
-                className="w-full h-[70vh] object-cover"
+                className="w-full min-h-[400px] h-[70vh] object-cover"
               />
             </CarouselItem>
             <CarouselItem>
               <img
                 src={heroImage3}
                 alt="Slide 3"
-                className="w-full h-[70vh] object-cover"
+                className="w-full min-h-[400px] h-[70vh] object-cover"
               />
             </CarouselItem>
           </CarouselContent>
