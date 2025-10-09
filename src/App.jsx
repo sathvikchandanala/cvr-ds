@@ -13,8 +13,6 @@ import JournalsPage from "./pages/JournalsPage";
 import BookChapter from "./pages/BookChapter";
 import Contact from "./pages/Contact";
 
-import React from "react";
-import DynamicCarousel from "./sample";
 
 
 function App() {
@@ -38,18 +36,6 @@ function App() {
   </Router>
   )
 }
-
-
-
-function App() {
-  return (
-    <div className="App">
-      <sample/>
-    </div>
-  );
-}
-
-
 
 export default App
 
