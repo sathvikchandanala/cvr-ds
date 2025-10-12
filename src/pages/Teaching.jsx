@@ -1,3 +1,293 @@
+const facultyData = [
+  {
+    title: "Professors",
+    count: 2,
+    members: [
+      {
+        name: "Dr. Venkata Suryanarayana S",
+        degree: "M.Tech., Ph.D.",
+        designation: "Head of the Department",
+        image: hod,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37438",
+      },
+      {
+        name: "Dr. N. Satyanarayana",
+        degree: "M.Tech., Ph.D.",
+        designation: "Professor",
+        image: SatyanarayanaN,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37439",
+      },
+    ],
+  },
+  {
+    title: "Associate Professors",
+    count: 7,
+    members: [
+      {
+        name: "LNC Prakash K",
+        degree: "M.Tech., Ph.D.",
+        designation: "Associate Professor",
+        image: klncprakash,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37440",
+      },
+      {
+        name: "A Srinivas Reddy",
+        degree: "M.Tech., Ph.D.",
+        designation: "Associate Professor",
+        image: SrinivasaReddyA,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37441",
+      },
+      {
+        name: "Varaprasad Rao M",
+        degree: "M.Tech., Ph.D.",
+        designation: "Associate Professor",
+        image: varaprasad,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37442",
+      },
+      {
+        name: "Rama Krishna B",
+        degree: "M.Tech., Ph.D.",
+        designation: "Associate Professor",
+        image: RamaKrishnaB,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37443",
+      },
+      {
+        name: "Janbhasha Shaik",
+        degree: "M.Tech., Ph.D.",
+        designation: "Associate Professor",
+        image: jhanbhasha,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38754",
+      },
+      {
+        name: "Basavaraj Chunchure",
+        degree: "M.Tech., Ph.D.",
+        designation: "Associate Professor",
+        image: baswaraj,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38755",
+      },
+      {
+        name: "M Sreenu",
+        degree: "M.Tech., Ph.D.",
+        designation: "Associate Professor",
+        image: Sreenu,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/39612",
+      },
+    ],
+  },
+  {
+    title: "Sr. Assistant Professors",
+    count: 10,
+    members: [
+      {
+        name: "Srichandana Abbineni",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Sr. Assistant Professor",
+        image: SrichandanaA,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37444",
+      },
+      {
+        name: "Vineela Krishna Suri",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Sr. Assistant Professor",
+        image: "/faculty/vineela_krishna.jpg",
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37445",
+      },
+      {
+        name: "Ahmed Shahebaaz",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Sr. Assistant Professor",
+        image: AhmedShahebaaz,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37451",
+      },
+      {
+        name: "Annapurna Gummadi",
+        degree: "M.Tech., Ph.D.",
+        designation: "Sr. Assistant Professor",
+        image: Annapurna,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37446",
+      },
+      {
+        name: "Yasmeen MD",
+        degree: "M.Tech., Ph.D.",
+        designation: "Sr. Assistant Professor",
+        image: Yasmeen_Aashu,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37447",
+      },
+      {
+        name: "Nitya Erupaka",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Sr. Assistant Professor",
+        image: "/faculty/nitya.jpg",
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37448",
+      },
+      {
+        name: "Padma Parshapu",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Sr. Assistant Professor",
+        image: PadmaParshapu,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37458",
+      },
+      {
+        name: "Hari Shankar Punna",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Sr. Assistant Professor",
+        image: HariShankarP,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37459",
+      },
+      {
+        name: "Harish Kumar K",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Sr. Assistant Professor",
+        image: HarishKumarK,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37463",
+      },
+      {
+        name: "Ranadheer Kumar K S",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Sr. Assistant Professor",
+        image: RanadheerKumarKS,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37464",
+      },
+    ],
+  },
+  {
+    title: "Assistant Professors",
+    count: 18,
+    members: [
+      {
+        name: "Lalitha S",
+        degree: "M.Tech.",
+        designation: "Assistant Professor",
+        image: LalithaS,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37449",
+      },
+      {
+        name: "Nagarani P",
+        degree: "M.Tech.",
+        designation: "Assistant Professor",
+        image: NagaraniP,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37450",
+      },
+      {
+        name: "Balakrishna Reddy S",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Assistant Professor",
+        image: BalakrishnaReddyS,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37452",
+      },
+      {
+        name: "Nikita Manne",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Assistant Professor",
+        image: nikitha_manne,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37453",
+      },
+      {
+        name: "Prashanth Donda",
+        degree: "M.Tech.",
+        designation: "Assistant Professor",
+        image: PrashanthDonda,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37454",
+      },
+      {
+        name: "Ramesh Vankudoth",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Assistant Professor",
+        image: RameshVankudoth,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37455",
+      },
+      {
+        name: "Nagasri Arava",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Assistant Professor",
+        image: NagasriArava,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37456",
+      },
+      {
+        name: "Srivani M",
+        degree: "M.Tech.",
+        designation: "Assistant Professor",
+        image: sreevani,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37457",
+      },
+      {
+        name: "Ramya T",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Assistant Professor",
+        image: RamyaT,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37460",
+      },
+      {
+        name: "Vadapally Praveen",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Assistant Professor",
+        image: PraveenKumarV,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37461",
+      },
+      {
+        name: "Sabitha B",
+        degree: "M.Tech.",
+        designation: "Assistant Professor",
+        image: SabithaB,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37462",
+      },
+      {
+        name: "Moghal Yaseen Pasha",
+        degree: "M.Tech.",
+        designation: "Assistant Professor",
+        image: Yaseen_pasha,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37465",
+      },
+      {
+        name: "Afreen Mohammed",
+        degree: "M.Tech., Ph.D.",
+        designation: "Assistant Professor",
+        image: AfreenMohammed,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37466",
+      },
+      {
+        name: "Krishna Erugu",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Assistant Professor",
+        image: KrishnaErugu,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37467",
+      },
+      {
+        name: "Swathi Velugoti",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Assistant Professor",
+        image: swathi,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40110",
+      },
+      {
+        name: "RaviKiranReddy Kandadi",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Assistant Professor",
+        image: Ravikiran,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40109",
+      },
+      {
+        name: "Phaniraj Thatha",
+        degree: "M.Tech.",
+        designation: "Assistant Professor",
+        image: "/faculty/phaniraj.jpg",
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52487",
+      },
+      {
+        name: "Suman N",
+        degree: "M.Tech.",
+        designation: "Assistant Professor",
+        image: "/faculty/suman.jpg",
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52547",
+      },
+    ],
+  },
+];
+
+
+
+
+/*
 import React, { useState } from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
@@ -396,3 +686,4 @@ className="mb-16"
     </div>
   );
 }
+*/
