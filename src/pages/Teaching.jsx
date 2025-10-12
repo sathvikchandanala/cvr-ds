@@ -1,44 +1,106 @@
 import React, { useState } from "react";
 
-import hod from "../assets/hod.webp";
-import nikitha_manne from "../assets/NikitaManne.jpg";
-import Yaseen_pasha from "../assets/Yaseen-PashaMoghal.jpg";
-import Yasmeen_Aashu from "../assets/YasmeenAashu.jpeg";
-import AfreenMohammed from "../assets/AfreenMohammed.jpeg";
-import SrinivasaReddyA from "../assets/Srinivasa-ReddyA.jpg";
-import SrichandanaA from "../assets/SrichandanaA.jpg";
-import SatyanarayanaN from "../assets/SatyanarayanaN.jpg";
-import SabithaB from "../assets/SabithaB.jpg";
-import RanadheerKumarKS from "../assets/Ranadheer-KumarK-S.jpeg";
-import RamyaT from "../assets/RamyaT.jpg";
-import RameshVankudoth from "../assets/RameshVankudoth.jpg";
-import RamaKrishnaB from "../assets/Rama-KrishnaB.jpg";
-import PraveenKumarV from "../assets/Praveen-KumarV.jpg";
-import PrashanthDonda from "../assets/PrashanthDonda.jpg";
-import PadmaParshapu from "../assets/PadmaParshapu.jpg";
-import NagasriArava from "../assets/NagasriArava.jpg";
-import NagaraniP from "../assets/NagaraniP.jpg";
-import LalithaS from "../assets/LalithaS.jpg";
-import KrishnaErugu from "../assets/KrishnaErugu.jpg";
-import HarishKumarK from "../assets/Harish-KumarK.jpg";
-import HariShankarP from "../assets/Hari-ShankarP.jpg";
-import BalakrishnaReddyS from "../assets/Balakrishna-ReddyS.jpg";
-import AhmedShahebaaz from "../assets/AhmedShahebaaz.jpg";
-import Annapurna from "../assets/Annapurna.jpg";
-import baswaraj from "../assets/baswaraj.jpeg";
-import jhanbhasha from "../assets/jhan bhasha.jpeg";
-import klncprakash from "../assets/klnc prakash.jpg";
-import Ravikiran from "../assets/Ravikiran.jpeg";
-import Sreenu from "../assets/Sreenu.jpg";
-import swathi from "../assets/swathi.jpg";
-import varaprasad from "../assets/varaprasad.jpeg";
-import sreevani from "../assets/sreevani.jpeg";
-import vineela_krishna from "../assets/vineela_krishna.jpg";
-import nitya from "../assets/nitya.jpg";
-import phaniraj from "../assets/phaniraj.jpg";
-import suman from "../assets/suman.jpg";
-
 // --- MOCK External Imports (for single-file execution) ---
+
+// MOCK IMAGE ASSET MAP:
+// Since relative imports (e.g., import hod from "../assets/hod.webp") fail in this environment,
+// we simulate the mapping of your unique image names to unique placeholder styles (color/text)
+// to ensure every faculty member gets a visually distinct avatar.
+const imageAssetMap = {
+    hod: { color: "FF0000", text: "HOD" },
+    nikitha_manne: { color: "008080", text: "NM" },
+    Yaseen_pasha: { color: "0000FF", text: "YPM" },
+    Yasmeen_Aashu: { color: "800080", text: "YA" },
+    AfreenMohammed: { color: "00FF00", text: "AM" },
+    SrinivasaReddyA: { color: "FF7F50", text: "ASR" },
+    SrichandanaA: { color: "FFFF00", text: "SA" },
+    SatyanarayanaN: { color: "00CED1", text: "NS" },
+    SabithaB: { color: "A52A2A", text: "SB" },
+    RanadheerKumarKS: { color: "9370DB", text: "RKS" },
+    RamyaT: { color: "FFC0CB", text: "RT" },
+    RameshVankudoth: { color: "808080", text: "RV" },
+    RamaKrishnaB: { color: "40E0D0", text: "RKB" },
+    PraveenKumarV: { color: "B0E0E6", text: "PV" },
+    PrashanthDonda: { color: "90EE90", text: "PD" },
+    PadmaParshapu: { color: "FFD700", text: "PP" },
+    NagasriArava: { color: "ADD8E6", text: "NA" },
+    NagaraniP: { color: "F0FFFF", text: "NP" },
+    LalithaS: { color: "DDA0DD", text: "LS" },
+    KrishnaErugu: { color: "4682B4", text: "KE" },
+    HarishKumarK: { color: "87CEFA", text: "HK" },
+    HariShankarP: { color: "7FFFD4", text: "HSP" },
+    BalakrishnaReddyS: { color: "DEB887", text: "BRS" },
+    AhmedShahebaaz: { color: "5F9EA0", text: "AS" },
+    Annapurna: { color: "7FFF00", text: "AG" },
+    baswaraj: { color: "D2B48C", text: "BC" },
+    jhanbhasha: { color: "FF6347", text: "JS" },
+    klncprakash: { color: "6495ED", text: "LPK" },
+    Ravikiran: { color: "DC143C", text: "RKR" },
+    Sreenu: { color: "00FA9A", text: "MS" },
+    swathi: { color: "C71585", text: "SV" },
+    varaprasad: { color: "D2691E", text: "VM" },
+    sreevani: { color: "1E90FF", text: "SM" },
+    vineela_krishna: { color: "FF1493", text: "VKS" },
+    nitya: { color: "00BFFF", text: "NE" },
+    phaniraj: { color: "8A2BE2", text: "PT" },
+    suman: { color: "20B2AA", text: "SN" },
+};
+
+// Mapping 'Faculty Name' to the 'Imported Variable Name'
+const nameToImageKey = {
+    "Dr. Venkata Suryanarayana S": "hod",
+    "Nikita Manne": "nikitha_manne",
+    "Moghal Yaseen Pasha": "Yaseen_pasha",
+    "Yasmeen MD": "Yasmeen_Aashu",
+    "Afreen Mohammed": "AfreenMohammed",
+    "A Srinivas Reddy": "SrinivasaReddyA",
+    "Srichandana Abbineni": "SrichandanaA",
+    "Dr. N. Satyanarayana": "SatyanarayanaN",
+    "Sabitha B": "SabithaB",
+    "Ranadheer Kumar K S": "RanadheerKumarKS",
+    "Ramya T": "RamyaT",
+    "Ramesh Vankudoth": "RameshVankudoth",
+    "Rama Krishna B": "RamaKrishnaB",
+    "Vadapally Praveen": "PraveenKumarV",
+    "Prashanth Donda": "PrashanthDonda",
+    "Padma Parshapu": "PadmaParshapu",
+    "Nagasri Arava": "NagasriArava",
+    "Nagarani P": "NagaraniP",
+    "Lalitha S": "LalithaS",
+    "Krishna Erugu": "KrishnaErugu",
+    "Harish Kumar K": "HarishKumarK",
+    "Hari Shankar Punna": "HariShankarP",
+    "Balakrishna Reddy S": "BalakrishnaReddyS",
+    "Ahmed Shahebaaz": "AhmedShahebaaz",
+    "Annapurna Gummadi": "Annapurna",
+    "Basavaraj Chunchure": "baswaraj",
+    "Janbhasha Shaik": "jhanbhasha",
+    "LNC Prakash K": "klncprakash",
+    "RaviKiranReddy Kandadi": "Ravikiran",
+    "M Sreenu": "Sreenu",
+    "Swathi Velugoti": "swathi",
+    "Varaprasad Rao M": "varaprasad",
+    "Srivani M": "sreevani",
+    "Vineela Krishna Suri": "vineela_krishna",
+    "Nitya Erupaka": "nitya",
+    "Phaniraj Thatha": "phaniraj",
+    "Suman N": "suman",
+};
+
+// Function to generate a stable placeholder URL for a given name
+const getPlaceholderImage = (name) => {
+    // 1. Get the key from the name-to-key map
+    const imageKey = nameToImageKey[name];
+    
+    // 2. Look up the asset properties (color/text), defaulting to generic initials if not found
+    const initials = name.split(' ').map(n => n[0]).join('');
+    const defaultAsset = { color: "2563EB", text: initials };
+
+    const asset = imageAssetMap[imageKey] || defaultAsset;
+
+    // Placeholder image structure: 160x160/HEX_COLOR/TEXT_COLOR?text=INITIALS
+    return `https://placehold.co/160x160/${asset.color}/white?text=${asset.text}`;
+};
 
 // Mock: Nav Component
 const Nav = () => (
@@ -100,9 +162,8 @@ const FaSearch = (props) => (
 );
 
 // Mock: Framer Motion (The component structure is kept, but true animation requires setup)
-// We will simply treat 'motion.div' as a regular 'div' for execution.
 const motion = {
-    // FIX: Destructure and discard Framer Motion props to prevent React warnings.
+    // Fix: Filter out Framer Motion props to prevent React warnings.
     div: ({ children, className, initial, animate, variants, whileInView, viewport, custom, whileHover, ...props }) => 
         <div className={className} {...props}>{children}</div>,
     h1: ({ children, className, initial, animate, variants, whileInView, viewport, custom, whileHover, ...props }) => 
@@ -111,15 +172,7 @@ const motion = {
 const fadeInUp = { hidden: { opacity: 0 }, visible: () => ({ opacity: 1 }) };
 
 
-// --- Faculty Data (Updated to use placeholder images) ---
-
-// Function to generate a stable placeholder URL for a given name
-const getPlaceholderImage = (name) => {
-    const initials = name.split(' ').map(n => n[0]).join('');
-    return `https://placehold.co/160x160/2563EB/ffffff?text=${initials}`;
-};
-
-
+// --- Faculty Data (Data remains the same) ---
 const facultyData = [
   {
     title: "Professors",
@@ -184,24 +237,19 @@ const facultyData = [
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 export default function Teaching() {
-  // We only need the 'search' state for live filtering
   const [search, setSearch] = useState("");
 
-  // Filter the data based on the current search input (LIVE FILTERING)
   const filteredData = facultyData
     .map((group) => ({
       ...group,
-      // Filter members whose name includes the search query (case-insensitive)
       members: group.members.filter((member) =>
         member.name.toLowerCase().includes(search.toLowerCase())
       ),
     }))
-    // Only keep groups that have matching members
     .filter((group) => group.members.length > 0);
 
-  // Simplified animation variants (True framer-motion requires external setup)
   const fadeInUp = {
-    hidden: { opacity: 0, y: 0 }, // Simplified to prevent errors without framer-motion
+    hidden: { opacity: 0, y: 0 },
     visible: (i = 1) => ({ opacity: 1, y: 0 }),
   };
 
@@ -263,9 +311,9 @@ export default function Teaching() {
                       <Card className="rounded-2xl shadow-xl bg-white border border-blue-50 hover:shadow-2xl transition-all duration-300">
                         <CardContent className="flex flex-col items-center text-center p-6">
                           <img
-                            // Use placeholder image URL
+                            // Use the unique, simulated placeholder image URL
                             src={getPlaceholderImage(member.name)}
-                            alt={member.name}
+                            alt={`Profile of ${member.name}`}
                             onClick={() => window.open(member.profileUrl, "_blank")}
                             className="w-36 h-36 object-cover object-center mb-4 shadow-lg rounded-full border-4 border-blue-500/20 transition-transform hover:scale-105"
                           />
@@ -303,11 +351,6 @@ export default function Teaching() {
     </div>
   );
 }
-
-
-
-
-
 
 
 
