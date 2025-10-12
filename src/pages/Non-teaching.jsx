@@ -1,4 +1,13 @@
 import React, { useState } from "react";
+import Nav from "./Nav";
+import Footer from "./Footer";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { ArrowUp } from "lucide-react";
+import { FaSearch } from "react-icons/fa";
+
 
 // --- MOCK External/Local Imports (REQUIRED for single-file execution) ---
 // Since this is a single, self-contained file, all components/functions
