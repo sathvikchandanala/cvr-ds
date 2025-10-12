@@ -94,29 +94,29 @@ export default function HomePage() {
         initial="hidden"
         animate="visible"
         variants={fadeInUpSlow}
-        className="relative h-[70vh] w-full"
+        className="relative w-full"
       >
-        <Carousel className="w-full h-full">
+        <Carousel className="w-full">
           <CarouselContent>
             <CarouselItem>
               <img
                 src={heroImage1}
                 alt="Slide 1"
-                className="w-full min-h-[400px] h-[70vh] object-cover"
+                className="w-full h-auto object-contain"
               />
             </CarouselItem>
             <CarouselItem>
               <img
                 src={heroImage2}
                 alt="Slide 2"
-                className="w-full min-h-[400px] h-[70vh] object-cover"
+                className="w-full h-auto object-contain"
               />
             </CarouselItem>
             <CarouselItem>
               <img
                 src={heroImage3}
                 alt="Slide 3"
-                className="w-full min-h-[400px] h-[70vh] object-cover"
+                className="w-full h-auto object-contain"
               />
             </CarouselItem>
           </CarouselContent>
