@@ -1,3 +1,11 @@
+<img
+  src={member.image}
+  alt={member.name}
+  onClick={() => window.open(member.profileUrl, "_blank")}
+  className="w-40 h-40 object-cover object-top mb-4 shadow rounded-full cursor-pointer transition-transform hover:scale-105"
+/>
+
+
 const facultyData = [
   {
     title: "Professors",
