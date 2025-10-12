@@ -55,7 +55,10 @@ const facultyData = [
         name: "Dr. S.V.Suryanarayana",
         degree: "M.Tech., Ph.D.",
         designation: "Head of the Department",
+       profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37438",
+
         image: hod
+
       },
       {
         name: "Dr. N. Satyanarayana",
