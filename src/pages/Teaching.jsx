@@ -47,356 +47,165 @@ import nitya from "../assets/nitya.jpg";
 import phaniraj from "../assets/phaniraj.jpg";
 import suman from "../assets/suman.jpg";
 
-
-/*
-import React, { useState } from "react";
-
-// --- MOCK External Imports (for single-file execution) ---
-
-// MOCK IMAGE ASSET MAP:
-// Since relative imports (e.g., import hod from "../assets/hod.webp") fail in this environment,
-// we simulate the mapping of your unique image names to unique placeholder styles (color/text)
-// to ensure every faculty member gets a visually distinct avatar.
-const imageAssetMap = {
-    hod: { color: "FF0000", text: "HOD" },
-    nikitha_manne: { color: "008080", text: "NM" },
-    Yaseen_pasha: { color: "0000FF", text: "YPM" },
-    Yasmeen_Aashu: { color: "800080", text: "YA" },
-    AfreenMohammed: { color: "00FF00", text: "AM" },
-    SrinivasaReddyA: { color: "FF7F50", text: "ASR" },
-    SrichandanaA: { color: "FFFF00", text: "SA" },
-    SatyanarayanaN: { color: "00CED1", text: "NS" },
-    SabithaB: { color: "A52A2A", text: "SB" },
-    RanadheerKumarKS: { color: "9370DB", text: "RKS" },
-    RamyaT: { color: "FFC0CB", text: "RT" },
-    RameshVankudoth: { color: "808080", text: "RV" },
-    RamaKrishnaB: { color: "40E0D0", text: "RKB" },
-    PraveenKumarV: { color: "B0E0E6", text: "PV" },
-    PrashanthDonda: { color: "90EE90", text: "PD" },
-    PadmaParshapu: { color: "FFD700", text: "PP" },
-    NagasriArava: { color: "ADD8E6", text: "NA" },
-    NagaraniP: { color: "F0FFFF", text: "NP" },
-    LalithaS: { color: "DDA0DD", text: "LS" },
-    KrishnaErugu: { color: "4682B4", text: "KE" },
-    HarishKumarK: { color: "87CEFA", text: "HK" },
-    HariShankarP: { color: "7FFFD4", text: "HSP" },
-    BalakrishnaReddyS: { color: "DEB887", text: "BRS" },
-    AhmedShahebaaz: { color: "5F9EA0", text: "AS" },
-    Annapurna: { color: "7FFF00", text: "AG" },
-    baswaraj: { color: "D2B48C", text: "BC" },
-    jhanbhasha: { color: "FF6347", text: "JS" },
-    klncprakash: { color: "6495ED", text: "LPK" },
-    Ravikiran: { color: "DC143C", text: "RKR" },
-    Sreenu: { color: "00FA9A", text: "MS" },
-    swathi: { color: "C71585", text: "SV" },
-    varaprasad: { color: "D2691E", text: "VM" },
-    sreevani: { color: "1E90FF", text: "SM" },
-    vineela_krishna: { color: "FF1493", text: "VKS" },
-    nitya: { color: "00BFFF", text: "NE" },
-    phaniraj: { color: "8A2BE2", text: "PT" },
-    suman: { color: "20B2AA", text: "SN" },
-};
-
-*/
-// Mapping 'Faculty Name' to the 'Imported Variable Name'
-const nameToImageKey = {
-    "Dr. Venkata Suryanarayana S": "hod",
-    "Nikita Manne": "nikitha_manne",
-    "Moghal Yaseen Pasha": "Yaseen_pasha",
-    "Yasmeen MD": "Yasmeen_Aashu",
-    "Afreen Mohammed": "AfreenMohammed",
-    "A Srinivas Reddy": "SrinivasaReddyA",
-    "Srichandana Abbineni": "SrichandanaA",
-    "Dr. N. Satyanarayana": "SatyanarayanaN",
-    "Sabitha B": "SabithaB",
-    "Ranadheer Kumar K S": "RanadheerKumarKS",
-    "Ramya T": "RamyaT",
-    "Ramesh Vankudoth": "RameshVankudoth",
-    "Rama Krishna B": "RamaKrishnaB",
-    "Vadapally Praveen": "PraveenKumarV",
-    "Prashanth Donda": "PrashanthDonda",
-    "Padma Parshapu": "PadmaParshapu",
-    "Nagasri Arava": "NagasriArava",
-    "Nagarani P": "NagaraniP",
-    "Lalitha S": "LalithaS",
-    "Krishna Erugu": "KrishnaErugu",
-    "Harish Kumar K": "HarishKumarK",
-    "Hari Shankar Punna": "HariShankarP",
-    "Balakrishna Reddy S": "BalakrishnaReddyS",
-    "Ahmed Shahebaaz": "AhmedShahebaaz",
-    "Annapurna Gummadi": "Annapurna",
-    "Basavaraj Chunchure": "baswaraj",
-    "Janbhasha Shaik": "jhanbhasha",
-    "LNC Prakash K": "klncprakash",
-    "RaviKiranReddy Kandadi": "Ravikiran",
-    "M Sreenu": "Sreenu",
-    "Swathi Velugoti": "swathi",
-    "Varaprasad Rao M": "varaprasad",
-    "Srivani M": "sreevani",
-    "Vineela Krishna Suri": "vineela_krishna",
-    "Nitya Erupaka": "nitya",
-    "Phaniraj Thatha": "phaniraj",
-    "Suman N": "suman",
-};
-
-// Function to generate a stable placeholder URL for a given name
-const getPlaceholderImage = (name) => {
-    // 1. Get the key from the name-to-key map
-    const imageKey = nameToImageKey[name];
-    
-    // 2. Look up the asset properties (color/text), defaulting to generic initials if not found
-    const initials = name.split(' ').map(n => n[0]).join('');
-    const defaultAsset = { color: "2563EB", text: initials };
-
-    const asset = imageAssetMap[imageKey] || defaultAsset;
-
-    // Placeholder image structure: 160x160/HEX_COLOR/TEXT_COLOR?text=INITIALS
-    return `https://placehold.co/160x160/${asset.color}/white?text=${asset.text}`;
-};
-
-// Mock: Nav Component
-const Nav = () => (
-  <header className="bg-white shadow-md">
-    <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-      <p className="text-xl font-bold text-blue-600">Faculty Directory</p>
-    </div>
-  </header>
-);
-
-// Mock: Footer Component
-const Footer = () => (
-  <footer className="bg-gray-800 text-white p-6 text-center">
-    <p className="text-sm">© {new Date().getFullYear()} Teaching Faculty Showcase</p>
-  </footer>
-);
-
-// Mock: Card Component (Shadcn/UI structure using Tailwind)
-const Card = ({ children, className = "" }) => (
-  <div className={`rounded-xl border bg-card text-card-foreground shadow-lg ${className}`}>
-    {children}
-  </div>
-);
-
-const CardContent = ({ children, className = "" }) => (
-  <div className={`p-6 pt-0 ${className}`}>{children}</div>
-);
-
-// Mock: Input Component (Shadcn/UI structure using Tailwind)
-const Input = ({ value, onChange, placeholder, className = "" }) => (
-  <input
-    type="text"
-    value={value}
-    onChange={onChange}
-    placeholder={placeholder}
-    className={`flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${className}`}
-  />
-);
-
-// Mock: Button Component (Shadcn/UI structure using Tailwind)
-const Button = ({ children, onClick, className = "" }) => (
-  <button
-    onClick={onClick}
-    className={`inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-blue-600 text-white hover:bg-blue-700 h-10 px-4 py-2 ${className}`}
-  >
-    {children}
-  </button>
-);
-
-// Mock: Icons (Replace lucide-react and react-icons/fa)
-const ArrowUp = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
-);
-
-const FaSearch = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" {...props}>
-    <path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.1-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
-  </svg>
-);
-
-// Mock: Framer Motion (The component structure is kept, but true animation requires setup)
-const motion = {
-    // Fix: Filter out Framer Motion props to prevent React warnings.
-    div: ({ children, className, initial, animate, variants, whileInView, viewport, custom, whileHover, ...props }) => 
-        <div className={className} {...props}>{children}</div>,
-    h1: ({ children, className, initial, animate, variants, whileInView, viewport, custom, whileHover, ...props }) => 
-        <h1 className={className} {...props}>{children}</h1>,
-};
-const fadeInUp = { hidden: { opacity: 0 }, visible: () => ({ opacity: 1 }) };
-
-
-// --- Faculty Data (Data remains the same) ---
+// ✅ Faculty Data with profile links
 const facultyData = [
   {
     title: "Professors",
+    count: 2,
     members: [
-      { name: "Dr. Venkata Suryanarayana S", degree: "M.Tech., Ph.D.", designation: "Head of the Department", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37438" },
-      { name: "Dr. N. Satyanarayana", degree: "M.Tech., Ph.D.", designation: "Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37439" },
+      {
+        name: "Dr. Venkata Suryanarayana S",
+        degree: "M.Tech., Ph.D.",
+        designation: "Head of the Department",
+        image: hod,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37438",
+      },
+      {
+        name: "Dr. N. Satyanarayana",
+        degree: "M.Tech., Ph.D.",
+        designation: "Professor",
+        image: SatyanarayanaN,
+        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37439",
+      },
     ],
   },
   {
     title: "Associate Professors",
+    count: 7,
     members: [
-      { name: "LNC Prakash K", degree: "M.Tech., Ph.D.", designation: "Associate Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37440" },
-      { name: "A Srinivas Reddy", degree: "M.Tech., Ph.D.", designation: "Associate Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37441" },
-      { name: "Varaprasad Rao M", degree: "M.Tech., Ph.D.", designation: "Associate Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37442" },
-      { name: "Rama Krishna B", degree: "M.Tech., Ph.D.", designation: "Associate Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37443" },
-      { name: "Janbhasha Shaik", degree: "M.Tech., Ph.D.", designation: "Associate Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38754" },
-      { name: "Basavaraj Chunchure", degree: "M.Tech., Ph.D.", designation: "Associate Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38755" },
-      { name: "M Sreenu", degree: "M.Tech., Ph.D.", designation: "Associate Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/39612" },
+      { name: "LNC Prakash K", degree: "M.Tech., Ph.D.", designation: "Associate Professor", image: klncprakash, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37440" },
+      { name: "A Srinivas Reddy", degree: "M.Tech., Ph.D.", designation: "Associate Professor", image: SrinivasaReddyA, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37441" },
+      { name: "Varaprasad Rao M", degree: "M.Tech., Ph.D.", designation: "Associate Professor", image: varaprasad, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37442" },
+      { name: "Rama Krishna B", degree: "M.Tech., Ph.D.", designation: "Associate Professor", image: RamaKrishnaB, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37443" },
+      { name: "Janbhasha Shaik", degree: "M.Tech., Ph.D.", designation: "Associate Professor", image: jhanbhasha, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38754" },
+      { name: "Basavaraj Chunchure", degree: "M.Tech., Ph.D.", designation: "Associate Professor", image: baswaraj, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38755" },
+      { name: "M Sreenu", degree: "M.Tech., Ph.D.", designation: "Associate Professor", image: Sreenu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/39612" },
     ],
   },
   {
     title: "Sr. Assistant Professors",
+    count: 10,
     members: [
-      { name: "Srichandana Abbineni", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37444" },
-      { name: "Vineela Krishna Suri", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37445" },
-      { name: "Ahmed Shahebaaz", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37451" },
-      { name: "Annapurna Gummadi", degree: "M.Tech., Ph.D.", designation: "Sr. Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37446" },
-      { name: "Yasmeen MD", degree: "M.Tech., Ph.D.", designation: "Sr. Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37447" },
-      { name: "Nitya Erupaka", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37448" },
-      { name: "Padma Parshapu", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37458" },
-      { name: "Hari Shankar Punna", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37459" },
-      { name: "Harish Kumar K", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37463" },
-      { name: "Ranadheer Kumar K S", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37464" },
+      { name: "Srichandana Abbineni", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: SrichandanaA, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37444" },
+      { name: "Vineela Krishna Suri", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: vineela_krishna, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37445" },
+      { name: "Ahmed Shahebaaz", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: AhmedShahebaaz, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37451" },
+      { name: "Annapurna Gummadi", degree: "M.Tech., Ph.D.", designation: "Sr. Assistant Professor", image: Annapurna, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37446" },
+      { name: "Yasmeen MD", degree: "M.Tech., Ph.D.", designation: "Sr. Assistant Professor", image: Yasmeen_Aashu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37447" },
+      { name: "Nitya Erupaka", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: nitya, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37448" },
+      { name: "Padma Parshapu", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: PadmaParshapu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37458" },
+      { name: "Hari Shankar Punna", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: HariShankarP, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37459" },
+      { name: "Harish Kumar K", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: HarishKumarK, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37463" },
+      { name: "Ranadheer Kumar K S", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: RanadheerKumarKS, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37464" },
     ],
   },
   {
     title: "Assistant Professors",
+    count: 18,
     members: [
-      { name: "Lalitha S", degree: "M.Tech.", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37449" },
-      { name: "Nagarani P", degree: "M.Tech.", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37450" },
-      { name: "Balakrishna Reddy S", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37452" },
-      { name: "Nikita Manne", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37453" },
-      { name: "Prashanth Donda", degree: "M.Tech.", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37454" },
-      { name: "Ramesh Vankudoth", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37455" },
-      { name: "Nagasri Arava", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37456" },
-      { name: "Srivani M", degree: "M.Tech.", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37457" },
-      { name: "Ramya T", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37460" },
-      { name: "Vadapally Praveen", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37461" },
-      { name: "Sabitha B", degree: "M.Tech.", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37462" },
-      { name: "Moghal Yaseen Pasha", degree: "M.Tech.", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37465" },
-      { name: "Afreen Mohammed", degree: "M.Tech., Ph.D.", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37466" },
-      { name: "Krishna Erugu", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37467" },
-      { name: "Swathi Velugoti", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40110" },
-      { name: "RaviKiranReddy Kandadi", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40109" },
-      { name: "Phaniraj Thatha", degree: "M.Tech.", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52487" },
-      { name: "Suman N", degree: "M.Tech.", designation: "Assistant Professor", profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52547" },
+      { name: "Lalitha S", degree: "M.Tech.", designation: "Assistant Professor", image: LalithaS, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37449" },
+      { name: "Nagarani P", degree: "M.Tech.", designation: "Assistant Professor", image: NagaraniP, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37450" },
+      { name: "Balakrishna Reddy S", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: BalakrishnaReddyS, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37452" },
+      { name: "Nikita Manne", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: nikitha_manne, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37453" },
+      { name: "Prashanth Donda", degree: "M.Tech.", designation: "Assistant Professor", image: PrashanthDonda, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37454" },
+      { name: "Ramesh Vankudoth", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: RameshVankudoth, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37455" },
+      { name: "Nagasri Arava", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: NagasriArava, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37456" },
+      { name: "Srivani M", degree: "M.Tech.", designation: "Assistant Professor", image: sreevani, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37457" },
+      { name: "Ramya T", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: RamyaT, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37460" },
+      { name: "Vadapally Praveen", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: PraveenKumarV, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37461" },
+      { name: "Sabitha B", degree: "M.Tech.", designation: "Assistant Professor", image: SabithaB, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37462" },
+      { name: "Moghal Yaseen Pasha", degree: "M.Tech.", designation: "Assistant Professor", image: Yaseen_pasha, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37465" },
+      { name: "Afreen Mohammed", degree: "M.Tech., Ph.D.", designation: "Assistant Professor", image: AfreenMohammed, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37466" },
+      { name: "Krishna Erugu", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: KrishnaErugu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37467" },
+      { name: "Swathi Velugoti", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: swathi, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40110" },
+      { name: "RaviKiranReddy Kandadi", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: Ravikiran, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40109" },
+      { name: "Phaniraj Thatha", degree: "M.Tech.", designation: "Assistant Professor", image: phaniraj, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52487" },
+      { name: "Suman N", degree: "M.Tech.", designation: "Assistant Professor", image: suman, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52547" },
     ],
   },
 ];
-
 
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 export default function Teaching() {
   const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("");
 
   const filteredData = facultyData
     .map((group) => ({
       ...group,
       members: group.members.filter((member) =>
-        member.name.toLowerCase().includes(search.toLowerCase())
+        member.name.toLowerCase().includes(query.toLowerCase())
       ),
     }))
     .filter((group) => group.members.length > 0);
 
   const fadeInUp = {
-    hidden: { opacity: 0, y: 0 },
-    visible: (i = 1) => ({ opacity: 1, y: 0 }),
+    hidden: { opacity: 0, y: 40 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+    }),
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans">
+    <div className="min-h-screen bg-white font-sans">
       <Nav />
-      <div className="flex flex-col items-center justify-center text-center py-16 px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="flex flex-col items-center justify-center text-center py-24 px-4 sm:px-6 bg-gradient-to-b from-blue-50 to-white space-y-12">
         <div className="w-full max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
-            <motion.h1
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-              className="text-4xl sm:text-5xl font-extrabold text-gray-800 text-left w-full sm:w-auto"
-            >
+            <motion.h1 initial="hidden" animate="visible" variants={fadeInUp} className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">
               Teaching Faculty
             </motion.h1>
-            <motion.div
-              className="flex w-full sm:w-auto gap-2 items-center"
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={2}
-            >
-              <Input
-                placeholder="Search by name..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="flex-grow sm:w-64 border-blue-300 focus-visible:ring-blue-500"
-              />
-              <Button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700">
-                <FaSearch className="w-4 h-4" /> Search
+            <motion.div className="flex w-full sm:w-auto gap-2 items-center" variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}>
+              <Input placeholder="Search by name" value={search} onChange={(e) => setSearch(e.target.value)} className="w-full sm:w-64" />
+              <Button onClick={() => setQuery(search)} className="flex items-center gap-2">
+                <FaSearch /> Search
               </Button>
             </motion.div>
           </div>
 
-          {filteredData.length === 0 && search.length > 0 ? (
-            <div className="text-xl text-gray-600 p-10 bg-white rounded-xl shadow-inner border border-dashed border-gray-300">
-                No faculty members found matching "{search}".
-            </div>
-          ) : (
-            filteredData.map((group, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                custom={index + 3}
-                className="mb-16"
-              >
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-6 text-left border-b-2 border-blue-100 pb-2">
-                  {group.title} ({group.members.length})
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                  {group.members.map((member, i) => (
-                    <motion.div key={i} whileHover={{ scale: 1.03 }} className="w-full cursor-pointer">
-                      <Card className="rounded-2xl shadow-xl bg-white border border-blue-50 hover:shadow-2xl transition-all duration-300">
-                        <CardContent className="flex flex-col items-center text-center p-6">
-                          <img
-                            // Use the unique, simulated placeholder image URL
-                            src={getPlaceholderImage(member.name)}
-                            alt={`Profile of ${member.name}`}
-                            onClick={() => window.open(member.profileUrl, "_blank")}
-                            className="w-36 h-36 object-cover object-center mb-4 shadow-lg rounded-full border-4 border-blue-500/20 transition-transform hover:scale-105"
-                          />
-                          <a
-                            href={member.profileUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-xl font-semibold text-gray-900 hover:text-blue-600 transition-colors"
-                          >
-                            {member.name}
-                          </a>
-                          <p className="text-md text-gray-700 mt-1">{member.degree}</p>
-                          <p className="text-sm text-blue-600 font-medium mt-1 p-1 px-3 bg-blue-50 rounded-full">
-                            {member.designation}
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            ))
-          )}
+          {filteredData.map((group, index) => (
+            <motion.div key={index} variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2} className="mb-16">
+              <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-6 text-left">
+                {group.title} - {group.count}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {group.members.map((member, i) => (
+                  <motion.div key={i} whileHover={{ scale: 1.05 }} className="w-full">
+                    <Card className="rounded-2xl shadow-md bg-white border border-gray-200 hover:shadow-lg transition-shadow">
+                      <CardContent className="flex flex-col items-center text-center p-4">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          onClick={() => window.open(member.profileUrl, "_blank")}
+                          className="w-40 h-40 object-cover object-top mb-4 shadow rounded-full cursor-pointer transition-transform hover:scale-105"
+                        />
+                        <a
+                          href={member.profileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-lg font-semibold text-gray-900 hover:underline"
+                        >
+                          {member.name}
+                        </a>
+                        <p className="text-sm text-gray-600">{member.degree}</p>
+                        <p className="text-sm text-black-600 mt-1">{member.designation}</p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-xl transition-transform transform hover:scale-110 active:scale-95 duration-200"
+          className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
           aria-label="Scroll to top"
         >
-          <ArrowUp className="w-6 h-6" />
+          <ArrowUp className="w-5 h-5" />
         </button>
       </div>
       <Footer />
