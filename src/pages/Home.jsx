@@ -5,10 +5,14 @@ import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
 import hod from "../assets/hod.webp";
-import heroImage1 from "../assets/IMG-20251008-WA0004.jpg";
+
+import heroImage1 from "../assets/CSE_DS.jpg";
+import heroImage2 from "../assets/IMG-20251008-WA0004.jpg";
+import heroImage3 from "../assets/IMG-20251008-WA0004.jpg";
+//import heroImage1 from "../assets/IMG-20251008-WA0004.jpg";
 // ✅ Fixed external image imports
-const heroImage2 = "https://via.placeholder.com/1920x800.png?text=Slide+2";
-const heroImage3 = "https://via.placeholder.com/1920x800.png?text=Slide+3";
+//const heroImage2 = "https://via.placeholder.com/1920x800.png?text=Slide+2";
+//const heroImage3 = "https://via.placeholder.com/1920x800.png?text=Slide+3";
 
 import Nav from "./Nav";
 import Footer from "./Footer";
