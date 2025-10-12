@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 import hod from "../assets/hod.webp";
 
 import heroImage1 from "../assets/CSE_DS.jpg";
-import heroImage2 from "../assets/IMG-20251008-WA0004.jpg";
-import heroImage3 from "../assets/IMG-20251008-WA0004.jpg";
+//import heroImage2 from "../assets/IMG-20251008-WA0004.jpg";
+//import heroImage3 from "../assets/IMG-20251008-WA0004.jpg";
 //import heroImage1 from "../assets/IMG-20251008-WA0004.jpg";
 // ✅ Fixed external image imports
 //const heroImage2 = "https://via.placeholder.com/1920x800.png?text=Slide+2";
