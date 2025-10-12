@@ -1,5 +1,43 @@
 import React, { useState } from "react";
 
+import hod from "../assets/hod.webp";
+import nikitha_manne from "../assets/NikitaManne.jpg";
+import Yaseen_pasha from "../assets/Yaseen-PashaMoghal.jpg";
+import Yasmeen_Aashu from "../assets/YasmeenAashu.jpeg";
+import AfreenMohammed from "../assets/AfreenMohammed.jpeg";
+import SrinivasaReddyA from "../assets/Srinivasa-ReddyA.jpg";
+import SrichandanaA from "../assets/SrichandanaA.jpg";
+import SatyanarayanaN from "../assets/SatyanarayanaN.jpg";
+import SabithaB from "../assets/SabithaB.jpg";
+import RanadheerKumarKS from "../assets/Ranadheer-KumarK-S.jpeg";
+import RamyaT from "../assets/RamyaT.jpg";
+import RameshVankudoth from "../assets/RameshVankudoth.jpg";
+import RamaKrishnaB from "../assets/Rama-KrishnaB.jpg";
+import PraveenKumarV from "../assets/Praveen-KumarV.jpg";
+import PrashanthDonda from "../assets/PrashanthDonda.jpg";
+import PadmaParshapu from "../assets/PadmaParshapu.jpg";
+import NagasriArava from "../assets/NagasriArava.jpg";
+import NagaraniP from "../assets/NagaraniP.jpg";
+import LalithaS from "../assets/LalithaS.jpg";
+import KrishnaErugu from "../assets/KrishnaErugu.jpg";
+import HarishKumarK from "../assets/Harish-KumarK.jpg";
+import HariShankarP from "../assets/Hari-ShankarP.jpg";
+import BalakrishnaReddyS from "../assets/Balakrishna-ReddyS.jpg";
+import AhmedShahebaaz from "../assets/AhmedShahebaaz.jpg";
+import Annapurna from "../assets/Annapurna.jpg";
+import baswaraj from "../assets/baswaraj.jpeg";
+import jhanbhasha from "../assets/jhan bhasha.jpeg";
+import klncprakash from "../assets/klnc prakash.jpg";
+import Ravikiran from "../assets/Ravikiran.jpeg";
+import Sreenu from "../assets/Sreenu.jpg";
+import swathi from "../assets/swathi.jpg";
+import varaprasad from "../assets/varaprasad.jpeg";
+import sreevani from "../assets/sreevani.jpeg";
+import vineela_krishna from "../assets/vineela_krishna.jpg";
+import nitya from "../assets/nitya.jpg";
+import phaniraj from "../assets/phaniraj.jpg";
+import suman from "../assets/suman.jpg";
+
 // --- MOCK External Imports (for single-file execution) ---
 
 // Mock: Nav Component
