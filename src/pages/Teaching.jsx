@@ -262,7 +262,7 @@ import swathi from "../assets/swathi.jpg"
 import varaprasad from "../assets/varaprasad.jpeg"
 import sreevani from "../assets/sreevani.jpeg"
 
-/*
+
 // ✅ Faculty Data
 const facultyData = [
   {
@@ -376,7 +376,9 @@ const facultyData = [
     ]
   }
 ];
-*/
+
+
+/*
 const facultyData = [
 {
     title: "Professors",
@@ -494,7 +496,7 @@ const facultyData = [
     ],
   },
 ];
-
+*/
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
