@@ -293,49 +293,49 @@ const facultyData = [
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
         image: klncprakash,
-        profileLink: "#"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37440"
       },
       {
         name: "Dr. A.Srinivasa Reddy",
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
         image: SrinivasaReddyA,
-        profileLink: "#"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37441"
       },
       {
         name: "Dr. Varaprasad Rao M",
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
         image: varaprasad,
-        profileLink: "#"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37442"
       },
       {
         name: "Dr. Rama Krishna B",
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
         image: RamaKrishnaB,
-        profileLink: "#"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37443"
       },
       {
         name: "Dr. Shaik Janbhasha",
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
         image: jhanbhasha,
-        profileLink: "#"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38754"
       },
       {
         name: "Dr. Basavaraj Chunchure",
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
         image: baswaraj,
-        profileLink: "#"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38755"
       },
       {
         name: "Dr. M.Sreenu",
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
         image: Sreenu,
-        profileLink: "#"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/39612"
       }
     ]
   },
@@ -348,28 +348,28 @@ const facultyData = [
         degree: "M.Tech.",
         designation: "Assistant Professor",
         image: Yaseen_pasha,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/xxxx"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37465"
       },
       {
         name: "Dr. Afreen Fatima Mohammed",
         degree: "M.Tech., Ph.D.",
         designation: "Assistant Professor",
         image: AfreenMohammed,
-        profileLink: "#"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37466"
       },
       {
         name: "Mrs. M. Nikita",
         degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
         image: nikitha_manne,
-        profileLink: "#"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37453"
       },
       {
         name: "Mr. K.Ravikiran Reddy",
         degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
         image: Ravikiran,
-        profileLink: "#"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40109"
       },
       // ✅ Add remaining Assistant Professors as needed
     ]
