@@ -1,8 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { Card } from "@/components/ui/card";
-// NOTE: You will likely need to add CarouselPrevious and CarouselNext components
-// to allow user navigation, which are not included here.
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
 import hod from "../assets/hod.webp";
@@ -10,6 +8,10 @@ import hod from "../assets/hod.webp";
 import heroImage1 from "../assets/CSE_DS.jpg";
 import heroImage2 from "../assets/CSE_DS.jpg";
 import heroImage3 from "../assets/CSE_DS.jpg";
+
+// ✅ Added missing hero image constants
+//const heroImage2 = "https://via.placeholder.com/1920x800.png?text=Slide+2";
+//const heroImage3 = "https://via.placeholder.com/1920x800.png?text=Slide+3";
 
 import Nav from "./Nav";
 import Footer from "./Footer";
@@ -65,7 +67,6 @@ const fadeInUp = {
   }),
 };
 
-// NOTE: fadeInUpSlow is no longer used, but kept for consistency if needed elsewhere
 const fadeInUpSlow = {
   hidden: { opacity: 0, y: 40 },
   visible: (i = 1) => ({
@@ -90,24 +91,21 @@ export default function HomePage() {
     <div className="min-h-screen">
       <Nav />
 
-      {/* ✅ MODIFIED: Removed the Framer Motion wrapper (motion.section) 
-        from the Hero Carousel since it's the first element and should be visible immediately. 
-      */}
-      <section
+      {/* ✅ Hero Section with Carousel */}
+/*      
+<motion.section
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUpSlow}
         className="relative w-full"
       >
         <Carousel className="w-full">
-          {/* TODO: Add CarouselPrevious and CarouselNext components here 
-            to enable user navigation between slides. 
-          */}
           <CarouselContent>
             <CarouselItem>
               <img
                 src={heroImage1}
                 alt="Slide 1"
-                // CONSIDER: Using object-cover and setting a fixed height (e.g., h-[500px]) 
-                // for better visual consistency across slides.
-                className="w-full h-auto object-contain" 
+                className="w-full h-auto object-contain"
               />
             </CarouselItem>
             <CarouselItem>
@@ -126,7 +124,7 @@ export default function HomePage() {
             </CarouselItem>
           </CarouselContent>
         </Carousel>
-      </section>
+      </motion.section>
 
       <motion.section className="py-24 px-6" ref={hodRef}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -221,3 +219,4 @@ export default function HomePage() {
     </div>
   );
 }
+
