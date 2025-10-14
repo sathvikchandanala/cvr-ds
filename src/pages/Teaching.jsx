@@ -347,7 +347,8 @@ const facultyData = [
     title: "Sr. Assistant Professors",
     count: 10,
     members: [
-      { name: "Srichandana Abbineni", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: SrichandanaA, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37444" },
+      { 
+        name: "Srichandana Abbineni", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: SrichandanaA, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37444" },
       { name: "Vineela Krishna Suri", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: vineela_krishna, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37445" },
       { name: "Ahmed Shahebaaz", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: AhmedShahebaaz, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37451" },
       { name: "Annapurna Gummadi", degree: "M.Tech., Ph.D.", designation: "Sr. Assistant Professor", image: Annapurna, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37446" },
