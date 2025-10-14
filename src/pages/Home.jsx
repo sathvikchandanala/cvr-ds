@@ -6,12 +6,10 @@ import { Link } from "react-router-dom";
 import hod from "../assets/hod.webp";
 
 import heroImage1 from "../assets/CSE_DS.jpg";
-import heroImage2 from "../assets/CSE_DS.jpg";
-import heroImage3 from "../assets/CSE_DS.jpg";
 
 // ✅ Added missing hero image constants
-//const heroImage2 = "https://via.placeholder.com/1920x800.png?text=Slide+2";
-//const heroImage3 = "https://via.placeholder.com/1920x800.png?text=Slide+3";
+const heroImage2 = "https://via.placeholder.com/1920x800.png?text=Slide+2";
+const heroImage3 = "https://via.placeholder.com/1920x800.png?text=Slide+3";
 
 import Nav from "./Nav";
 import Footer from "./Footer";
@@ -92,8 +90,7 @@ export default function HomePage() {
       <Nav />
 
       {/* ✅ Hero Section with Carousel */}
-/*      
-<motion.section
+      <motion.section
         initial="hidden"
         animate="visible"
         variants={fadeInUpSlow}
@@ -219,4 +216,3 @@ export default function HomePage() {
     </div>
   );
 }
-
