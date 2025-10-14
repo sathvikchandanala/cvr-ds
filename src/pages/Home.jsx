@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
-import { Card } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer"; // ✅ safer alternative
+import { Card } from "../components/ui/card"; // ✅ make sure this path is correct
 import { Link } from "react-router-dom";
 
 import Nav from "./Nav";
@@ -14,7 +15,7 @@ import heroImage1 from "../assets/CSE_DS.jpg";
 import heroImage2 from "../assets/CSE_DS.jpg";
 import heroImage3 from "../assets/CSE_DS.jpg";
 
-//  Department Strength data
+// ✅ Department Strength data
 const stats = [
   { title: "Professors", count: 2 },
   { title: "Associate Professors", count: 7 },
@@ -23,14 +24,13 @@ const stats = [
   { title: "Programmers & Admin", count: 3 },
 ];
 
-//  Animated Counter
+// ✅ Animated Counter
 function Counter({ target }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const { ref, inView } = useInView({ triggerOnce: true });
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!inView) return;
     let current = 0;
     const duration = 2000;
     const incrementTime = 40;
@@ -45,12 +45,12 @@ function Counter({ target }) {
       setCount(current);
     }, incrementTime);
     return () => clearInterval(interval);
-  }, [isInView, target]);
+  }, [inView, target]);
 
   return <span ref={ref}>{count}</span>;
 }
 
-//  Animations
+// ✅ Animations
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: (i = 1) => ({
@@ -69,10 +69,10 @@ const fadeInUpSlow = {
   }),
 };
 
-//  Scroll to Top
+// ✅ Scroll to Top
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-//  Messages for slider
+// ✅ Messages for slider
 const messages = [
   {
     img: hod,
@@ -86,14 +86,14 @@ const messages = [
   {
     img: dean,
     title: "Message from the Dean",
-    name: "Dr.Lakshmi H N, Ph.D.",
+    name: "Dr. Lakshmi H N, Ph.D.",
     text: `As Dean of CSE (Data Science), I welcome you to a vibrant department focused on fostering academic
     excellence, innovative research, and student development. We strive to build professionals equipped
     with the knowledge and skills to lead in technology-driven industries.`,
   },
 ];
 
-//  Manual Slider Component
+// ✅ Manual Slider Component
 function MessageSection() {
   const [current, setCurrent] = useState(0);
 
@@ -140,13 +140,13 @@ function MessageSection() {
             onClick={prevSlide}
             className="bg-blue-700 text-white px-5 py-2 rounded-full hover:bg-blue-800 transition"
           >
-             Previous
+            ◀ Previous
           </button>
           <button
             onClick={nextSlide}
             className="bg-blue-700 text-white px-5 py-2 rounded-full hover:bg-blue-800 transition"
           >
-            Next 
+            Next ▶
           </button>
         </div>
       </div>
@@ -154,7 +154,7 @@ function MessageSection() {
   );
 }
 
-//  Home Component
+// ✅ Home Component
 export default function HomePage() {
   return (
     <div className="min-h-screen">
@@ -169,10 +169,10 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/*  HOD & Dean Messages */}
+      {/* HOD & Dean Messages */}
       <MessageSection />
 
-      {/*  Department Strength */}
+      {/* Department Strength */}
       <motion.section
         variants={fadeInUp}
         initial="hidden"
@@ -207,7 +207,7 @@ export default function HomePage() {
       {/* Scroll to Top */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
+        className="fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
         aria-label="Scroll to top"
       >
         <ArrowUp className="w-5 h-5" />
