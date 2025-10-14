@@ -229,7 +229,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay"; // ✅ Added autoplay plugin
+import Autoplay from "embla-carousel-autoplay"; //  Added autoplay plugin
 import { Link } from "react-router-dom";
 
 import hod from "../assets/hod.webp";
@@ -307,7 +307,7 @@ export default function HomePage() {
     <div className="min-h-screen">
       <Nav />
 
-      {/* ✅ Hero Section with Carousel */}
+      {/*  Hero Section with Carousel */}
   
 /*
 <motion.section initial="hidden" animate="visible" variants={fadeInUpSlow} className="relative w-full">
@@ -326,12 +326,12 @@ export default function HomePage() {
         </Carousel>
       </motion.section>
 
-      {/* ✅ HOD & Dean Message Section with Autoplay Carousel */}
+      {/*  HOD & Dean Message Section with Autoplay Carousel */
 /*  
 <motion.section className="py-24 px-6" ref={hodRef}>
         <Carousel plugins={[autoplayPlugin.current]} className="max-w-7xl mx-auto">
           <CarouselContent>
-            {/* HOD Message */}
+            {/* HOD Message */
   
 /*
 <CarouselItem>
@@ -377,7 +377,7 @@ export default function HomePage() {
               </div>
             </CarouselItem>
 
-            {/* Dean Message */}
+            {/* Dean Message */
 /*  
 <CarouselItem>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -423,7 +423,7 @@ export default function HomePage() {
         </Carousel>
       </motion.section>
 
-      {/* ✅ Department Strength */}
+      {/*  Department Strength */
 /*  
 <motion.section
         variants={fadeInUp}
@@ -456,7 +456,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* ✅ Scroll to Top */}
+      {/*  Scroll to Top */
 /*  
 <button
         onClick={scrollToTop}
@@ -485,7 +485,7 @@ import heroImage1 from "../assets/CSE_DS.jpg";
 import heroImage2 from "../assets/CSE_DS.jpg";
 import heroImage3 from "../assets/CSE_DS.jpg";
 
-// ✅ Added missing hero image constants
+//  Added missing hero image constants
 //const heroImage2 = "https://via.placeholder.com/1920x800.png?text=Slide+2";
 //const heroImage3 = "https://via.placeholder.com/1920x800.png?text=Slide+3";
 
@@ -567,7 +567,7 @@ export default function HomePage() {
     <div className="min-h-screen">
       <Nav />
 
-      {/* ✅ Hero Section with Carousel */}
+      {/* Hero Section with Carousel */
 /*      
 <motion.section
         initial="hidden"
