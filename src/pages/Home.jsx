@@ -8,7 +8,7 @@ import Footer from "./Footer";
 import { ArrowUp } from "lucide-react";
 
 import hod from "../assets/hod.webp";
-import dean from "../assets/dean.jpg";
+import dean from "../assets/DeanET.png";
 
 import heroImage1 from "../assets/CSE_DS.jpg";
 import heroImage2 from "../assets/CSE_DS.jpg";
@@ -86,7 +86,7 @@ const messages = [
   {
     img: dean,
     title: "Message from the Dean",
-    name: "Dr. [Dean Name]",
+    name: "Dr. Dr.Lakshmi H N, Ph.D.",
     text: `As Dean of CSE (Data Science), I welcome you to a vibrant department focused on fostering academic
     excellence, innovative research, and student development. We strive to build professionals equipped
     with the knowledge and skills to lead in technology-driven industries.`,
@@ -140,13 +140,13 @@ function MessageSection() {
             onClick={prevSlide}
             className="bg-blue-700 text-white px-5 py-2 rounded-full hover:bg-blue-800 transition"
           >
-            ◀ Previous
+            Previous
           </button>
           <button
             onClick={nextSlide}
             className="bg-blue-700 text-white px-5 py-2 rounded-full hover:bg-blue-800 transition"
           >
-            Next ▶
+            Next 
           </button>
         </div>
       </div>
