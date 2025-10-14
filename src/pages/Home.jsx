@@ -6,7 +6,7 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import { ArrowUp } from "lucide-react";
 import hod from "../assets/hod.webp";
-import heroImage1 from "../assets/IMG-20251008-WA0004.jpg";
+import heroImage1 from "../assets/assets/CSE_DS.jpg";
 
 // External URLs for hero carousel slides
 const heroImage2 = "https://via.placeholder.com/1920x800.png?text=Slide+2";
