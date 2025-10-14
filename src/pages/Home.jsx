@@ -1,15 +1,12 @@
-
 import { useState, useRef, useEffect } from "react";
-import { Menu, ChevronDown } from "lucide-react";
-//import { motion, useInView } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { motion, useInView } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Link } from "react-router-dom";
 import hod from "../assets/hod.webp";
+import heroImage1 from "../assets/IMG-20251008-WA0004.jpg";
+import heroImage2 from "https://via.placeholder.com/1920x800.png?text=Slide+2";
+import heroImage3 from "https://via.placeholder.com/1920x800.png?text=Slide+3";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import { ArrowUp } from "lucide-react";
@@ -77,9 +74,9 @@ const fadeInUpSlow = {
   }),
 };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 export default function HomePage() {
   const hodRef = useRef(null);
@@ -88,34 +85,38 @@ export default function HomePage() {
     <div className="min-h-screen">
       <Nav />
 
+      {/* Hero Section with Carousel */}
       <motion.section
         initial="hidden"
-            animate="visible"
-            variants={fadeInUpSlow}
-        className="py-40 px-6 flex flex-col items-center justify-center text-center space-y-12"
+        animate="visible"
+        variants={fadeInUpSlow}
+        className="relative h-[70vh] w-full"
       >
-        <div>
-          <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight px-2 sm:px-4 animate-fade-in-up
-               text-black 
-               dark:text-transparent dark:bg-gradient-to-b dark:from-white dark:to-white/70 dark:bg-clip-text
-               drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)] text-center">
-  Welcome to the <br /> <span className="bg-gradient-to-r from-blue-600 to-blue-800 
-             bg-clip-text text-transparent ">Department of  CSE (Data Science)</span>
-</h2>
-
-
-
-
-
-        </div>
-
-        <Button
-          onClick={() => hodRef.current?.scrollIntoView({ behavior: "smooth" })}
-          className="group px-8 py-3 text-lg font-semibold bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3"
-        >
-          Explore
-          <ChevronDown className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1" />
-        </Button>
+        <Carousel className="w-full h-full">
+          <CarouselContent>
+            <CarouselItem>
+              <img
+                src={heroImage1}
+                alt="Slide 1"
+                className="w-full h-[70vh] object-cover"
+              />
+            </CarouselItem>
+            <CarouselItem>
+              <img
+                src={heroImage2}
+                alt="Slide 2"
+                className="w-full h-[70vh] object-cover"
+              />
+            </CarouselItem>
+            <CarouselItem>
+              <img
+                src={heroImage3}
+                alt="Slide 3"
+                className="w-full h-[70vh] object-cover"
+              />
+            </CarouselItem>
+          </CarouselContent>
+        </Carousel>
       </motion.section>
 
       <motion.section className="py-24 px-6" ref={hodRef}>
@@ -124,7 +125,7 @@ export default function HomePage() {
             src={hod}
             alt="HOD - CSE Data Science"
             className="rounded-lg w-full h-auto shadow-lg object-cover"
-                variants={fadeInUp}
+            variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -133,35 +134,33 @@ export default function HomePage() {
           <div>
             <motion.h2
               className="text-3xl font-bold text-gray-900 mb-4"
-               variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={2}
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={2}
             >
               Message from the Head of the Department
             </motion.h2>
             <motion.p
               className="text-gray-700 leading-relaxed text-lg text-justify"
-                  variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={2}
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={2}
             >
               Welcome to the Department of Computer Science and Engineering (Data Science) at CVR College of Engineering.
               Our department is committed to academic excellence, research innovation, and nurturing the next generation of data professionals.
               We aim to provide students with the technical expertise and ethical values required to thrive in a data-driven world.
             </motion.p>
             <motion.p
-              className="mt-6 font-bold tracking-tight 
-             bg-gradient-to-r from-blue-600 to-blue-800 
-             bg-clip-text text-transparent "
-                 variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={2}
+              className="mt-6 font-bold tracking-tight bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={2}
             >
               Dr. S.V.Suryanarayana
             </motion.p>
@@ -170,11 +169,11 @@ export default function HomePage() {
       </motion.section>
 
       <motion.section
-          variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={2}
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        custom={2}
         className="py-24 px-6"
       >
         <div className="max-w-7xl mx-auto text-center mb-12">
@@ -183,30 +182,31 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-            {stats.map((item, index) => (
-    <Card
-      key={index}
-      className="p-6 text-center shadow-md rounded-2xl bg-white text-black hover:scale-105 transition-transform duration-300 cursor-pointer"
-    >
-      <Link to={`/faculty/${encodeURIComponent(item.title)}`} className="block">
-        <h3 className="text-4xl font-bold mb-2">
-          <Counter target={item.count} />
-        </h3>
-        <p className="font-medium tracking-tight 
-             bg-gradient-to-r from-blue-600 to-blue-800 
-             bg-clip-text text-transparent ">{item.title}</p>
-      </Link>
-    </Card>
-  ))}
+          {stats.map((item, index) => (
+            <Card
+              key={index}
+              className="p-6 text-center shadow-md rounded-2xl bg-white text-black hover:scale-105 transition-transform duration-300 cursor-pointer"
+            >
+              <Link to={`/faculty/${encodeURIComponent(item.title)}`} className="block">
+                <h3 className="text-4xl font-bold mb-2">
+                  <Counter target={item.count} />
+                </h3>
+                <p className="font-medium tracking-tight bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+                  {item.title}
+                </p>
+              </Link>
+            </Card>
+          ))}
         </div>
       </motion.section>
-       <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
-          aria-label="Scroll to top"
-        >
-          <ArrowUp className="w-5 h-5" />
-        </button>
+
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
+        aria-label="Scroll to top"
+      >
+        <ArrowUp className="w-5 h-5" />
+      </button>
 
       <Footer />
     </div>
