@@ -14,7 +14,7 @@ import heroImage1 from "../assets/CSE_DS.jpg";
 import heroImage2 from "../assets/CSE_DS.jpg";
 import heroImage3 from "../assets/CSE_DS.jpg";
 
-// ✅ Department Strength data
+// Department Strength data
 const stats = [
   { title: "Professors", count: 2 },
   { title: "Associate Professors", count: 7 },
@@ -23,7 +23,7 @@ const stats = [
   { title: "Programmers & Admin", count: 3 },
 ];
 
-// ✅ Animated Counter
+// Animated Counter
 function Counter({ target }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -50,7 +50,7 @@ function Counter({ target }) {
   return <span ref={ref}>{count}</span>;
 }
 
-// ✅ Animations
+//  Animations
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: (i = 1) => ({
@@ -69,10 +69,10 @@ const fadeInUpSlow = {
   }),
 };
 
-// ✅ Scroll to Top
+//  Scroll to Top
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-// ✅ Messages for slider
+//  Messages for slider
 const messages = [
   {
     img: hod,
@@ -93,7 +93,7 @@ const messages = [
   },
 ];
 
-// ✅ Manual Slider Component
+//  Manual Slider Component
 function MessageSection() {
   const [current, setCurrent] = useState(0);
 
@@ -154,7 +154,7 @@ function MessageSection() {
   );
 }
 
-// ✅ Home Component
+//  Home Component
 export default function HomePage() {
   return (
     <div className="min-h-screen">
@@ -169,10 +169,10 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* ✅ HOD & Dean Messages */}
+      {/*  HOD & Dean Messages */}
       <MessageSection />
 
-      {/* ✅ Department Strength */}
+      {/*  Department Strength */}
       <motion.section
         variants={fadeInUp}
         initial="hidden"
@@ -204,7 +204,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* ✅ Scroll to Top */}
+      {/*  Scroll to Top */}
       <button
         onClick={scrollToTop}
         className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
