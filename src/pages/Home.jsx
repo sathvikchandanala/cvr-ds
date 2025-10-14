@@ -8,13 +8,13 @@ import Footer from "./Footer";
 import { ArrowUp } from "lucide-react";
 
 import hod from "../assets/hod.webp";
-import dean from "../assets/DeanET.png";
+import dean from "../assets/dean.jpg";
 
 import heroImage1 from "../assets/CSE_DS.jpg";
 import heroImage2 from "../assets/CSE_DS.jpg";
 import heroImage3 from "../assets/CSE_DS.jpg";
 
-// Department Strength data
+//  Department Strength data
 const stats = [
   { title: "Professors", count: 2 },
   { title: "Associate Professors", count: 7 },
@@ -23,7 +23,7 @@ const stats = [
   { title: "Programmers & Admin", count: 3 },
 ];
 
-// Animated Counter
+//  Animated Counter
 function Counter({ target }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -86,7 +86,7 @@ const messages = [
   {
     img: dean,
     title: "Message from the Dean",
-    name: "Dr. Dr.Lakshmi H N, Ph.D.",
+    name: "Dr.Lakshmi H N, Ph.D.",
     text: `As Dean of CSE (Data Science), I welcome you to a vibrant department focused on fostering academic
     excellence, innovative research, and student development. We strive to build professionals equipped
     with the knowledge and skills to lead in technology-driven industries.`,
@@ -140,7 +140,7 @@ function MessageSection() {
             onClick={prevSlide}
             className="bg-blue-700 text-white px-5 py-2 rounded-full hover:bg-blue-800 transition"
           >
-            Previous
+             Previous
           </button>
           <button
             onClick={nextSlide}
@@ -204,7 +204,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/*  Scroll to Top */}
+      {/* Scroll to Top */}
       <button
         onClick={scrollToTop}
         className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
@@ -217,7 +217,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-
-
-
