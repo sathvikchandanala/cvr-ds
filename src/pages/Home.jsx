@@ -1,15 +1,16 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
-import hod from "../assets/hod.webp";
-import heroImage1 from "../assets/IMG-20251008-WA0004.jpg";
-import heroImage2 from "https://via.placeholder.com/1920x800.png?text=Slide+2";
-import heroImage3 from "https://via.placeholder.com/1920x800.png?text=Slide+3";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import { ArrowUp } from "lucide-react";
+import hod from "../assets/hod.webp";
+import heroImage1 from "../assets/IMG-20251008-WA0004.jpg";
+
+// External URLs for hero carousel slides
+const heroImage2 = "https://via.placeholder.com/1920x800.png?text=Slide+2";
+const heroImage3 = "https://via.placeholder.com/1920x800.png?text=Slide+3";
 
 const stats = [
   { title: "Professors", count: 2 },
@@ -92,33 +93,27 @@ export default function HomePage() {
         variants={fadeInUpSlow}
         className="relative h-[70vh] w-full"
       >
-        <Carousel className="w-full h-full">
-          <CarouselContent>
-            <CarouselItem>
-              <img
-                src={heroImage1}
-                alt="Slide 1"
-                className="w-full h-[70vh] object-cover"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <img
-                src={heroImage2}
-                alt="Slide 2"
-                className="w-full h-[70vh] object-cover"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <img
-                src={heroImage3}
-                alt="Slide 3"
-                className="w-full h-[70vh] object-cover"
-              />
-            </CarouselItem>
-          </CarouselContent>
-        </Carousel>
+        <div className="w-full h-full overflow-hidden relative">
+          <img
+            src={heroImage1}
+            alt="Slide 1"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <img
+            src={heroImage2}
+            alt="Slide 2"
+            className="absolute inset-0 w-full h-full object-cover opacity-0"
+          />
+          <img
+            src={heroImage3}
+            alt="Slide 3"
+            className="absolute inset-0 w-full h-full object-cover opacity-0"
+          />
+          {/* You can later add a proper Carousel library here */}
+        </div>
       </motion.section>
 
+      {/* HOD Section */}
       <motion.section className="py-24 px-6" ref={hodRef}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <motion.img
@@ -162,12 +157,13 @@ export default function HomePage() {
               viewport={{ once: true }}
               custom={2}
             >
-              Dr. S.V.Suryanarayana
+              Dr. S.V. Suryanarayana
             </motion.p>
           </div>
         </div>
       </motion.section>
 
+      {/* Department Stats */}
       <motion.section
         variants={fadeInUp}
         initial="hidden"
@@ -200,9 +196,10 @@ export default function HomePage() {
         </div>
       </motion.section>
 
+      {/* Scroll to top */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
+        className="fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
         aria-label="Scroll to top"
       >
         <ArrowUp className="w-5 h-5" />
