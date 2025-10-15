@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import hod from "../assets/hod.webp";
 import dean from "../assets/dean.webp";  // ✅ Added dean image
 
+
 import heroImage1 from "../assets/CSE_DS.jpg";
 import heroImage2 from "../assets/CSE_DS.jpg";
 import heroImage3 from "../assets/CSE_DS.jpg";
