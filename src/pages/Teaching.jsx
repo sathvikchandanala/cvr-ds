@@ -341,7 +341,7 @@ const facultyData = [
     ]
   },
 
-
+/*
 
 {
     title: "Sr. Assistant Professors",
@@ -360,6 +360,7 @@ const facultyData = [
       { name: "Ranadheer Kumar K S", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: RanadheerKumarKS, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37464" },
     ],
   },
+  */
   {
     title: "Assistant Professors",
     count: 18,
