@@ -1,24 +1,31 @@
-/*
 import React, { useState } from "react";
-import Nav from "./Nav";
-import Footer from "./Footer";
-import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { Separator } from "@/components/ui/separator";
 import { ArrowUp } from "lucide-react";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaUsers, FaEnvelope, FaCalendarAlt, FaIdBadge } from "react-icons/fa";
+import Nav from "./Nav";
+import Footer from "./Footer";
 
-// ✅ Faculty Images Imports
+// ✅ Images you already imported (keep these paths as-is)
 import hod from "../assets/hod.webp";
 import nikitha_manne from "../assets/NikitaManne.jpg";
+import prasanna from "../assets/Prasanna.jpeg";
+import Suman from "../assets/Suman.jpg";
+import SriLaxmiKuna from "../assets/SriLaxmiKuna.jpeg";
 import Yaseen_pasha from "../assets/Yaseen-PashaMoghal.jpg";
+import Phaniraj from "../assets/PhanirajKumar.jpg";
 import Yasmeen_Aashu from "../assets/YasmeenAashu.jpeg";
 import AfreenMohammed from "../assets/AfreenMohammed.jpeg";
 import SrinivasaReddyA from "../assets/Srinivasa-ReddyA.jpg";
 import SrichandanaA from "../assets/SrichandanaA.jpg";
 import SatyanarayanaN from "../assets/SatyanarayanaN.jpg";
 import SabithaB from "../assets/SabithaB.jpg";
+import vijay from "../assets/vijay.jpg";
+import vineela from "../assets/vineela.jpg";
+import nitya from "../assets/nitya.jpg";
 import RanadheerKumarKS from "../assets/Ranadheer-KumarK-S.jpeg";
 import RamyaT from "../assets/RamyaT.jpg";
 import RameshVankudoth from "../assets/RameshVankudoth.jpg";
@@ -43,620 +50,649 @@ import Sreenu from "../assets/Sreenu.jpg";
 import swathi from "../assets/swathi.jpg";
 import varaprasad from "../assets/varaprasad.jpeg";
 import sreevani from "../assets/sreevani.jpeg";
-import vineela_krishna from "../assets/vineela_krishna.jpg";
-import nitya from "../assets/nitya.jpg";
-import phaniraj from "../assets/phaniraj.jpg";
-import suman from "../assets/suman.jpg";
 
-// ✅ Faculty Data with profile links
+// Fallback: some faculty images are not present — leave image: null for those so placeholder will be used.
+
+// Helper for generated placeholder avatar (same logic as NonTeachingStaff.jsx)
+const getImageUrl = (name) => {
+  const initial = name ? name.charAt(0).toUpperCase() : "S";
+  const colors = ["2563EB", "9333EA", "DC2626", "16A34A", "EA580C"];
+  const color = colors[initial.charCodeAt(0) % colors.length];
+  return `https://placehold.co/160x160/${color}/FFFFFF?text=${initial}`;
+};
+
+// === Faculty data with the additional fields you provided (S.No. 1-40) ===
 const facultyData = [
   {
     title: "Professors",
-    count: 2,
-    members: [
-      {
-        name: "Dr. Venkata Suryanarayana S",
-        degree: "M.Tech., Ph.D.",
-        designation: "Head of the Department",
-        image: hod,
-        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37438",
-      },
-      {
-        name: "Dr. N. Satyanarayana",
-        degree: "M.Tech., Ph.D.",
-        designation: "Professor",
-        image: SatyanarayanaN,
-        profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37439",
-      },
-    ],
-  },
-  {
-    title: "Associate Professors",
-    count: 7,
-    members: [
-      { name: "LNC Prakash K", degree: "M.Tech., Ph.D.", designation: "Associate Professor", image: klncprakash, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37440" },
-      { name: "A Srinivas Reddy", degree: "M.Tech., Ph.D.", designation: "Associate Professor", image: SrinivasaReddyA, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37441" },
-      { name: "Varaprasad Rao M", degree: "M.Tech., Ph.D.", designation: "Associate Professor", image: varaprasad, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37442" },
-      { name: "Rama Krishna B", degree: "M.Tech., Ph.D.", designation: "Associate Professor", image: RamaKrishnaB, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37443" },
-      { name: "Janbhasha Shaik", degree: "M.Tech., Ph.D.", designation: "Associate Professor", image: jhanbhasha, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38754" },
-      { name: "Basavaraj Chunchure", degree: "M.Tech., Ph.D.", designation: "Associate Professor", image: baswaraj, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38755" },
-      { name: "M Sreenu", degree: "M.Tech., Ph.D.", designation: "Associate Professor", image: Sreenu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/39612" },
-    ],
-  },
-  {
-    title: "Sr. Assistant Professors",
-    count: 10,
-    members: [
-      { name: "Srichandana Abbineni", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: SrichandanaA, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37444" },
-      { name: "Vineela Krishna Suri", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: vineela_krishna, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37445" },
-      { name: "Ahmed Shahebaaz", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: AhmedShahebaaz, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37451" },
-      { name: "Annapurna Gummadi", degree: "M.Tech., Ph.D.", designation: "Sr. Assistant Professor", image: Annapurna, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37446" },
-      { name: "Yasmeen MD", degree: "M.Tech., Ph.D.", designation: "Sr. Assistant Professor", image: Yasmeen_Aashu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37447" },
-      { name: "Nitya Erupaka", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: nitya, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37448" },
-      { name: "Padma Parshapu", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: PadmaParshapu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37458" },
-      { name: "Hari Shankar Punna", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: HariShankarP, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37459" },
-      { name: "Harish Kumar K", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: HarishKumarK, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37463" },
-      { name: "Ranadheer Kumar K S", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: RanadheerKumarKS, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37464" },
-    ],
-  },
-  {
-    title: "Assistant Professors",
-    count: 18,
-    members: [
-      { name: "Lalitha S", degree: "M.Tech.", designation: "Assistant Professor", image: LalithaS, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37449" },
-      { name: "Nagarani P", degree: "M.Tech.", designation: "Assistant Professor", image: NagaraniP, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37450" },
-      { name: "Balakrishna Reddy S", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: BalakrishnaReddyS, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37452" },
-      { name: "Nikita Manne", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: nikitha_manne, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37453" },
-      { name: "Prashanth Donda", degree: "M.Tech.", designation: "Assistant Professor", image: PrashanthDonda, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37454" },
-      { name: "Ramesh Vankudoth", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: RameshVankudoth, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37455" },
-      { name: "Nagasri Arava", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: NagasriArava, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37456" },
-      { name: "Srivani M", degree: "M.Tech.", designation: "Assistant Professor", image: sreevani, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37457" },
-      { name: "Ramya T", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: RamyaT, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37460" },
-      { name: "Vadapally Praveen", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: PraveenKumarV, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37461" },
-      { name: "Sabitha B", degree: "M.Tech.", designation: "Assistant Professor", image: SabithaB, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37462" },
-      { name: "Moghal Yaseen Pasha", degree: "M.Tech.", designation: "Assistant Professor", image: Yaseen_pasha, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37465" },
-      { name: "Afreen Mohammed", degree: "M.Tech., Ph.D.", designation: "Assistant Professor", image: AfreenMohammed, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37466" },
-      { name: "Krishna Erugu", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: KrishnaErugu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37467" },
-      { name: "Swathi Velugoti", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: swathi, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40110" },
-      { name: "RaviKiranReddy Kandadi", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: Ravikiran, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40109" },
-      { name: "Phaniraj Thatha", degree: "M.Tech.", designation: "Assistant Professor", image: phaniraj, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52487" },
-      { name: "Suman N", degree: "M.Tech.", designation: "Assistant Professor", image: suman, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52547" },
-    ],
-  },
-];
-
-const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
-export default function Teaching() {
-  const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("");
-
-  const filteredData = facultyData
-    .map((group) => ({
-      ...group,
-      members: group.members.filter((member) =>
-        member.name.toLowerCase().includes(query.toLowerCase())
-      ),
-    }))
-    .filter((group) => group.members.length > 0);
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (i = 1) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
-    }),
-  };
-
-  return (
-    <div className="min-h-screen bg-white font-sans">
-      <Nav />
-      <div className="flex flex-col items-center justify-center text-center py-24 px-4 sm:px-6 bg-gradient-to-b from-blue-50 to-white space-y-12">
-        <div className="w-full max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
-            <motion.h1 initial="hidden" animate="visible" variants={fadeInUp} className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">
-              Teaching Faculty
-            </motion.h1>
-            <motion.div className="flex w-full sm:w-auto gap-2 items-center" variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}>
-              <Input placeholder="Search by name" value={search} onChange={(e) => setSearch(e.target.value)} className="w-full sm:w-64" />
-              <Button onClick={() => setQuery(search)} className="flex items-center gap-2">
-                <FaSearch /> Search
-              </Button>
-            </motion.div>
-          </div>
-
-          {filteredData.map((group, index) => (
-            <motion.div key={index} variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2} className="mb-16">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-6 text-left">
-                {group.title} - {group.count}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {group.members.map((member, i) => (
-                  <motion.div key={i} whileHover={{ scale: 1.05 }} className="w-full">
-                    <Card className="rounded-2xl shadow-md bg-white border border-gray-200 hover:shadow-lg transition-shadow">
-                      <CardContent className="flex flex-col items-center text-center p-4">
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          onClick={() => window.open(member.profileUrl, "_blank")}
-                          className="w-40 h-40 object-cover object-top mb-4 shadow rounded-full cursor-pointer transition-transform hover:scale-105"
-                        />
-                        <a
-                          href={member.profileUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-lg font-semibold text-gray-900 hover:underline"
-                        >
-                          {member.name}
-                        </a>
-                        <p className="text-sm text-gray-600">{member.degree}</p>
-                        <p className="text-sm text-black-600 mt-1">{member.designation}</p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
-          aria-label="Scroll to top"
-        >
-          <ArrowUp className="w-5 h-5" />
-        </button>
-      </div>
-      <Footer />
-    </div>
-  );
-}
-
-*/
-
-
-import React, { useState } from "react";
-import Nav from "./Nav";
-import Footer from "./Footer";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { ArrowUp } from "lucide-react";
-import { FaSearch } from "react-icons/fa";
-
-// ✅ Import Images
-import hod from "../assets/hod.webp";
-import nikitha_manne from "../assets/NikitaManne.jpg"
-import Yaseen_pasha from "../assets/Yaseen-PashaMoghal.jpg" 
-import Yasmeen_Aashu from "../assets/YasmeenAashu.jpeg"
-import AfreenMohammed from "../assets/AfreenMohammed.jpeg"
-import SrinivasaReddyA from "../assets/Srinivasa-ReddyA.jpg"
-import SrichandanaA from "../assets/SrichandanaA.jpg"
-import SatyanarayanaN from "../assets/SatyanarayanaN.jpg"
-import SabithaB from "../assets/SabithaB.jpg"
-import RanadheerKumarKS  from "../assets/Ranadheer-KumarK-S.jpeg"
-import RamyaT from "../assets/RamyaT.jpg"
-import RameshVankudoth from "../assets/RameshVankudoth.jpg"
-import RamaKrishnaB from "../assets/Rama-KrishnaB.jpg"
-import PraveenKumarV from "../assets/Praveen-KumarV.jpg"
-import PrashanthDonda from "../assets/PrashanthDonda.jpg"
-import PadmaParshapu from "../assets/PadmaParshapu.jpg"
-import NagasriArava from "../assets/NagasriArava.jpg"
-import NagaraniP from "../assets/NagaraniP.jpg"
-import LalithaS from "../assets/LalithaS.jpg"
-import KrishnaErugu from "../assets/KrishnaErugu.jpg"
-import HarishKumarK from "../assets/Harish-KumarK.jpg"
-import HariShankarP from "../assets/Hari-ShankarP.jpg"
-import BalakrishnaReddyS from "../assets/Balakrishna-ReddyS.jpg" 
-import AhmedShahebaaz from "../assets/AhmedShahebaaz.jpg"
-import Annapurna from "../assets/Annapurna.jpg"
-import baswaraj from "../assets/baswaraj.jpeg"
-import jhanbhasha from "../assets/jhan bhasha.jpeg"
-import klncprakash from "../assets/klnc prakash.jpg"
-import Ravikiran from "../assets/Ravikiran.jpeg"
-import Sreenu from "../assets/Sreenu.jpg"
-import swathi from "../assets/swathi.jpg"
-import varaprasad from "../assets/varaprasad.jpeg"
-import sreevani from "../assets/sreevani.jpeg"
-//import phaniraj from "../assets/phaniraj.jpg";
-//import suman from "../assets/suman.jpg";
-
-
-// ✅ Faculty Data
-const facultyData = [
-  {
-    title: "Professors",
-    count: 2,
     members: [
       {
         name: "Dr. S.V.Suryanarayana",
-        degree: "M.Tech., Ph.D.",
-        designation: "Head of the Department",
+        designation: "Professor & HoD",
+        qualification: "Ph.D",
+        joined: "29.05.2017",
+        nature: "Regular",
+        specialization: "Data Mining",
+        email: "suryanarayana@cvr.ac.in",
         image: hod,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37438"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37438",
       },
       {
         name: "Dr. N. Satyanarayana",
-        degree: "M.Tech., Ph.D.",
         designation: "Professor",
+        qualification: "Ph.D",
+        joined: "01.03.2024",
+        nature: "Regular",
+        specialization: "Machine Learning",
+        email: "n.satyanarayana@cvr.ac.in",
         image: SatyanarayanaN,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37439"
-      }
-    ]
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37439",
+      },
+    ],
   },
+
   {
     title: "Associate Professors",
-    count: 7,
     members: [
       {
         name: "Dr. LNC Prakash K",
-        degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
+        qualification: "Ph.D",
+        joined: "22.03.2021",
+        nature: "Regular",
+        specialization: "Data Mining",
+        email: "klnc.prakash@cvr.ac.in",
         image: klncprakash,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37440"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37440",
       },
       {
         name: "Dr. A.Srinivasa Reddy",
-        degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
+        qualification: "Ph.D",
+        joined: "24.03.2021",
+        nature: "Regular",
+        specialization: "Image Processing",
+        email: "a.srinivasareddy@cvr.ac.in",
         image: SrinivasaReddyA,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37441"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37441",
       },
       {
         name: "Dr. Varaprasad Rao M",
-        degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
+        qualification: "Ph.D",
+        joined: "04.01.2023",
+        nature: "Regular",
+        specialization: "Natural Language Processing",
+        email: "varam78@cvr.ac.in",
         image: varaprasad,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37442"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37442",
       },
       {
         name: "Dr. Rama Krishna B",
-        degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
+        qualification: "Ph.D",
+        joined: "22.01.2024",
+        nature: "Regular",
+        specialization: "Data Mining",
+        email: "ramakrishnabasude@cvr.ac.in",
         image: RamaKrishnaB,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37443"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37443",
       },
       {
         name: "Dr. Shaik Janbhasha",
-        degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
+        qualification: "Ph.D.",
+        joined: "28.11.2024",
+        nature: "Regular",
+        specialization: "Deep Learning",
+        email: "afreen.jbasha@cvr.ac.in",
         image: jhanbhasha,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38754"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38754",
       },
       {
         name: "Dr. Basavaraj Chunchure",
-        degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
+        qualification: "Ph.D.",
+        joined: "18.12.2024",
+        nature: "Regular",
+        specialization: "Artificial Intelligence",
+        email: "p9880636942@cvr.ac.in",
         image: baswaraj,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38755"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38755",
       },
       {
         name: "Dr. M.Sreenu",
-        degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
+        qualification: "Ph.D.",
+        joined: "26.12.2024",
+        nature: "Regular",
+        specialization: "Blockchain technology",
+        email: "pittunaik723@cvr.ac.in",
         image: Sreenu,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/39612"
-      }
-    ]
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/39612",
+      },
+      // Dr Sri Laxmi Kuna (from the table)
+      {
+        name: "Dr. Sri Laxmi Kuna",
+        designation: "Associate Professor",
+        qualification: "Ph.D",
+        joined: "01.09.2025",
+        nature: "Regular",
+        specialization: "Deep Learning",
+        email: "drsrilaxmi2019@cvr.ac.in",
+        image: SriLaxmiKuna,
+        profileLink: null,
+      },
+    ],
   },
 
-/*
-
-{
+  {
     title: "Sr. Assistant Professors",
-    count: 10,
-    members: [
-      { 
-        name: "Srichandana Abbineni", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: SrichandanaA, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37444" },
-      { name: "Vineela Krishna Suri", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: vineela_krishna, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37445" },
-      { name: "Ahmed Shahebaaz", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: AhmedShahebaaz, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37451" },
-      { name: "Annapurna Gummadi", degree: "M.Tech., Ph.D.", designation: "Sr. Assistant Professor", image: Annapurna, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37446" },
-      { name: "Yasmeen MD", degree: "M.Tech., Ph.D.", designation: "Sr. Assistant Professor", image: Yasmeen_Aashu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37447" },
-      { name: "Nitya Erupaka", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: nitya, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37448" },
-      { name: "Padma Parshapu", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: PadmaParshapu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37458" },
-      { name: "Hari Shankar Punna", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: HariShankarP, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37459" },
-      { name: "Harish Kumar K", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: HarishKumarK, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37463" },
-      { name: "Ranadheer Kumar K S", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: RanadheerKumarKS, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37464" },
-    ],
-  },
-  */
-  {
-    title: "Assistant Professors",
-    count: 18,
-    members: [
-      { name: "Lalitha S", degree: "M.Tech.", designation: "Assistant Professor", image: LalithaS, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37449" },
-      { name: "Nagarani P", degree: "M.Tech.", designation: "Assistant Professor", image: NagaraniP, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37450" },
-      { name: "Balakrishna Reddy S", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: BalakrishnaReddyS, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37452" },
-      { name: "Nikita Manne", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: nikitha_manne, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37453" },
-      { name: "Prashanth Donda", degree: "M.Tech.", designation: "Assistant Professor", image: PrashanthDonda, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37454" },
-      { name: "Ramesh Vankudoth", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: RameshVankudoth, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37455" },
-      { name: "Nagasri Arava", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: NagasriArava, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37456" },
-      { name: "Srivani M", degree: "M.Tech.", designation: "Assistant Professor", image: sreevani, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37457" },
-      { name: "Ramya T", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: RamyaT, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37460" },
-      { name: "Vadapally Praveen", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: PraveenKumarV, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37461" },
-      { name: "Sabitha B", degree: "M.Tech.", designation: "Assistant Professor", image: SabithaB, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37462" },
-      { name: "Moghal Yaseen Pasha", degree: "M.Tech.", designation: "Assistant Professor", image: Yaseen_pasha, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37465" },
-      { name: "Afreen Mohammed", degree: "M.Tech., Ph.D.", designation: "Assistant Professor", image: AfreenMohammed, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37466" },
-      { name: "Krishna Erugu", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: KrishnaErugu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37467" },
-      { name: "Swathi Velugoti", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: swathi, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40110" },
-      { name: "RaviKiranReddy Kandadi", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: Ravikiran, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40109" },
-  //    { name: "Phaniraj Thatha", degree: "M.Tech.", designation: "Assistant Professor", image: phaniraj, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52487" },
-    //  { name: "Suman N", degree: "M.Tech.", designation: "Assistant Professor", image: suman, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52547" },
-    ],
-  },
-];
-
-
-  
-
-
-/*  
-  {
-    title: "Assistant Professors",
-    count: 17,
     members: [
       {
-        name: "Mr. Moghal.Yaseen Pasha",
-        degree: "M.Tech.",
-        designation: "Assistant Professor",
-        image: Yaseen_pasha,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37465"
+        name: "Mrs. A Srichandana",
+        designation: "Sr. Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "01.06.2010",
+        nature: "Regular",
+        specialization: "Natural Language Processing",
+        email: "srichandana@cvr.ac.in",
+        image: SrichandanaA,
+        profileLink: null,
       },
       {
-        name: "Dr. Afreen Fatima Mohammed",
-        degree: "M.Tech., Ph.D.",
+        name: "Mrs. S. Vineela Krishna",
+        designation: "Sr. Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "24.06.2021",
+        nature: "Regular",
+        specialization: "Cloud Computing",
+        email: "vineela.krishna@cvr.ac.in",
+        image: vineela,
+        profileLink: null,
+      },
+      {
+        name: "Mr. Ahmed Shahebaaz",
+        designation: "Sr. Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "08.01.2022",
+        nature: "Regular",
+        specialization: "Data Structures",
+        email: "ahmed.shahebaaz@cvr.ac.in",
+        image: AhmedShahebaaz,
+        profileLink: null,
+      },
+      {
+        name: "Dr. Annapurna Gummadi",
+        designation: "Sr. Assistant Professor",
+        qualification: "Ph.D",
+        joined: "17.01.2022",
+        nature: "Regular",
+        specialization: "Machine Learning",
+        email: "g.annapurna@cvr.ac.in",
+        image: Annapurna,
+        profileLink: null,
+      },
+      {
+        name: "Dr. Yasmeen",
+        designation: "Sr. Assistant Professor",
+        qualification: "Ph.D",
+        joined: "07.03.2022",
+        nature: "Regular",
+        specialization: "Cloud Computing",
+        email: "yasmeen.aashu@cvr.ac.in",
+        image: Yasmeen_Aashu,
+        profileLink: null,
+      },
+      {
+        name: "Mrs. E. Nitya",
+        designation: "Sr. Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "28.04.2022",
+        nature: "Regular",
+        specialization: "Deep Learning",
+        email: "e.nitya@cvr.ac.in",
+        image: nitya,
+        profileLink: null,
+      },
+      {
+        name: "Mrs. P. Padma",
+        designation: "Sr. Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "25.01.2023",
+        nature: "Regular",
+        specialization: "Machine Learning",
+        email: "p.padma@cvr.ac.in",
+        image: PadmaParshapu,
+        profileLink: null,
+      },
+      {
+        name: "Mr. P. Hari Shankar",
+        designation: "Sr. Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "27.01.2023",
+        nature: "Regular",
+        specialization: "Cloud Computing",
+        email: "harishankar@cvr.ac.in",
+        image: HariShankarP,
+        profileLink: null,
+      },
+      {
+        name: "Mr. K. Harish Kumar",
+        designation: "Sr. Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "06.02.2023",
+        nature: "Regular",
+        specialization: "Cloud Computing",
+        email: "k.harish@cvr.ac.in",
+        image: HarishKumarK,
+        profileLink: null,
+      },
+      {
+        name: "Mr. K.S. Ranadheer Kumar",
+        designation: "Sr. Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "16.03.2023",
+        nature: "Regular",
+        specialization: "Artificial Intelligence",
+        email: "ranadheer@cvr.ac.in",
+        image: RanadheerKumarKS,
+        profileLink: null,
+      },
+    ],
+  },
+
+  {
+    title: "Assistant Professors",
+    members: [
+      {
+        name: "Ms. S. Lalitha",
         designation: "Assistant Professor",
-        image: AfreenMohammed,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37466"
+        qualification: "M.Tech",
+        joined: "01.05.2015",
+        nature: "Regular",
+        specialization: "Artificial Intelligence",
+        email: "s.lalitha@cvr.ac.in",
+        image: LalithaS,
+        profileLink: null,
+      },
+      {
+        name: "Mrs. P. Nagarani",
+        designation: "Assistant Professor",
+        qualification: "M.Tech",
+        joined: "28.12.2019",
+        nature: "Regular",
+        specialization: "Machine Learning Programming",
+        email: "p.nagarani@cvr.ac.in",
+        image: NagaraniP,
+        profileLink: null,
+      },
+      {
+        name: "Mr. S. Balakrishna Reddy",
+        designation: "Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "10.01.2022",
+        nature: "Regular",
+        specialization: "Computer Networks",
+        email: "s.balakrishna@cvr.ac.in",
+        image: BalakrishnaReddyS,
+        profileLink: null,
       },
       {
         name: "Mrs. M. Nikita",
-        degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "07.03.2022",
+        nature: "Regular",
+        specialization: "Cloud Computing",
+        email: "sainikita@cvr.ac.in",
         image: nikitha_manne,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37453"
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37453",
       },
       {
-        name: "Mr. K.Ravikiran Reddy",
-        degree: "M.Tech., (Ph.D).",
+        name: "Mr. Prashanth Donda",
         designation: "Assistant Professor",
+        qualification: "M.Tech",
+        joined: "14.03.2022",
+        nature: "Regular",
+        specialization: "Operating Systems",
+        email: "teaching.prashanth@cvr.ac.in",
+        image: PrashanthDonda,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37454",
+      },
+      {
+        name: "Mr. V. Ramesh",
+        designation: "Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "22.03.2022",
+        nature: "Regular",
+        specialization: "Block Chain Technologies",
+        email: "v.ramesh406@cvr.ac.in",
+        image: RameshVankudoth,
+        profileLink: null,
+      },
+      {
+        name: "Ms. Arava Nagasri",
+        designation: "Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "07.04.2022",
+        nature: "Regular",
+        specialization: "Programming in C",
+        email: "nagasri.arava@cvr.ac.in",
+        image: NagasriArava,
+        profileLink: null,
+      },
+      {
+        name: "Mrs. M. Srivani",
+        designation: "Assistant Professor",
+        qualification: "M.Tech",
+        joined: "23.01.2023",
+        nature: "Regular",
+        specialization: "Cyber Security",
+        email: "m.srivani@cvr.ac.in",
+        image: sreevani,
+        profileLink: null,
+      },
+      {
+        name: "Mrs. T. Ramya",
+        designation: "Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "30.01.2023",
+        nature: "Regular",
+        specialization: "Artificial Intelligence",
+        email: "t.ramya@cvr.ac.in",
+        image: RamyaT,
+        profileLink: null,
+      },
+      {
+        name: "Mr. V. Praveen Kumar",
+        designation: "Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "01.02.2023",
+        nature: "Regular",
+        specialization: "Database Management Systems",
+        email: "v.praveen@cvr.ac.in",
+        image: PraveenKumarV,
+        profileLink: null,
+      },
+      {
+        name: "Mrs. B. Sabitha",
+        designation: "Assistant Professor",
+        qualification: "M.Tech",
+        joined: "01.02.2023",
+        nature: "Regular",
+        specialization: "Data Science",
+        email: "b.sabitha@cvr.ac.in",
+        image: SabithaB,
+        profileLink: null,
+      },
+      {
+        name: "Mr. Moghal. Yaseen Pasha",
+        designation: "Assistant Professor",
+        qualification: "M.Tech",
+        joined: "01.02.2024",
+        nature: "Regular",
+        specialization: "Cloud Computing",
+        email: "moghal.yaseenpasha@cvr.ac.in",
+        image: Yaseen_pasha,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37465",
+      },
+      {
+        name: "Dr. Afreen Fatima Mohammed",
+        designation: "Assistant Professor",
+        qualification: "Ph.D",
+        joined: "05.03.2024",
+        nature: "Regular",
+        specialization: "Data Mining",
+        email: "afreen0422@cvr.ac.in",
+        image: AfreenMohammed,
+        profileLink: null,
+      },
+      {
+        name: "Mr. Erugu Krishna",
+        designation: "Assistant Professor",
+        qualification: "M.Tech",
+        joined: "28.03.2024",
+        nature: "Regular",
+        specialization: "Cloud Computing",
+        email: "krishna.cseit@cvr.ac.in",
+        image: KrishnaErugu,
+        profileLink: null,
+      },
+      {
+        name: "Mrs. V. Swathi",
+        designation: "Assistant Professor",
+        qualification: "M.Tech (Ph.D)",
+        joined: "26.12.2024",
+        nature: "Regular",
+        specialization: "Cloud Computing",
+        email: "swathivelugoti@cvr.ac.in",
+        image: swathi,
+        profileLink: null,
+      },
+      {
+        name: "Mr. K. Ravikiran Reddy",
+        designation: "Assistant Professor",
+        qualification: "M.Tech (Ph.D)",
+        joined: "30.12.2024",
+        nature: "Regular",
+        specialization: "Programming in C",
+        email: "ravikiranreddykandadi.asstprof@cvr.ac.in",
         image: Ravikiran,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40109"
+        profileLink: null,
       },
-      // ✅ Add remaining Assistant Professors as needed
-  
-    ]
-  }
-];
-
-*/
-
-
-/*
-const facultyData = [
-{
-    title: "Professors",
-    count: 2,
-    members: [
+      // Newly added (from S.No. 37 onwards) - images not provided yet
       {
-        name: "Dr. S.V.Suryanarayana",
-        degree: "M.Tech., Ph.D.",
-        designation: "Head of the Department",
-        image: hod,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37438"
+        name: "Mr. T. Phaniraj Kumar",
+        designation: "Assistant Professor",
+        qualification: "M.Tech",
+        joined: "12.08.2025",
+        nature: "Regular",
+        specialization: "Programming in C",
+        email: "tphanirk@cvr.ac.in",
+        image: Phaniraj,
+        profileLink: null,
       },
       {
-        name: "Dr. N. Satyanarayana",
-        degree: "M.Tech., Ph.D.",
-        designation: "Professor",
-        image: SatyanarayanaN,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37439"
-      }
-    ]
-  },
-  {
-    title: "Associate Professors",
-    count: 7,
-    members: [
-      {
-        name: "Dr. LNC Prakash K",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: klncprakash,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37440"
+        name: "Mr. N. Suman",
+        designation: "Assistant Professor",
+        qualification: "M.Tech (Ph.D)",
+        joined: "13.08.2025",
+        nature: "Regular",
+        specialization: "Artificial Intelligence",
+        email: "sumannayaka14@cvr.ac.in",
+        image: Suman,
+        profileLink: null,
       },
       {
-        name: "Dr. A.Srinivasa Reddy",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: SrinivasaReddyA,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37441"
+        name: "Ms. M. Prasanna Lakshmi",
+        designation: "Assistant Professor",
+        qualification: "M.Tech",
+        joined: "01.09.2025",
+        nature: "Regular",
+        specialization: "Machine Learning",
+        email: "mplprasanna9@cvr.ac.in",
+        image: prasanna,
+        profileLink: null,
       },
       {
-        name: "Dr. Varaprasad Rao M",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: varaprasad,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37442"
+        name: "G. Vijay Kumar",
+        designation: "Assistant Professor",
+        qualification: "M.Tech",
+        joined: "22.09.2025",
+        nature: "Regular",
+        specialization: "Data Sciences",
+        email: "vijaygovindu@cvr.ac.in",
+        image: vijay,
+        profileLink: null,
       },
-      {
-        name: "Dr. Rama Krishna B",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: RamaKrishnaB,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37443"
-      },
-      {
-        name: "Dr. Shaik Janbhasha",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: jhanbhasha,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38754"
-      },
-      {
-        name: "Dr. Basavaraj Chunchure",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: baswaraj,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38755"
-      },
-      {
-        name: "Dr. M.Sreenu",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: Sreenu,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/39612"
-      }
-    ]
-  },
-  {
-    title: "Sr. Assistant Professors",
-    count: 10,
-    members: [
-      { name: "Srichandana Abbineni", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: SrichandanaA, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37444" },
-      { name: "Vineela Krishna Suri", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: vineela_krishna, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37445" },
-      { name: "Ahmed Shahebaaz", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: AhmedShahebaaz, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37451" },
-      { name: "Annapurna Gummadi", degree: "M.Tech., Ph.D.", designation: "Sr. Assistant Professor", image: Annapurna, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37446" },
-      { name: "Yasmeen MD", degree: "M.Tech., Ph.D.", designation: "Sr. Assistant Professor", image: Yasmeen_Aashu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37447" },
-      { name: "Nitya Erupaka", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: nitya, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37448" },
-      { name: "Padma Parshapu", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: PadmaParshapu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37458" },
-      { name: "Hari Shankar Punna", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: HariShankarP, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37459" },
-      { name: "Harish Kumar K", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: HarishKumarK, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37463" },
-      { name: "Ranadheer Kumar K S", degree: "M.Tech., (Ph.D)", designation: "Sr. Assistant Professor", image: RanadheerKumarKS, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37464" },
-    ],
-  },
-  {
-    title: "Assistant Professors",
-    count: 18,
-    members: [
-      { name: "Lalitha S", degree: "M.Tech.", designation: "Assistant Professor", image: LalithaS, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37449" },
-      { name: "Nagarani P", degree: "M.Tech.", designation: "Assistant Professor", image: NagaraniP, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37450" },
-      { name: "Balakrishna Reddy S", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: BalakrishnaReddyS, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37452" },
-      { name: "Nikita Manne", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: nikitha_manne, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37453" },
-      { name: "Prashanth Donda", degree: "M.Tech.", designation: "Assistant Professor", image: PrashanthDonda, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37454" },
-      { name: "Ramesh Vankudoth", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: RameshVankudoth, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37455" },
-      { name: "Nagasri Arava", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: NagasriArava, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37456" },
-      { name: "Srivani M", degree: "M.Tech.", designation: "Assistant Professor", image: sreevani, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37457" },
-      { name: "Ramya T", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: RamyaT, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37460" },
-      { name: "Vadapally Praveen", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: PraveenKumarV, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37461" },
-      { name: "Sabitha B", degree: "M.Tech.", designation: "Assistant Professor", image: SabithaB, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37462" },
-      { name: "Moghal Yaseen Pasha", degree: "M.Tech.", designation: "Assistant Professor", image: Yaseen_pasha, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37465" },
-      { name: "Afreen Mohammed", degree: "M.Tech., Ph.D.", designation: "Assistant Professor", image: AfreenMohammed, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37466" },
-      { name: "Krishna Erugu", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: KrishnaErugu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37467" },
-      { name: "Swathi Velugoti", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: swathi, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40110" },
-      { name: "RaviKiranReddy Kandadi", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: Ravikiran, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40109" },
-      { name: "Phaniraj Thatha", degree: "M.Tech.", designation: "Assistant Professor", image: phaniraj, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52487" },
-      { name: "Suman N", degree: "M.Tech.", designation: "Assistant Professor", image: suman, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52547" },
     ],
   },
 ];
-*/
+
+// Animation preset (same as NonTeachingStaff)
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+  }),
+};
+
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 export default function Teaching() {
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("");
 
+  // filter by name, designation, qualification, specialization, email
   const filteredData = facultyData
     .map((group) => ({
       ...group,
-      members: group.members.filter((member) =>
-        member.name.toLowerCase().includes(query.toLowerCase())
-      ),
+      members: group.members.filter((m) => {
+        const q = search.trim().toLowerCase();
+        if (!q) return true;
+        return (
+          (m.name || "").toLowerCase().includes(q) ||
+          (m.designation || "").toLowerCase().includes(q) ||
+          (m.qualification || "").toLowerCase().includes(q) ||
+          (m.specialization || "").toLowerCase().includes(q) ||
+          (m.email || "").toLowerCase().includes(q)
+        );
+      }),
     }))
-    .filter((group) => group.members.length > 0);
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (i = 1) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.15,
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    }),
-  };
+    .filter((g) => g.members.length > 0);
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <>
       <Nav />
-      <div className="flex flex-col items-center justify-center text-center py-24 px-4 sm:px-6 bg-gradient-to-b from-blue-50 to-white space-y-12">
-        <div className="w-full max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
-            <motion.h1
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-              className="text-4xl md:text-5xl font-bold text-black mb-4"
-            >
-              <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">
-                Teaching Faculty
-              </h1>
-            </motion.h1>
-            <motion.div
-              className="flex w-full sm:w-auto gap-2 items-center"
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={2}
-            >
-              <Input
-                placeholder="Search by name"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="w-full sm:w-64"
-              />
-              <Button onClick={() => setQuery(search)} className="flex items-center gap-2">
-                <FaSearch /> Search
-              </Button>
-            </motion.div>
-          </div>
+      <main className="min-h-screen py-24 px-4 md:px-16 space-y-16 bg-gradient-to-b from-white to-gray-50">
+        {/* Header */}
+        <section className="text-center max-w-3xl mx-auto">
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold text-black mb-4"
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+          >
+            Teaching Faculty
+          </motion.h1>
+          <motion.p
+            className="text-lg text-gray-700"
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            custom={1}
+          >
+            Explore our experienced and dedicated teaching faculty who guide students
+            in Computer Science & Data Science.
+          </motion.p>
+        </section>
 
-          {filteredData.map((group, index) => (
-            <motion.div
-              key={index}
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={2}
-              className="mb-16"
-            >
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-6 text-left">
-                {group.title} - {group.count}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {group.members.map((member, i) => (
-                  <motion.div key={i} whileHover={{ scale: 1.05 }} className="w-full">
-                    <Card className="rounded-2xl shadow-md bg-white border border-gray-200 hover:shadow-lg transition-shadow">
-                      <CardContent className="flex flex-col items-center text-center p-4">
-                        <a href={member.profileLink} target="_blank" rel="noopener noreferrer">
-                          <img
-                            src={member.image}
-                            alt={member.name}
-                            className="w-40 h-40 object-cover object-top mb-4 shadow rounded-full hover:opacity-90 transition"
-                          />
-                        </a>
-                        <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
-                        <p className="text-sm text-gray-600">{member.degree}</p>
-                        <p className="text-sm text-black-600 mt-1">{member.designation}</p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {/* Search Bar */}
+        <motion.div
+          className="flex flex-col sm:flex-row gap-3 justify-center items-center max-w-lg mx-auto"
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+          custom={2}
+        >
+          <Input
+            placeholder="Search by name, designation, specialization, or email..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full sm:w-80 border-blue-300 focus-visible:ring-blue-500"
+          />
+          <Button
+            className="bg-blue-700 hover:bg-blue-800 flex items-center gap-2"
+            onClick={() => { }}
+          >
+            <FaSearch className="text-white" /> Search
+          </Button>
+        </motion.div>
 
+        {/* Sections */}
+        <section className="max-w-7xl mx-auto space-y-16">
+          {filteredData.length === 0 && search.length > 0 ? (
+            <div className="text-center text-gray-500 text-lg">
+              No results found for "{search}".
+            </div>
+          ) : (
+            filteredData.map((group, index) => (
+              <motion.div
+                key={group.title + index}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={index + 3}
+              >
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent flex items-center gap-2">
+                    <FaUsers className="text-blue-700" />
+                    {group.title} ({group.members.length})
+                  </h2>
+                  <Separator className="flex-grow ml-4" />
+                </div>
+
+                <div className="grid md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-2 gap-8">
+                  {group.members.map((member, i) => (
+                    <motion.div
+                      key={member.name + i}
+                      variants={fadeInUp}
+                      custom={i}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                    >
+                      <Card className="hover:shadow-xl hover:-translate-y-1 transition duration-300 rounded-2xl border border-gray-100">
+                        <CardHeader className="flex flex-col items-center gap-2 pt-6">
+                          {member.profileLink ? (
+                            <a href={member.profileLink} target="_blank" rel="noopener noreferrer">
+                              <img
+                                src={member.image ? member.image : getImageUrl(member.name)}
+                                alt={member.name}
+                                className="w-30 h-30 object-cover object-top mb-4 shadow rounded-full shadow-lg border-4 border-blue-100"
+                              />
+                            </a>
+                          ) : (
+                            <img
+                              src={member.image ? member.image : getImageUrl(member.name)}
+                              alt={member.name}
+                              className="w-30 h-30 object-cover object-top mb-4 shadow rounded-full shadow-lg border-4 border-blue-100"
+                            />
+                          )}
+                          <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
+                          <p className="text-sm text-gray-500">({member.qualification})</p>
+                          <p className="text-sm font-medium text-blue-700 bg-blue-50 rounded-full px-3 py-1">
+                            {member.designation}
+                          </p>
+                        </CardHeader>
+
+                        <CardContent className="text-center text-gray-700 space-y-2 pb-6">
+                          <p className="text-sm"><strong>Specialization:</strong> {member.specialization || "-"}</p>
+                          <p className="text-sm"><strong>Date of Joining:</strong> {member.joined || "-"}</p>
+                          {member.email && (
+                            <a
+                              href={`mailto:${member.email}`}
+                              className="flex items-center justify-center gap-2 text-blue-600 hover:underline mt-2"
+                            >
+                              <FaEnvelope /> {member.email}
+                            </a>
+                          )}
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ))
+          )}
+        </section>
+
+        {/* Scroll To Top */}
         <button
           onClick={scrollToTop}
           className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
@@ -664,416 +700,9 @@ export default function Teaching() {
         >
           <ArrowUp className="w-5 h-5" />
         </button>
-      </div>
+      </main>
+
       <Footer />
-    </div>
+    </>
   );
 }
-
-
-
-
-
-/*
-
-import React, { useState } from "react";
-import Nav from "./Nav";
-import Footer from "./Footer";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import hod from "../assets/hod.webp";
-import { ArrowUp } from "lucide-react";
-import { FaSearch } from "react-icons/fa";
-import nikitha_manne from "../assets/NikitaManne.jpg"
-import Yaseen_pasha from "../assets/Yaseen-PashaMoghal.jpg" 
-import Yasmeen_Aashu from "../assets/YasmeenAashu.jpeg"
-import AfreenMohammed from "../assets/AfreenMohammed.jpeg"
-import SrinivasaReddyA from "../assets/Srinivasa-ReddyA.jpg"
-import SrichandanaA from "../assets/SrichandanaA.jpg"
-import SatyanarayanaN from "../assets/SatyanarayanaN.jpg"
-import SabithaB from "../assets/SabithaB.jpg"
-import RanadheerKumarKS  from "../assets/Ranadheer-KumarK-S.jpeg"
-import RamyaT from "../assets/RamyaT.jpg"
-import RameshVankudoth from "../assets/RameshVankudoth.jpg"
-import RamaKrishnaB from "../assets/Rama-KrishnaB.jpg"
-import PraveenKumarV from "../assets/Praveen-KumarV.jpg"
-import PrashanthDonda from "../assets/PrashanthDonda.jpg"
-import PadmaParshapu from "../assets/PadmaParshapu.jpg"
-import NagasriArava from "../assets/NagasriArava.jpg"
-import NagaraniP from "../assets/NagaraniP.jpg"
-import LalithaS from "../assets/LalithaS.jpg"
-import KrishnaErugu from "../assets/KrishnaErugu.jpg"
-import HarishKumarK from "../assets/Harish-KumarK.jpg"
-import HariShankarP from "../assets/Hari-ShankarP.jpg"
-import BalakrishnaReddyS from "../assets/Balakrishna-ReddyS.jpg" 
-import AhmedShahebaaz from "../assets/AhmedShahebaaz.jpg"
-import Annapurna from "../assets/Annapurna.jpg"
-import baswaraj from "../assets/baswaraj.jpeg"
-import jhanbhasha from "../assets/jhan bhasha.jpeg"
-import klncprakash from "../assets/klnc prakash.jpg"
-import Ravikiran from "../assets/Ravikiran.jpeg"
-import Sreenu from "../assets/Sreenu.jpg"
-import swathi from "../assets/swathi.jpg"
-import varaprasad from "../assets/varaprasad.jpeg"
-import sreevani from "../assets/sreevani.jpeg"
-
-const facultyData = [
-  {
-    title: "Professors",
-    count:2,
-    members: [
-      {
-        name: "Dr. S.V.Suryanarayana",
-        degree: "M.Tech., Ph.D.",
-        designation: "Head of the Department",
-        image: hod
-      },
-      {
-        name: "Dr. N. Satyanarayana",
-        degree: "M.Tech., Ph.D.",
-        designation: "Professor",
-        image: SatyanarayanaN
-      }
-    ]
-  },
-  {
-    title: "Associate Professors",
-    count:7,
-    members: [
-      {
-        name: "Dr. LNC Prakash K",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: klncprakash
-      },
-      {
-        name: "Dr. A.Srinivasa Reddy",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: SrinivasaReddyA
-      },
-      {
-        name: "Dr. Varaprasad Rao M",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: varaprasad
-      },
-      {
-        name: "Dr. Rama Krishna B",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: RamaKrishnaB
-      },
-      {
-        name: "Dr. Shaik Janbhasha",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: jhanbhasha
-      },
-      {
-        name: "Dr. Basavaraj Chunchure",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: baswaraj
-      },
-      {
-        name: "Dr. M.Sreenu",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: Sreenu
-      }
-    ]
-  },
-  {
-    title: "Sr. Assistant Professors",
-    count:10,
-    members: [
-      {
-        name: "Mrs. A Srichandana",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Sr. Assistant Professor",
-        image: SrichandanaA
-      },
-      {
-        name: "Mrs. S. Vineela Krishna",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Sr. Assistant Professor",
-        image: "/faculty/vineela_krishna.jpg"
-      },
-      {
-        name: "Mr. Ahmed Shahebaaz",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Sr. Assistant Professor",
-        image: AhmedShahebaaz
-      },
-      {
-        name: "Dr. Annapurna Gummadi",
-        degree: "M.Tech., Ph.D.",
-        designation: "Sr. Assistant Professor",
-        image: Annapurna
-      },
-      {
-        name: "Dr. Yasmeen",
-        degree: "M.Tech., Ph.D.",
-        designation: "Sr. Assistant Professor",
-        image: Yasmeen_Aashu
-      },
-      {
-        name: "Mrs. E.Nitya",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Sr. Assistant Professor",
-        image: "/faculty/nitya.jpg"
-      },
-      {
-        name: "Mrs. P.Padma",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Sr. Assistant Professor",
-        image: PadmaParshapu
-      },
-      {
-        name: "Mr. P.Hari Shankar",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Sr. Assistant Professor",
-        image: HariShankarP
-      },
-      {
-        name: "Mr. K. Harish Kumar",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Sr. Assistant Professor",
-        image: HarishKumarK
-      },
-      {
-        name: "Mr. K.S.Ranadheer Kumar",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Sr. Assistant Professor",
-        image: RanadheerKumarKS
-      }
-    ]
-  },
-  {
-    title: "Assistant Professors",
-    count:17,
-    members: [
-      {
-        name: "Mrs. S. Lalitha",
-        degree: "M.Tech.",
-        designation: "Assistant Professor",
-        image: LalithaS
-      },
-      {
-        name: "Mrs. P Nagarani",
-        degree: "M.Tech.",
-        designation: "Assistant Professor",
-        image: NagaraniP
-      },
-      {
-        name: "Mr. S.Balakrishna Reddy",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Assistant Professor",
-        image: BalakrishnaReddyS
-      },
-      {
-        name: "Mrs. M. Nikita",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Assistant Professor",
-        image: nikitha_manne
-      },
-      {
-        name: "Mr. Prashanth Donda",
-        degree: "M.Tech.",
-        designation: "Assistant Professor",
-        image: PrashanthDonda
-      },
-      {
-        name: "Mr. V.Ramesh",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Assistant Professor",
-        image: RameshVankudoth
-      },
-      {
-        name: "Mrs. Arava Nagasri",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Assistant Professor",
-        image: NagasriArava
-      },
-      {
-        name: "Mrs. M.Srivani",
-        degree: "M.Tech.",
-        designation: "Assistant Professor",
-        image: sreevani
-      },
-      {
-        name: "Mrs. T. Ramya",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Assistant Professor",
-        image: RamyaT
-      },
-      {
-        name: "Mr. V.Praveen Kumar",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Assistant Professor",
-        image: PraveenKumarV
-      },
-      {
-        name: "Mrs. B.Sabitha",
-        degree: "M.Tech.",
-        designation: "Assistant Professor",
-        image: SabithaB
-      },
-      {
-        name: "Mrs. K.Rajya Laxmi",
-        degree: "M.Tech.",
-        designation: "Assistant Professor",
-        image: "/faculty/rajya_laxmi.jpg"
-      },
-      {
-        name: "Mr. Moghal.Yaseen Pasha",
-        degree: "M.Tech.",
-        designation: "Assistant Professor",
-        image: Yaseen_pasha
-      },
-      {
-        name: "Dr. Afreen Fatima Mohammed",
-        degree: "M.Tech., Ph.D.",
-        designation: "Assistant Professor",
-        image: AfreenMohammed
-      },
-      {
-        name: "Mr. Erugu Krishna",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Assistant Professor",
-        image: KrishnaErugu
-      },
-      {
-        name: "Mrs. V.Swathi",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Assistant Professor",
-        image: swathi
-      },
-      {
-        name: "Mr. K.Ravikiran Reddy",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Assistant Professor",
-        image: Ravikiran
-      }
-    ]
-  }
-];
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-export default function Teaching() {
-  const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("");
-
-  const filteredData = facultyData.map((group) => ({
-    ...group,
-    members: group.members.filter((member) =>
-      member.name.toLowerCase().includes(query.toLowerCase())
-    )
-  })).filter((group) => group.members.length > 0);
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i = 1) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.15,
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  }),
-};
-
-  return (
-    <div className="min-h-screen bg-white font-sans">
-      <Nav />
-      <div className="flex flex-col items-center justify-center text-center py-24 px-4 sm:px-6 bg-gradient-to-b from-blue-50 to-white space-y-12">
-        <div className="w-full max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
-              <motion.h1
-                   
-               initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
-                    className="text-4xl md:text-5xl font-bold text-black mb-4"
-                    
-                  >
-                    <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">Teaching Faculty</h1>
-                  </motion.h1>
-            <motion.div className="flex w-full sm:w-auto gap-2 items-center" variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={2}>
-              <Input
-                placeholder="Search by name"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="w-full sm:w-64"
-              />
-              <Button onClick={() => setQuery(search)} className="flex items-center gap-2">
-                <FaSearch /> Search
-              </Button>
-            </motion.div>
-          </div>
-          {filteredData.map((group, index) => (
-            <motion.div
-           key={index}
-variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={2}
-className="mb-16"
-            >
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 
-             bg-clip-text text-transparent mb-6 text-left">
-                {group.title} - {group.count}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {group.members.map((member, i) => (
-                  <motion.div
-                    key={i}
-                    whileHover={{ scale: 1.05 }}
-                    className="w-full"
-                  >
-                    <Card className="rounded-2xl shadow-md bg-white border border-gray-200 hover:shadow-lg transition-shadow">
-                      <CardContent className="flex flex-col items-center text-center p-4">
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-40 h-40 object-cover object-top mb-4 shadow rounded-full"
-
-                        />
-                        <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
-                        <p className="text-sm text-gray-600">{member.degree}</p>
-                        <p className="text-sm text-black-600 mt-1">{member.designation}</p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-         <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
-          aria-label="Scroll to top"
-        >
-          <ArrowUp className="w-5 h-5" />
-        </button>
-      </div>
-      <Footer />
-    </div>
-  );
-}
-
-*/
-

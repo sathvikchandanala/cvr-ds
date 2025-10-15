@@ -20,9 +20,9 @@ const fadeInUp = {
   }),
 };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 const Objectives = () => {
   return (
@@ -155,7 +155,7 @@ const Objectives = () => {
               </CardHeader>
               <Separator />
               <CardContent className="text-gray-700 text-md mt-4 text-justify space-y-4 max-h-[500px] overflow-y-auto">
-               <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">PO1 - Engineering knowledge:</span> Apply knowledge of mathematics, natural science, computing, engineering fundamentals and an engineering specialization as specified in WK1 to WK4 respectively to develop to the solution of complex engineering problems.</p>
+                <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">PO1 - Engineering knowledge:</span> Apply knowledge of mathematics, natural science, computing, engineering fundamentals and an engineering specialization as specified in WK1 to WK4 respectively to develop to the solution of complex engineering problems.</p>
                 <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">PO2 - Problem analysis:</span> Identify, formulate, review research literature and analyze complex engineering problems reaching substantiated conclusions with consideration for sustainable development. (WK1 to WK4).</p>
                 <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">PO3 - Design/development of solutions:</span> Design creative solutions for complex engineering problems and design/develop systems/components/processes to meet identified needs with consideration for the public health and safety, whole-life cost, net zero carbon, culture, society and environment as required. (WK5)</p>
                 <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">PO4 - Conduct investigations of complex problems:</span> Conduct investigations of complex engineering problems using research-based knowledge including design of experiments, modelling, analysis & interpretation of data to provide valid conclusions. (WK8).</p>
@@ -165,15 +165,15 @@ const Objectives = () => {
                 <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">PO8 - Individual and Collaborative Team work: </span> Function effectively as an individual, and as a member or leader in diverse/multi-disciplinary teams.</p>
                 <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">PO9 - Communication:</span> Communicate effectively and inclusively within the engineering community and society at large, such as being able to comprehend and write effective reports and design documentation, make effective presentations considering cultural, language, and learning differences.</p>
                 <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">PO10 - Project Management and Finance: </span> Apply knowledge and understanding of engineering management principles and economic decision-making and apply these to one’s own work, as a member and leader in a team, and to manage projects and in multidisciplinary environments.</p>
-                <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">PO11 - Life-Long Learning:</span> Recognize the need for, and have the preparation and ability for i) independent and life-long learning 
-ii) adaptability to new and emerging technologies and iii) critical thinking in the broadest context of technological change. (WK8)
-</p>
+                <p><span className="font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">PO11 - Life-Long Learning:</span> Recognize the need for, and have the preparation and ability for i) independent and life-long learning
+                  ii) adaptability to new and emerging technologies and iii) critical thinking in the broadest context of technological change. (WK8)
+                </p>
               </CardContent>
             </Card>
-            
+
           </motion.div>
         </section>
-         <button
+        <button
           onClick={scrollToTop}
           className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
           aria-label="Scroll to top"

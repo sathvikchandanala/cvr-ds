@@ -18,9 +18,9 @@ const labImages = [
   { src: CM_218_220, location: "CM-218_220" },
 ];
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 export default function DepartmentLaboratories() {
   const [viewerOpen, setViewerOpen] = useState(false);
@@ -60,33 +60,33 @@ export default function DepartmentLaboratories() {
       </motion.div>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 mb-12">
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-    viewport={{ once: true, amount: 0.5 }}
-    className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-center"
-  >
-    {labImages.map((lab, index) => (
-      <div
-        key={index}
-        onClick={() => openViewer(lab)}
-        className="cursor-pointer overflow-hidden rounded-2xl shadow-lg bg-white max-w-md mx-auto transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-      >
-        <div className="aspect-[16/9] overflow-hidden">
-          <img
-            src={lab.src}
-            alt={`Lab ${index + 1}`}
-            className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-          />
-        </div>
-        <div className="p-4">
-          <h3 className="text-lg font-semibold text-gray-800">{lab.location}</h3>
-        </div>
-      </div>
-    ))}
-  </motion.div>
-</section>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-center"
+        >
+          {labImages.map((lab, index) => (
+            <div
+              key={index}
+              onClick={() => openViewer(lab)}
+              className="cursor-pointer overflow-hidden rounded-2xl shadow-lg bg-white max-w-md mx-auto transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+            >
+              <div className="aspect-[16/9] overflow-hidden">
+                <img
+                  src={lab.src}
+                  alt={`Lab ${index + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-gray-800">{lab.location}</h3>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </section>
 
 
       <AnimatePresence>
@@ -144,11 +144,11 @@ export default function DepartmentLaboratories() {
             <FaDesktop className="text-4xl text-indigo-600 mb-4" />
             <h2 className="text-xl font-semibold text-gray-900 mb-2">Labs</h2>
             <ul className="text-gray-700 space-y-3 text-sm">
-  <li className="flex items-center gap-2">
-    <HiArrowRight className="text-indigo-600 flex-shrink-0" />
-    6 B.Tech. Labs with high-end systems
-  </li>
-</ul>
+              <li className="flex items-center gap-2">
+                <HiArrowRight className="text-indigo-600 flex-shrink-0" />
+                6 B.Tech. Labs with high-end systems
+              </li>
+            </ul>
 
           </motion.div>
 
@@ -160,23 +160,23 @@ export default function DepartmentLaboratories() {
             <HiComputerDesktop className="text-4xl text-emerald-600 mb-4" />
             <h2 className="text-xl font-semibold text-gray-900 mb-2">Equipment</h2>
             <ul className="text-gray-700 space-y-3 text-sm">
-  <li className="flex items-center gap-2">
-    <HiArrowRight className="text-emerald-600 flex-shrink-0" />
-    Acer, Lenovo dual core, i3 and i5 desktops with LED monitors
-  </li>
-  <li className="flex items-center gap-2">
-    <HiArrowRight className="text-emerald-600 flex-shrink-0" />
-    Access to all major cloud service providers (EC2, Azure)
-  </li>
-  <li className="flex items-center gap-2">
-    <HiArrowRight className="text-emerald-600 flex-shrink-0" />
-    LCD projectors
-  </li>
-  <li className="flex items-center gap-2">
-    <HiArrowRight className="text-emerald-600 flex-shrink-0" />
-    HP LaserJet printers
-  </li>
-</ul>
+              <li className="flex items-center gap-2">
+                <HiArrowRight className="text-emerald-600 flex-shrink-0" />
+                Acer, Lenovo dual core, i3 and i5 desktops with LED monitors
+              </li>
+              <li className="flex items-center gap-2">
+                <HiArrowRight className="text-emerald-600 flex-shrink-0" />
+                Access to all major cloud service providers (EC2, Azure)
+              </li>
+              <li className="flex items-center gap-2">
+                <HiArrowRight className="text-emerald-600 flex-shrink-0" />
+                LCD projectors
+              </li>
+              <li className="flex items-center gap-2">
+                <HiArrowRight className="text-emerald-600 flex-shrink-0" />
+                HP LaserJet printers
+              </li>
+            </ul>
           </motion.div>
 
           <motion.div
@@ -192,25 +192,25 @@ export default function DepartmentLaboratories() {
             <h2 className="text-xl font-semibold text-gray-900 mb-2">Software</h2>
             <ul className="text-gray-700 space-y-3 text-sm">
               <li className="flex items-center gap-2">
-              <HiArrowRight className="text-red-600 flex-shrink-0" />
-              All Microsoft software (Microsoft Imagine subscription)</li>
+                <HiArrowRight className="text-red-600 flex-shrink-0" />
+                All Microsoft software (Microsoft Imagine subscription)</li>
               <li className="flex items-center gap-2">
-              <HiArrowRight className="text-red-600 flex-shrink-0" />
-              All Oracle software (Oracle Academy membership)</li>
+                <HiArrowRight className="text-red-600 flex-shrink-0" />
+                All Oracle software (Oracle Academy membership)</li>
               <li className="flex items-center gap-2">
-              <HiArrowRight className="text-red-600 flex-shrink-0" />
-              Various flavors of Linux</li>
+                <HiArrowRight className="text-red-600 flex-shrink-0" />
+                Various flavors of Linux</li>
             </ul>
           </motion.div>
         </motion.div>
       </section>
-       <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
-          aria-label="Scroll to top"
-        >
-          <ArrowUp className="w-5 h-5" />
-        </button>
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-6 right-6 z-50 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform transform hover:scale-110"
+        aria-label="Scroll to top"
+      >
+        <ArrowUp className="w-5 h-5" />
+      </button>
       <Footer />
     </div>
   );
