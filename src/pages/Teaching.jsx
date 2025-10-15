@@ -261,8 +261,8 @@ import Sreenu from "../assets/Sreenu.jpg"
 import swathi from "../assets/swathi.jpg"
 import varaprasad from "../assets/varaprasad.jpeg"
 import sreevani from "../assets/sreevani.jpeg"
-import phaniraj from "../assets/phaniraj.jpg";
-import suman from "../assets/suman.jpg";
+//import phaniraj from "../assets/phaniraj.jpg";
+//import suman from "../assets/suman.jpg";
 
 
 // ✅ Faculty Data
@@ -383,8 +383,8 @@ const facultyData = [
       { name: "Krishna Erugu", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: KrishnaErugu, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37467" },
       { name: "Swathi Velugoti", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: swathi, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40110" },
       { name: "RaviKiranReddy Kandadi", degree: "M.Tech., (Ph.D)", designation: "Assistant Professor", image: Ravikiran, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40109" },
-      { name: "Phaniraj Thatha", degree: "M.Tech.", designation: "Assistant Professor", image: phaniraj, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52487" },
-      { name: "Suman N", degree: "M.Tech.", designation: "Assistant Professor", image: suman, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52547" },
+  //    { name: "Phaniraj Thatha", degree: "M.Tech.", designation: "Assistant Professor", image: phaniraj, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52487" },
+    //  { name: "Suman N", degree: "M.Tech.", designation: "Assistant Professor", image: suman, profileUrl: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52547" },
     ],
   },
 ];
