@@ -261,6 +261,8 @@ import Sreenu from "../assets/Sreenu.jpg"
 import swathi from "../assets/swathi.jpg"
 import varaprasad from "../assets/varaprasad.jpeg"
 import sreevani from "../assets/sreevani.jpeg"
+import phaniraj from "../assets/phaniraj.jpg";
+import suman from "../assets/suman.jpg";
 
 
 // ✅ Faculty Data
