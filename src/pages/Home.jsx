@@ -155,7 +155,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               custom={2}
             >
-              Dr. [Dean’s Full Name]
+              Dr.Lakshmi H N, Ph.D.
             </motion.p>
           </div>
         </div>
