@@ -4,14 +4,11 @@ import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
 import hod from "../assets/hod.webp";
+import dean from "../assets/dean.webp";  // ✅ Added dean image
 
 import heroImage1 from "../assets/CSE_DS.jpg";
 import heroImage2 from "../assets/CSE_DS.jpg";
 import heroImage3 from "../assets/CSE_DS.jpg";
-
-//  Added missing hero image constants
-//const heroImage2 = "https://via.placeholder.com/1920x800.png?text=Slide+2";
-//const heroImage3 = "https://via.placeholder.com/1920x800.png?text=Slide+3";
 
 import Nav from "./Nav";
 import Footer from "./Footer";
@@ -91,9 +88,8 @@ export default function HomePage() {
     <div className="min-h-screen">
       <Nav />
 
-      {/* Hero Section with Carousel */}
-
-<motion.section
+      {/* Hero Section */}
+      <motion.section
         initial="hidden"
         animate="visible"
         variants={fadeInUpSlow}
@@ -102,30 +98,69 @@ export default function HomePage() {
         <Carousel className="w-full">
           <CarouselContent>
             <CarouselItem>
-              <img
-                src={heroImage1}
-                alt="Slide 1"
-                className="w-full h-auto object-contain"
-              />
+              <img src={heroImage1} alt="Slide 1" className="w-full h-auto object-contain" />
             </CarouselItem>
             <CarouselItem>
-              <img
-                src={heroImage2}
-                alt="Slide 2"
-                className="w-full h-auto object-contain"
-              />
+              <img src={heroImage2} alt="Slide 2" className="w-full h-auto object-contain" />
             </CarouselItem>
             <CarouselItem>
-              <img
-                src={heroImage3}
-                alt="Slide 3"
-                className="w-full h-auto object-contain"
-              />
+              <img src={heroImage3} alt="Slide 3" className="w-full h-auto object-contain" />
             </CarouselItem>
           </CarouselContent>
         </Carousel>
       </motion.section>
 
+      {/* ✅ Dean's Message Section */}
+      <motion.section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <motion.img
+            src={dean}
+            alt="Dean - School of CSE"
+            className="rounded-lg w-full h-auto shadow-lg object-cover"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={2}
+          />
+          <div>
+            <motion.h2
+              className="text-3xl font-bold text-gray-900 mb-4"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={2}
+            >
+              Message from the Dean
+            </motion.h2>
+            <motion.p
+              className="text-gray-700 leading-relaxed text-lg text-justify"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={2}
+            >
+              Welcome to the School of Computer Science and Engineering at CVR College of Engineering. 
+              We focus on academic excellence, innovation, and preparing students for impactful careers 
+              in technology. Our programs emphasize practical learning, research, and strong industry collaboration.
+            </motion.p>
+            <motion.p
+              className="mt-6 font-bold tracking-tight bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent"
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={2}
+            >
+              Dr. [Dean’s Full Name]
+            </motion.p>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* ✅ HOD Message Section */}
       <motion.section className="py-24 px-6" ref={hodRef}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <motion.img
@@ -158,8 +193,9 @@ export default function HomePage() {
               custom={2}
             >
               Welcome to the Department of Computer Science and Engineering (Data Science) at CVR College of Engineering.
-              Our department is committed to academic excellence, research innovation, and nurturing the next generation of data professionals.
-              We aim to provide students with the technical expertise and ethical values required to thrive in a data-driven world.
+              Our department is committed to academic excellence, research innovation, and nurturing the next generation 
+              of data professionals. We aim to provide students with the technical expertise and ethical values required 
+              to thrive in a data-driven world.
             </motion.p>
             <motion.p
               className="mt-6 font-bold tracking-tight bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent"
@@ -175,6 +211,7 @@ export default function HomePage() {
         </div>
       </motion.section>
 
+      {/* Stats Section */}
       <motion.section
         variants={fadeInUp}
         initial="hidden"
