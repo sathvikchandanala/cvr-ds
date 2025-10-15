@@ -133,7 +133,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               custom={2}
             >
-              Message from the Dean
+              Message from the Associate Dean, Emerging Technologies
             </motion.h2>
             <motion.p
               className="text-gray-700 leading-relaxed text-lg text-justify"
