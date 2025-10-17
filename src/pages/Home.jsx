@@ -73,7 +73,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       <Nav />
 
-      {/* 🌟 Centered Professional Carousel */}
+      {/*  Centered Professional Carousel */}
       <section className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-16 py-16 relative">
         <div className="relative w-full h-100 overflow-hidden rounded-2xl shadow-xl">
           <AnimatePresence initial={false}>
@@ -126,7 +126,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <motion.img
             src={dean}
-            alt="Dean - School of CSE"
+            alt="Associate Dean - CSE(DS)"
             className="rounded-lg w-full h-auto shadow-lg object-cover"
             variants={fadeInUp}
             initial="hidden"
@@ -150,10 +150,10 @@ export default function HomePage() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              Welcome to the School of Computer Science and Engineering at CVR
-              College of Engineering. We focus on academic excellence,
-              innovation, and preparing students for impactful careers in
-              technology.
+ Welcome to the Department of Computer Science and Engineering (Data Science) at CVR College of Engineering. 
+ At our institution, we are committed to equipping students, researchers, and innovators with the skills, mindset, and vision needed to lead this transformation.
+ We emphasize interdisciplinary learning, research excellence, and collaboration with industry leaders to ensure our graduates are not only future-ready but also capable of driving technological change responsibly.
+ Our initiatives in Data Science, Artificial Intelligence, Cybersecurity  and related domains are designed to empower learners to explore, experiment, and excel.
             </motion.p>
             <motion.p
               className="mt-6 font-bold tracking-tight bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent"
