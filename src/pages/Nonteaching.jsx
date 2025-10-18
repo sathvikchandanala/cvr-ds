@@ -16,6 +16,9 @@ import Anand from "../assets/Anand.jpeg";
 import Srikanth from "../assets/Srikanth.jpg";
 import Yamuna from "../assets/Yamuna.jpeg";
 
+import keerthana from "../assets/keerthana.png";
+
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: (i = 1) => ({
@@ -88,6 +91,21 @@ const nonTeachingStaffData = [
         email: "hakeesrikanth2002@cvr.ac.in",
         image: Srikanth,
       },
+
+      {
+        code: "CVRETN016",
+        name: "M.Sai Keerthana",
+        designation: "Lab Programmer",
+        mobile: "9100181694",
+        joined: "8.10.2025",
+        email: "keerthanamittapalli07@cvr.ac.in",
+        image: keerthana,
+      },
+
+
+
+
+
     ],
   },
   {
