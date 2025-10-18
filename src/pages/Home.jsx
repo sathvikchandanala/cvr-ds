@@ -13,10 +13,10 @@ import Footer from "./Footer";
 
 const stats = [
   { title: "Professors", count: 2 },
-  { title: "Associate Professors", count: 7 },
+  { title: "Associate Professors", count: 8 },
   { title: "Sr. Assistant Professors", count: 10 },
-  { title: "Assistant Professors", count: 17 },
-  { title: "Programmers & Admin", count: 3 },
+  { title: "Assistant Professors", count: 20 },
+  { title: "Programmers & DTP", count: 8 },
 ];
 
 // Counter animation for stats
