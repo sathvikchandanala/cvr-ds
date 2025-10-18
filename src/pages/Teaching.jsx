@@ -9,7 +9,7 @@ import { FaSearch, FaUsers, FaEnvelope, FaCalendarAlt, FaIdBadge } from "react-i
 import Nav from "./Nav";
 import Footer from "./Footer";
 
-// ✅ Images you already imported (keep these paths as-is)
+//  Images you already imported (keep these paths as-is)
 import hod from "../assets/hod.webp";
 import nikitha_manne from "../assets/NikitaManne.jpg";
 import prasanna from "../assets/Prasanna.jpeg";
@@ -198,7 +198,7 @@ const facultyData = [
         specialization: "Natural Language Processing",
         email: "srichandana@cvr.ac.in",
         image: SrichandanaA,
-        profileLink: null,
+        profileLink:"https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37444",
       },
       {
         name: "Mrs. S. Vineela Krishna",
@@ -209,7 +209,7 @@ const facultyData = [
         specialization: "Cloud Computing",
         email: "vineela.krishna@cvr.ac.in",
         image: vineela,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37445",
       },
       {
         name: "Mr. Ahmed Shahebaaz",
@@ -220,7 +220,7 @@ const facultyData = [
         specialization: "Data Structures",
         email: "ahmed.shahebaaz@cvr.ac.in",
         image: AhmedShahebaaz,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37451",
       },
       {
         name: "Dr. Annapurna Gummadi",
@@ -231,7 +231,7 @@ const facultyData = [
         specialization: "Machine Learning",
         email: "g.annapurna@cvr.ac.in",
         image: Annapurna,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37446",
       },
       {
         name: "Dr. Yasmeen",
@@ -242,7 +242,7 @@ const facultyData = [
         specialization: "Cloud Computing",
         email: "yasmeen.aashu@cvr.ac.in",
         image: Yasmeen_Aashu,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37447",
       },
       {
         name: "Mrs. E. Nitya",
@@ -253,7 +253,7 @@ const facultyData = [
         specialization: "Deep Learning",
         email: "e.nitya@cvr.ac.in",
         image: nitya,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37448",
       },
       {
         name: "Mrs. P. Padma",
@@ -264,7 +264,7 @@ const facultyData = [
         specialization: "Machine Learning",
         email: "p.padma@cvr.ac.in",
         image: PadmaParshapu,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37458",
       },
       {
         name: "Mr. P. Hari Shankar",
@@ -275,7 +275,7 @@ const facultyData = [
         specialization: "Cloud Computing",
         email: "harishankar@cvr.ac.in",
         image: HariShankarP,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37459",
       },
       {
         name: "Mr. K. Harish Kumar",
@@ -286,7 +286,7 @@ const facultyData = [
         specialization: "Cloud Computing",
         email: "k.harish@cvr.ac.in",
         image: HarishKumarK,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37463",
       },
       {
         name: "Mr. K.S. Ranadheer Kumar",
@@ -297,7 +297,7 @@ const facultyData = [
         specialization: "Artificial Intelligence",
         email: "ranadheer@cvr.ac.in",
         image: RanadheerKumarKS,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37464",
       },
     ],
   },
@@ -314,7 +314,7 @@ const facultyData = [
         specialization: "Artificial Intelligence",
         email: "s.lalitha@cvr.ac.in",
         image: LalithaS,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37449",
       },
       {
         name: "Mrs. P. Nagarani",
@@ -325,7 +325,7 @@ const facultyData = [
         specialization: "Machine Learning Programming",
         email: "p.nagarani@cvr.ac.in",
         image: NagaraniP,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37450",
       },
       {
         name: "Mr. S. Balakrishna Reddy",
@@ -336,7 +336,7 @@ const facultyData = [
         specialization: "Computer Networks",
         email: "s.balakrishna@cvr.ac.in",
         image: BalakrishnaReddyS,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37452",
       },
       {
         name: "Mrs. M. Nikita",
@@ -369,7 +369,7 @@ const facultyData = [
         specialization: "Block Chain Technologies",
         email: "v.ramesh406@cvr.ac.in",
         image: RameshVankudoth,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37455",
       },
       {
         name: "Ms. Arava Nagasri",
@@ -380,7 +380,7 @@ const facultyData = [
         specialization: "Programming in C",
         email: "nagasri.arava@cvr.ac.in",
         image: NagasriArava,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37456",
       },
       {
         name: "Mrs. M. Srivani",
@@ -391,7 +391,7 @@ const facultyData = [
         specialization: "Cyber Security",
         email: "m.srivani@cvr.ac.in",
         image: sreevani,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37457",
       },
       {
         name: "Mrs. T. Ramya",
@@ -402,7 +402,7 @@ const facultyData = [
         specialization: "Artificial Intelligence",
         email: "t.ramya@cvr.ac.in",
         image: RamyaT,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37460",
       },
       {
         name: "Mr. V. Praveen Kumar",
@@ -413,7 +413,7 @@ const facultyData = [
         specialization: "Database Management Systems",
         email: "v.praveen@cvr.ac.in",
         image: PraveenKumarV,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37461",
       },
       {
         name: "Mrs. B. Sabitha",
@@ -424,7 +424,7 @@ const facultyData = [
         specialization: "Data Science",
         email: "b.sabitha@cvr.ac.in",
         image: SabithaB,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37462",
       },
       {
         name: "Mr. Moghal. Yaseen Pasha",
@@ -446,7 +446,7 @@ const facultyData = [
         specialization: "Data Mining",
         email: "afreen0422@cvr.ac.in",
         image: AfreenMohammed,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37466",
       },
       {
         name: "Mr. Erugu Krishna",
@@ -457,7 +457,7 @@ const facultyData = [
         specialization: "Cloud Computing",
         email: "krishna.cseit@cvr.ac.in",
         image: KrishnaErugu,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37467",
       },
       {
         name: "Mrs. V. Swathi",
@@ -468,7 +468,7 @@ const facultyData = [
         specialization: "Cloud Computing",
         email: "swathivelugoti@cvr.ac.in",
         image: swathi,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40110",
       },
       {
         name: "Mr. K. Ravikiran Reddy",
@@ -479,7 +479,7 @@ const facultyData = [
         specialization: "Programming in C",
         email: "ravikiranreddykandadi.asstprof@cvr.ac.in",
         image: Ravikiran,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40109",
       },
       // Newly added (from S.No. 37 onwards) - images not provided yet
       {
@@ -491,7 +491,7 @@ const facultyData = [
         specialization: "Programming in C",
         email: "tphanirk@cvr.ac.in",
         image: Phaniraj,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52487",
       },
       {
         name: "Mr. N. Suman",
@@ -502,7 +502,7 @@ const facultyData = [
         specialization: "Artificial Intelligence",
         email: "sumannayaka14@cvr.ac.in",
         image: Suman,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/52547",
       },
       {
         name: "Ms. M. Prasanna Lakshmi",
