@@ -38,6 +38,10 @@ import Sreenu from "../assets/Sreenu.jpg"
 import swathi from "../assets/swathi.jpg"
 import varaprasad from "../assets/varaprasad.jpeg"
 import sreevani from "../assets/sreevani.jpeg"
+
+import SriLaxmiKuna from "../assets/SriLaxmiKuna.jpeg"
+
+
 import { ArrowUp } from "lucide-react";
 
 import { ArrowLeft } from "lucide-react";
@@ -113,6 +117,17 @@ const facultyData = [
         designation: "Associate Professor",
         image: Sreenu
       }
+,
+{
+        name: "Dr. Sri Laxmi Kuna",
+        degree: "M.Tech., Ph.D.",
+        designation: "Associate Professor",
+       image: SriLaxmiKuna
+      }
+
+
+
+
     ]
   },
   {
