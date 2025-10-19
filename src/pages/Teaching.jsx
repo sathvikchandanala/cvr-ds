@@ -496,7 +496,7 @@ const facultyData = [
       {
         name: "Mr. N. Suman",
         designation: "Assistant Professor",
-        qualification: "M.Tech",
+        qualification: "M.Tech (P.hD)",
         joined: "13.08.2025",
         nature: "Regular",
         specialization: "Artificial Intelligence",
@@ -513,7 +513,7 @@ const facultyData = [
         specialization: "Machine Learning",
         email: "mplprasanna9@cvr.ac.in",
         image: prasanna,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/53132",
       },
       {
         name: "G. Vijay Kumar",
@@ -524,7 +524,7 @@ const facultyData = [
         specialization: "Data Sciences",
         email: "vijaygovindu@cvr.ac.in",
         image: vijay,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37794",
       },
     ],
   },
