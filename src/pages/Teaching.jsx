@@ -451,7 +451,7 @@ const facultyData = [
       {
         name: "Mr. Erugu Krishna",
         designation: "Assistant Professor",
-        qualification: "M.Tech (Ph.D)",
+        qualification: "M.Tech(Ph.D)",
         joined: "28.03.2024",
         nature: "Regular",
         specialization: "Cloud Computing",
@@ -496,7 +496,7 @@ const facultyData = [
       {
         name: "Mr. N. Suman",
         designation: "Assistant Professor",
-        qualification: "M.Tech (Ph.D)",
+        qualification: "M.Tech",
         joined: "13.08.2025",
         nature: "Regular",
         specialization: "Artificial Intelligence",
@@ -665,7 +665,7 @@ export default function Teaching() {
                             />
                           )}
                           <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
-                          <p className="text-sm text-gray-500">({member.qualification})</p>
+                          <p className="text-sm text-gray-500">{member.qualification}</p>
                           <p className="text-sm font-medium text-blue-700 bg-blue-50 rounded-full px-3 py-1">
                             {member.designation}
                           </p>
