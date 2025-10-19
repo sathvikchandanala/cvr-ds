@@ -69,7 +69,7 @@ const facultyData = [
       {
         name: "Dr. S.V.Suryanarayana",
         designation: "Professor & HoD",
-        qualification: "Ph.D",
+        qualification: "M.Tech Ph.D",
         joined: "29.05.2017",
         nature: "Regular",
         specialization: "Data Mining",
@@ -80,7 +80,7 @@ const facultyData = [
       {
         name: "Dr. N. Satyanarayana",
         designation: "Professor",
-        qualification: "Ph.D",
+        qualification: "M.Tech Ph.D",
         joined: "01.03.2024",
         nature: "Regular",
         specialization: "Machine Learning",
@@ -97,7 +97,7 @@ const facultyData = [
       {
         name: "Dr. LNC Prakash K",
         designation: "Associate Professor",
-        qualification: "Ph.D",
+        qualification: "M.Tech Ph.D",
         joined: "22.03.2021",
         nature: "Regular",
         specialization: "Data Mining",
@@ -108,7 +108,7 @@ const facultyData = [
       {
         name: "Dr. A.Srinivasa Reddy",
         designation: "Associate Professor",
-        qualification: "Ph.D",
+        qualification: "M.Tech Ph.D",
         joined: "24.03.2021",
         nature: "Regular",
         specialization: "Image Processing",
@@ -119,7 +119,7 @@ const facultyData = [
       {
         name: "Dr. Varaprasad Rao M",
         designation: "Associate Professor",
-        qualification: "Ph.D",
+        qualification: "M.Tech Ph.D",
         joined: "04.01.2023",
         nature: "Regular",
         specialization: "Natural Language Processing",
@@ -130,7 +130,7 @@ const facultyData = [
       {
         name: "Dr. Rama Krishna B",
         designation: "Associate Professor",
-        qualification: "Ph.D",
+        qualification: "M.Tech Ph.D",
         joined: "22.01.2024",
         nature: "Regular",
         specialization: "Data Mining",
@@ -141,7 +141,7 @@ const facultyData = [
       {
         name: "Dr. Shaik Janbhasha",
         designation: "Associate Professor",
-        qualification: "Ph.D.",
+        qualification: "M.Tech Ph.D",
         joined: "28.11.2024",
         nature: "Regular",
         specialization: "Deep Learning",
@@ -152,7 +152,7 @@ const facultyData = [
       {
         name: "Dr. Basavaraj Chunchure",
         designation: "Associate Professor",
-        qualification: "Ph.D.",
+        qualification: "M.Tech Ph.D",
         joined: "18.12.2024",
         nature: "Regular",
         specialization: "Artificial Intelligence",
@@ -163,7 +163,7 @@ const facultyData = [
       {
         name: "Dr. M.Sreenu",
         designation: "Associate Professor",
-        qualification: "Ph.D.",
+        qualification: "M.Tech Ph.D",
         joined: "26.12.2024",
         nature: "Regular",
         specialization: "Blockchain technology",
@@ -175,13 +175,13 @@ const facultyData = [
       {
         name: "Dr. Sri Laxmi Kuna",
         designation: "Associate Professor",
-        qualification: "Ph.D",
+        qualification: "M.Tech Ph.D",
         joined: "01.09.2025",
         nature: "Regular",
         specialization: "Deep Learning",
         email: "drsrilaxmi2019@cvr.ac.in",
         image: SriLaxmiKuna,
-        profileLink: null,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/54188",
       },
     ],
   },
@@ -225,7 +225,7 @@ const facultyData = [
       {
         name: "Dr. Annapurna Gummadi",
         designation: "Sr. Assistant Professor",
-        qualification: "Ph.D",
+        qualification: "M.Tech Ph.D",
         joined: "17.01.2022",
         nature: "Regular",
         specialization: "Machine Learning",
@@ -236,7 +236,7 @@ const facultyData = [
       {
         name: "Dr. Yasmeen",
         designation: "Sr. Assistant Professor",
-        qualification: "Ph.D",
+        qualification: "M.Tech Ph.D",
         joined: "07.03.2022",
         nature: "Regular",
         specialization: "Cloud Computing",
@@ -440,7 +440,7 @@ const facultyData = [
       {
         name: "Dr. Afreen Fatima Mohammed",
         designation: "Assistant Professor",
-        qualification: "Ph.D",
+        qualification: "M.Tech Ph.D",
         joined: "05.03.2024",
         nature: "Regular",
         specialization: "Data Mining",
@@ -451,7 +451,7 @@ const facultyData = [
       {
         name: "Mr. Erugu Krishna",
         designation: "Assistant Professor",
-        qualification: "M.Tech",
+        qualification: "M.Tech (Ph.D)",
         joined: "28.03.2024",
         nature: "Regular",
         specialization: "Cloud Computing",
