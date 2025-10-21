@@ -41,6 +41,13 @@ import sreevani from "../assets/sreevani.jpeg"
 
 import SriLaxmiKuna from "../assets/SriLaxmiKuna.jpeg"
 
+import Phaniraj from "../assets/PhanirajKumar.jpg";
+import prasanna from "../assets/Prasanna.jpeg";
+import Suman from "../assets/Suman.jpg";
+import vijay from "../assets/vijay.jpg";
+
+
+
 
 import { ArrowUp } from "lucide-react";
 
@@ -299,7 +306,36 @@ const facultyData = [
         degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
         image: Ravikiran
-      }
+      },
+
+{
+        name: "Mr. T. Phaniraj Kumar",
+        degree: "M.Tech",
+        designation: "Assistant Professor",
+        image: Phaniraj,
+         },
+      {
+        name: "Mr. N. Suman",
+        degree: "M.Tech",
+        designation: "Assistant Professor",
+        image: Suman,
+        },
+      {
+        name: "Ms. M. Prasanna Lakshmi",
+        degree: "M.Tech",
+        designation: "Assistant Professor",
+        image: prasanna,
+        },
+      {
+        name: "G. Vijay Kumar",
+	degree: "M.Tech",
+        designation: "Assistant Professor",
+                
+	image: vijay,
+        
+      },
+
+      
     ]
   }
 ];
