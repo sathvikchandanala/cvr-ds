@@ -272,12 +272,6 @@ const facultyData = [
         image: SabithaB
       },
       {
-        name: "Mrs. K.Rajya Laxmi",
-        degree: "M.Tech.",
-        designation: "Assistant Professor",
-        image: "/faculty/rajya_laxmi.jpg"
-      },
-      {
         name: "Mr. Moghal.Yaseen Pasha",
         degree: "M.Tech.",
         designation: "Assistant Professor",
