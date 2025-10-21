@@ -6,8 +6,8 @@ import { ArrowUp, ArrowLeft, ArrowRight } from "lucide-react";
 import hod from "../assets/hod.webp";
 import dean from "../assets/dean.jpg";
 import hero1 from "../assets/CSE_DS.jpg";
-import hero2 from "../assets/CSE_DS.jpg";
-import hero3 from "../assets/CSE_DS.jpg";
+import hero2 from "../assets/ds1.jpg";
+import hero3 from "../assets/ds2.jpg";
 import Nav from "./Nav";
 import Footer from "./Footer";
 
