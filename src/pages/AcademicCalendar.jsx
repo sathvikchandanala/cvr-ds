@@ -44,9 +44,9 @@ const AcademicCalendar = () => {
     };
 
     const yearTitles = {
-        second: "2nd Year Academic Calendar",
-        third: "3rd Year Academic Calendar",
-        fourth: "4th Year Academic Calendar",
+        second: "B.Tech II Year - 2025-26 - R22",
+        third: "B.Tech III Year - 2025-26 - R22",
+        fourth: "B.Tech IV Year - 2025-26 - R22",
     };
 
     return (
@@ -62,7 +62,7 @@ const AcademicCalendar = () => {
                         animate="visible"
                         variants={fadeInUp}
                     >
-                        Academic Calendar
+                        Academic Calendar 2025-26
                     </motion.h1>
                     <motion.p
                         className="text-lg text-gray-700"
@@ -79,9 +79,9 @@ const AcademicCalendar = () => {
                 {/* Cards Section */}
                 <section className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {[
-                        { title: "2nd Year", year: "second" },
-                        { title: "3rd Year", year: "third" },
-                        { title: "4th Year", year: "fourth" },
+                        { title: "B.Tech II Year", year: "second" },
+                        { title: "B.Tech III Year", year: "third" },
+                        { title: "B.Tech IV Year", year: "fourth" },
                     ].map((item, index) => (
                         <motion.div
                             key={item.title}
@@ -152,3 +152,4 @@ const AcademicCalendar = () => {
 };
 
 export default AcademicCalendar;
+
