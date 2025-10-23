@@ -142,7 +142,7 @@ export default function Contact() {
                       href="mailto:web@cvr.ac.in"
                       className="text-blue-600 dark:text-blue-400 underline"
                     >
-                      web@cvr.ac.in
+                      moghal.yaseenpasha@cvr.ac.in
                     </a>
                   </p>
                 </div>
