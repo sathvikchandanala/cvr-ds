@@ -38,7 +38,7 @@ const AcademicCalendar = () => {
 
     // ✅ Ensure these files exist in: public/pdfs/
     const calendars = {
-        second: "/pdfs/II BTech Academic Calendar 2025-26.pdf",
+        second: "/pdfs/Revised Academic Calendar for II B.Tech. I Semester 2025-26.pdf",
         third: "/pdfs/III BTech Academic Calendar 2025-26.pdf",
         fourth: "/pdfs/IV BTech Academic Calendar 2025-26.pdf",
     };
@@ -152,4 +152,5 @@ const AcademicCalendar = () => {
 };
 
 export default AcademicCalendar;
+
 
