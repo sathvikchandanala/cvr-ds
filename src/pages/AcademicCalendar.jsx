@@ -40,7 +40,7 @@ const AcademicCalendar = () => {
     const calendars = {
         second: "/pdfs/Revised Academic Calendar for II B.Tech. I Semester 2025-26.pdf",
         third: "/pdfs/Revised Academic Calendar for III B.Tech. I Semester 2025-26.pdf",
-        fourth: "/pdfs/IV BTech Academic Calendar 2025-26.pdf",
+        fourth: "/pdfs/Revised Academic Calendar for IV B.Tech. I Semester 2025-26.pdf",
     };
 
     const yearTitles = {
@@ -152,6 +152,7 @@ const AcademicCalendar = () => {
 };
 
 export default AcademicCalendar;
+
 
 
 
