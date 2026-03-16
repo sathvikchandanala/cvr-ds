@@ -146,7 +146,7 @@ export default function DepartmentLaboratories() {
             <ul className="text-gray-700 space-y-3 text-sm">
               <li className="flex items-center gap-2">
                 <HiArrowRight className="text-indigo-600 flex-shrink-0" />
-                6 B.Tech. Labs with high-end systems
+                8 B.Tech. Labs with high-end systems
               </li>
             </ul>
 
