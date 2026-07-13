@@ -30,11 +30,11 @@ import HariShankarP from "../assets/Hari-ShankarP.jpg"
 import BalakrishnaReddyS from "../assets/Balakrishna-ReddyS.jpg" 
 import AhmedShahebaaz from "../assets/AhmedShahebaaz.jpg"
 import Annapurna from "../assets/Annapurna.jpg"
-import baswaraj from "../assets/baswaraj.jpeg"
+//import baswaraj from "../assets/baswaraj.jpeg"
 import jhanbhasha from "../assets/jhan bhasha.jpeg"
 import klncprakash from "../assets/klnc prakash.jpg"
-import Ravikiran from "../assets/Ravikiran.jpeg"
-import Sreenu from "../assets/Sreenu.jpg"
+//import Ravikiran from "../assets/Ravikiran.jpeg"
+//import Sreenu from "../assets/Sreenu.jpg"
 import swathi from "../assets/swathi.jpg"
 import varaprasad from "../assets/varaprasad.jpeg"
 import sreevani from "../assets/sreevani.jpeg"
@@ -112,7 +112,7 @@ const facultyData = [
         designation: "Associate Professor",
         image: jhanbhasha
       },
-      {
+/*      {
         name: "Dr. Basavaraj Chunchure",
         degree: "M.Tech., Ph.D.",
         designation: "Associate Professor",
@@ -124,7 +124,9 @@ const facultyData = [
         designation: "Associate Professor",
         image: Sreenu
       }
+,*/
 ,
+
 {
         name: "Dr. Sri Laxmi Kuna",
         degree: "M.Tech., Ph.D.",
@@ -295,12 +297,12 @@ const facultyData = [
         designation: "Assistant Professor",
         image: swathi
       },
-      {
+      /*{
         name: "Mr. K.Ravikiran Reddy",
         degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
         image: Ravikiran
-      },
+      }*/,
 
 {
         name: "Mr. T. Phaniraj Kumar",
