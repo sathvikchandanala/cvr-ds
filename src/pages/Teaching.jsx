@@ -42,11 +42,11 @@ import HariShankarP from "../assets/Hari-ShankarP.jpg";
 import BalakrishnaReddyS from "../assets/Balakrishna-ReddyS.jpg";
 import AhmedShahebaaz from "../assets/AhmedShahebaaz.jpg";
 import Annapurna from "../assets/Annapurna.jpg";
-import baswaraj from "../assets/baswaraj.jpeg";
+//import baswaraj from "../assets/baswaraj.jpeg";
 import jhanbhasha from "../assets/jhan bhasha.jpeg";
 import klncprakash from "../assets/klnc prakash.jpg";
-import Ravikiran from "../assets/Ravikiran.jpeg";
-import Sreenu from "../assets/Sreenu.jpg";
+//import Ravikiran from "../assets/Ravikiran.jpeg";
+//import Sreenu from "../assets/Sreenu.jpg";
 import swathi from "../assets/swathi.jpg";
 import varaprasad from "../assets/varaprasad.jpeg";
 import sreevani from "../assets/sreevani.jpeg";
@@ -149,7 +149,7 @@ const facultyData = [
         image: jhanbhasha,
         profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/38754",
       },
-      {
+  /*    {
         name: "Dr. Basavaraj Chunchure",
         designation: "Associate Professor",
         qualification: "M.Tech Ph.D",
@@ -170,7 +170,7 @@ const facultyData = [
         email: "pittunaik723@cvr.ac.in",
         image: Sreenu,
         profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/39612",
-      },
+      }*/,
       // Dr Sri Laxmi Kuna (from the table)
       {
         name: "Dr. Sri Laxmi Kuna",
@@ -470,7 +470,7 @@ const facultyData = [
         image: swathi,
         profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40110",
       },
-      {
+   /*   {
         name: "Mr. K. Ravikiran Reddy",
         designation: "Assistant Professor",
         qualification: "M.Tech (Ph.D)",
@@ -480,7 +480,7 @@ const facultyData = [
         email: "ravikiranreddykandadi.asstprof@cvr.ac.in",
         image: Ravikiran,
         profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40109",
-      },
+      }*/,
       // Newly added (from S.No. 37 onwards) - images not provided yet
       {
         name: "Mr. T. Phaniraj Kumar",
