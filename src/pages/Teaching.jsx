@@ -429,7 +429,7 @@ const facultyData = [
       {
         name: "Mr. Moghal. Yaseen Pasha",
         designation: "Assistant Professor",
-        qualification: "M.Tech",
+        qualification: "M.Tech (Ph.D.)",
         joined: "01.02.2024",
         nature: "Regular",
         specialization: "Cloud Computing",
