@@ -51,6 +51,13 @@ import swathi from "../assets/swathi.jpg";
 import varaprasad from "../assets/varaprasad.jpeg";
 import sreevani from "../assets/sreevani.jpeg";
 
+
+
+import Spoorthi from "../assets/Spoorthi.png";
+import shafi from "../assets/shafi.jpg";
+
+
+
 // Fallback: some faculty images are not present — leave image: null for those so placeholder will be used.
 
 // Helper for generated placeholder avatar (same logic as NonTeachingStaff.jsx)
@@ -526,6 +533,34 @@ const facultyData = [
         image: vijay,
         profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37794",
       },
+
+
+{
+        name: "Mrs K. Spoorthi",
+        designation: "Assistant Professor",
+        qualification: "M.Tech",
+        joined: "23.06.2025 ",
+        nature: "Regular",
+        specialization: "Data Sciences",
+        email: "spoorthi@cvr.ac.in",
+        image: Spoorthi,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/62769",
+      },
+
+{
+        name: "	Mr Md Shafiullah",
+        designation: "Assistant Professor",
+        qualification: "M.Tech",
+        joined: "23.06.2025 ",
+        nature: "Regular",
+        specialization: "Data Sciences",
+        email: "shafiullah@cvr.ac.in",
+        image: shafi,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/62771",
+      },
+
+
+
     ],
   },
 ];
