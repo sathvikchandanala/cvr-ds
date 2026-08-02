@@ -371,8 +371,8 @@ file: "https://drive.google.com/drive/folders/1mtrt4HuVYySmg5_Yc1FesYjdNynD5s-t"
 
     {
       id: 102,
-      code: "ESWI",
-      name: "Essentials of System and Web Interfacing Lab",
+      code: "ENG",
+      name: "Communicative English",
       icon: "📘",
       faculty: "Faculty Name",
 
@@ -380,14 +380,14 @@ file: "https://drive.google.com/drive/folders/1mtrt4HuVYySmg5_Yc1FesYjdNynD5s-t"
 
         notes: [
           {
-            title: "ESWI Notes",
+            title: "English Notes",
             file: "https://drive.google.com/drive/folders/ENG_NOTES_FOLDER"
           }
         ],
 
         ppt: [
           {
-            title: "ESWI PPT",
+            title: "English PPT",
             file: "https://drive.google.com/drive/folders/ENG_PPT_FOLDER"
           }
         ],
@@ -396,35 +396,35 @@ file: "https://drive.google.com/drive/folders/1mtrt4HuVYySmg5_Yc1FesYjdNynD5s-t"
 
         videos: [
           {
-            title: "ESWI Videos",
+            title: "English Videos",
             file: "https://drive.google.com/drive/folders/ENG_VIDEO_FOLDER"
           }
         ],
 
         books: [
           {
-            title: "ESWI Books",
+            title: "English Books",
             file: "https://drive.google.com/drive/folders/ENG_BOOK_FOLDER"
           }
         ],
 
         papers: [
           {
-            title: "ESWI Previous Papers",
+            title: "English Previous Papers",
             file: "https://drive.google.com/drive/folders/ENG_PAPER_FOLDER"
           }
         ],
 
         syllabus: [
           {
-            title: "ESWI Syllabus",
+            title: "English Syllabus",
             file: "https://drive.google.com/drive/folders/ENG_SYLLABUS_FOLDER"
           }
         ],
 
         assignments: [
           {
-            title: "ESWI Assignments",
+            title: "English Assignments",
             file: "https://drive.google.com/drive/folders/ENG_ASSIGNMENT_FOLDER"
           }
         ]
@@ -432,7 +432,137 @@ file: "https://drive.google.com/drive/folders/1mtrt4HuVYySmg5_Yc1FesYjdNynD5s-t"
       }
     },
 
-    
+    {
+      id: 103,
+      code: "MATH-I",
+      name: "Mathematics-I",
+      icon: "📐",
+      faculty: "Faculty Name",
+
+      resources: {
+
+        notes: [
+          {
+            title: "Mathematics Notes",
+            file: "https://drive.google.com/drive/folders/MATH1_NOTES_FOLDER"
+          }
+        ],
+
+        ppt: [
+          {
+            title: "Mathematics PPT",
+            file: "https://drive.google.com/drive/folders/MATH1_PPT_FOLDER"
+          }
+        ],
+
+        lab: [],
+
+        videos: [
+          {
+            title: "Mathematics Videos",
+            file: "https://drive.google.com/drive/folders/MATH1_VIDEO_FOLDER"
+          }
+        ],
+
+        books: [
+          {
+            title: "Mathematics Books",
+            file: "https://drive.google.com/drive/folders/MATH1_BOOK_FOLDER"
+          }
+        ],
+
+        papers: [
+          {
+            title: "Mathematics Previous Papers",
+            file: "https://drive.google.com/drive/folders/MATH1_PAPER_FOLDER"
+          }
+        ],
+
+        syllabus: [
+          {
+            title: "Mathematics Syllabus",
+            file: "https://drive.google.com/drive/folders/MATH1_SYLLABUS_FOLDER"
+          }
+        ],
+
+        assignments: [
+          {
+            title: "Mathematics Assignments",
+            file: "https://drive.google.com/drive/folders/MATH1_ASSIGNMENT_FOLDER"
+          }
+        ]
+
+      }
+    },
+
+    {
+      id: 104,
+      code: "PHY",
+      name: "Engineering Physics",
+      icon: "⚛️",
+      faculty: "Faculty Name",
+
+      resources: {
+
+        notes: [
+          {
+            title: "Physics Notes",
+            file: "https://drive.google.com/drive/folders/PHY_NOTES_FOLDER"
+          }
+        ],
+
+        ppt: [
+          {
+            title: "Physics PPT",
+            file: "https://drive.google.com/drive/folders/PHY_PPT_FOLDER"
+          }
+        ],
+
+        lab: [
+          {
+            title: "Physics Lab",
+            file: "https://drive.google.com/drive/folders/PHY_LAB_FOLDER"
+          }
+        ],
+
+        videos: [
+          {
+            title: "Physics Videos",
+            file: "https://drive.google.com/drive/folders/PHY_VIDEO_FOLDER"
+          }
+        ],
+
+        books: [
+          {
+            title: "Physics Books",
+            file: "https://drive.google.com/drive/folders/PHY_BOOK_FOLDER"
+          }
+        ],
+
+        papers: [
+          {
+            title: "Physics Previous Papers",
+            file: "https://drive.google.com/drive/folders/PHY_PAPER_FOLDER"
+          }
+        ],
+
+        syllabus: [
+          {
+            title: "Physics Syllabus",
+            file: "https://drive.google.com/drive/folders/PHY_SYLLABUS_FOLDER"
+          }
+        ],
+
+        assignments: [
+          {
+            title: "Physics Assignments",
+            file: "https://drive.google.com/drive/folders/PHY_ASSIGNMENT_FOLDER"
+          }
+        ]
+
+      }
+    }
+
   ]
 },
 
@@ -450,7 +580,7 @@ file: "https://drive.google.com/drive/folders/1mtrt4HuVYySmg5_Yc1FesYjdNynD5s-t"
     {
       id: 201,
       code: "DS",
-      name: "Data Structures through C",
+      name: "Data Structures",
       icon: "📊",
       faculty: "Faculty Name",
 
@@ -508,64 +638,171 @@ file: "https://drive.google.com/drive/folders/1mtrt4HuVYySmg5_Yc1FesYjdNynD5s-t"
 
     {
       id: 202,
-      code: "PFC",
-      name: "Python for Computing",
+      code: "JAVA",
+      name: "Programming Through Java",
       icon: "☕",
       faculty: "Faculty Name",
 
       resources: {
         notes: [
           {
-            title: "Python Notes",
-            file: "https://drive.google.com/drive/folders/Python_NOTES_FOLDER"
+            title: "Java Notes",
+            file: "https://drive.google.com/drive/folders/JAVA_NOTES_FOLDER"
           }
         ],
         ppt: [
           {
-            title: "Python PPT",
-            file: "https://drive.google.com/drive/folders/Python_PPT_FOLDER"
+            title: "Java PPT",
+            file: "https://drive.google.com/drive/folders/JAVA_PPT_FOLDER"
           }
         ],
         lab: [
           {
-            title: "Python Lab",
-            file: "https://drive.google.com/drive/folders/Python_LAB_FOLDER"
+            title: "Java Lab",
+            file: "https://drive.google.com/drive/folders/JAVA_LAB_FOLDER"
           }
         ],
         videos: [
           {
-            title: "Python Videos",
-            file: "https://drive.google.com/drive/folders/Python_VIDEO_FOLDER"
+            title: "Java Videos",
+            file: "https://drive.google.com/drive/folders/JAVA_VIDEO_FOLDER"
           }
         ],
         books: [
           {
-            title: "Python Books",
-            file: "https://drive.google.com/drive/folders/Python_BOOK_FOLDER"
+            title: "Java Books",
+            file: "https://drive.google.com/drive/folders/JAVA_BOOK_FOLDER"
           }
         ],
         papers: [
           {
             title: "Previous Papers",
-            file: "https://drive.google.com/drive/folders/Python_PAPER_FOLDER"
+            file: "https://drive.google.com/drive/folders/JAVA_PAPER_FOLDER"
           }
         ],
         syllabus: [
           {
             title: "Syllabus",
-            file: "https://drive.google.com/drive/folders/Python_SYLLABUS_FOLDER"
+            file: "https://drive.google.com/drive/folders/JAVA_SYLLABUS_FOLDER"
           }
         ],
         assignments: [
           {
             title: "Assignments",
-            file: "https://drive.google.com/drive/folders/Python_ASSIGNMENT_FOLDER"
+            file: "https://drive.google.com/drive/folders/JAVA_ASSIGNMENT_FOLDER"
           }
         ]
       }
     },
 
-    
+    {
+      id: 203,
+      code: "MATH-II",
+      name: "Mathematics-II",
+      icon: "📐",
+      faculty: "Faculty Name",
+
+      resources: {
+        notes: [
+          {
+            title: "Mathematics-II Notes",
+            file: "https://drive.google.com/drive/folders/MATH2_NOTES_FOLDER"
+          }
+        ],
+        ppt: [
+          {
+            title: "Mathematics-II PPT",
+            file: "https://drive.google.com/drive/folders/MATH2_PPT_FOLDER"
+          }
+        ],
+        lab: [],
+        videos: [
+          {
+            title: "Mathematics-II Videos",
+            file: "https://drive.google.com/drive/folders/MATH2_VIDEO_FOLDER"
+          }
+        ],
+        books: [
+          {
+            title: "Reference Books",
+            file: "https://drive.google.com/drive/folders/MATH2_BOOK_FOLDER"
+          }
+        ],
+        papers: [
+          {
+            title: "Previous Papers",
+            file: "https://drive.google.com/drive/folders/MATH2_PAPER_FOLDER"
+          }
+        ],
+        syllabus: [
+          {
+            title: "Syllabus",
+            file: "https://drive.google.com/drive/folders/MATH2_SYLLABUS_FOLDER"
+          }
+        ],
+        assignments: [
+          {
+            title: "Assignments",
+            file: "https://drive.google.com/drive/folders/MATH2_ASSIGNMENT_FOLDER"
+          }
+        ]
+      }
+    },
+
+    {
+      id: 204,
+      code: "EVS",
+      name: "Environmental Science",
+      icon: "🌿",
+      faculty: "Faculty Name",
+
+      resources: {
+        notes: [
+          {
+            title: "EVS Notes",
+            file: "https://drive.google.com/drive/folders/EVS_NOTES_FOLDER"
+          }
+        ],
+        ppt: [
+          {
+            title: "EVS PPT",
+            file: "https://drive.google.com/drive/folders/EVS_PPT_FOLDER"
+          }
+        ],
+        lab: [],
+        videos: [
+          {
+            title: "EVS Videos",
+            file: "https://drive.google.com/drive/folders/EVS_VIDEO_FOLDER"
+          }
+        ],
+        books: [
+          {
+            title: "Reference Books",
+            file: "https://drive.google.com/drive/folders/EVS_BOOK_FOLDER"
+          }
+        ],
+        papers: [
+          {
+            title: "Previous Papers",
+            file: "https://drive.google.com/drive/folders/EVS_PAPER_FOLDER"
+          }
+        ],
+        syllabus: [
+          {
+            title: "Syllabus",
+            file: "https://drive.google.com/drive/folders/EVS_SYLLABUS_FOLDER"
+          }
+        ],
+        assignments: [
+          {
+            title: "Assignments",
+            file: "https://drive.google.com/drive/folders/EVS_ASSIGNMENT_FOLDER"
+          }
+        ]
+      }
+    }
+
   ]
 },
 
@@ -639,58 +876,58 @@ file: "https://drive.google.com/drive/folders/1mtrt4HuVYySmg5_Yc1FesYjdNynD5s-t"
 
     {
       id: 302,
-      code: "OOPS",
-      name: "Object Oriented Programming through Java",
-      icon: "☕",
+      code: "OS",
+      name: "Operating Systems",
+      icon: "💽",
       faculty: "Faculty Name",
 
       resources: {
         notes: [
           {
-            title: "OOP Through Java Notes",
-            file: "https://drive.google.com/drive/folders/java_NOTES_FOLDER"
+            title: "Operating Systems Notes",
+            file: "https://drive.google.com/drive/folders/OS_NOTES_FOLDER"
           }
         ],
         ppt: [
           {
-            title: "OOP Through Java PPT",
-            file: "https://drive.google.com/drive/folders/java_PPT_FOLDER"
+            title: "Operating Systems PPT",
+            file: "https://drive.google.com/drive/folders/OS_PPT_FOLDER"
           }
         ],
         lab: [
           {
-            title: "OOP Through Java Lab",
-            file: "https://drive.google.com/drive/folders/java_LAB_FOLDER"
+            title: "Operating Systems Lab",
+            file: "https://drive.google.com/drive/folders/OS_LAB_FOLDER"
           }
         ],
         videos: [
           {
-            title: "OOP Through Java Videos",
-            file: "https://drive.google.com/drive/folders/java_VIDEO_FOLDER"
+            title: "Operating Systems Videos",
+            file: "https://drive.google.com/drive/folders/OS_VIDEO_FOLDER"
           }
         ],
         books: [
           {
-            title: "OOP Through Java Books",
-            file: "https://drive.google.com/drive/folders/java_BOOK_FOLDER"
+            title: "Operating Systems Books",
+            file: "https://drive.google.com/drive/folders/OS_BOOK_FOLDER"
           }
         ],
         papers: [
           {
-            title: "OOP Through Java Previous Papers",
-            file: "https://drive.google.com/drive/folders/java_PAPER_FOLDER"
+            title: "Operating Systems Previous Papers",
+            file: "https://drive.google.com/drive/folders/OS_PAPER_FOLDER"
           }
         ],
         syllabus: [
           {
-            title: "OOP Through Java Syllabus",
-            file: "https://drive.google.com/drive/folders/java_SYLLABUS_FOLDER"
+            title: "Operating Systems Syllabus",
+            file: "https://drive.google.com/drive/folders/OS_SYLLABUS_FOLDER"
           }
         ],
         assignments: [
           {
-            title: "OOP Through Java Assignments",
-            file: "https://drive.google.com/drive/folders/java_ASSIGNMENT_FOLDER"
+            title: "Operating Systems Assignments",
+            file: "https://drive.google.com/drive/folders/OS_ASSIGNMENT_FOLDER"
           }
         ]
       }
@@ -698,81 +935,65 @@ file: "https://drive.google.com/drive/folders/1mtrt4HuVYySmg5_Yc1FesYjdNynD5s-t"
 
     {
       id: 303,
-      code: "DED",
-      name: "Digital Electronics and Design",
+      code: "OOPS",
+      name: "Object Oriented Programming",
       icon: "☕",
       faculty: "Faculty Name",
 
       resources: {
         notes: [
           {
-            title: "DED Notes",
+            title: "OOP Notes",
             file: "https://drive.google.com/drive/folders/OOPS_NOTES_FOLDER"
           }
         ],
         ppt: [
           {
-            title: "DED PPT",
+            title: "OOP PPT",
             file: "https://drive.google.com/drive/folders/OOPS_PPT_FOLDER"
           }
         ],
         lab: [
           {
-            title: "DED Lab",
+            title: "OOP Lab",
             file: "https://drive.google.com/drive/folders/OOPS_LAB_FOLDER"
           }
         ],
         videos: [
           {
-            title: "DED Video Lectures",
+            title: "OOP Video Lectures",
             file: "https://drive.google.com/drive/folders/OOPS_VIDEO_FOLDER"
           }
         ],
         books: [
           {
-            title: "DED Books",
+            title: "OOP Books",
             file: "https://drive.google.com/drive/folders/OOPS_BOOK_FOLDER"
           }
         ],
         papers: [
           {
-            title: "DED Previous Papers",
+            title: "OOP Previous Papers",
             file: "https://drive.google.com/drive/folders/OOPS_PAPER_FOLDER"
           }
         ],
         syllabus: [
           {
-            title: "DED Syllabus",
+            title: "OOP Syllabus",
             file: "https://drive.google.com/drive/folders/OOPS_SYLLABUS_FOLDER"
           }
         ],
         assignments: [
           {
-            title: "DED Assignments",
+            title: "OOP Assignments",
             file: "https://drive.google.com/drive/folders/OOPS_ASSIGNMENT_FOLDER"
           }
         ]
       }
     },
 
-    
-  ]
-},
-
-
-
-//ii-ii
-
- id: 4,
-  semester: "II-II",
-  fullName: "Second Year - Second Semester",
-
-  subjects: [
-
-{
-  id: 4,
- {
-      id: 401,
+    {
+      id: 304,
       code: "COA",
       name: "Computer Organization & Architecture",
       icon: "🖥️",
@@ -824,7 +1045,80 @@ file: "https://drive.google.com/drive/folders/1mtrt4HuVYySmg5_Yc1FesYjdNynD5s-t"
         ]
       }
     }
-,
+
+  ]
+},
+
+
+
+//ii-ii
+
+
+{
+  id: 4,
+  semester: "II-II",
+  fullName: "Second Year - Second Semester",
+
+  subjects: [
+
+    {
+      id: 401,
+      code: "CN",
+      name: "Computer Networks",
+      icon: "🌐",
+      faculty: "Faculty Name",
+
+      resources: {
+        notes: [
+          {
+            title: "Computer Networks Notes",
+            file: "https://drive.google.com/drive/folders/CN_NOTES_FOLDER"
+          }
+        ],
+        ppt: [
+          {
+            title: "Computer Networks PPT",
+            file: "https://drive.google.com/drive/folders/CN_PPT_FOLDER"
+          }
+        ],
+        lab: [
+          {
+            title: "Computer Networks Lab",
+            file: "https://drive.google.com/drive/folders/CN_LAB_FOLDER"
+          }
+        ],
+        videos: [
+          {
+            title: "Computer Networks Videos",
+            file: "https://drive.google.com/drive/folders/CN_VIDEO_FOLDER"
+          }
+        ],
+        books: [
+          {
+            title: "Reference Books",
+            file: "https://drive.google.com/drive/folders/CN_BOOK_FOLDER"
+          }
+        ],
+        papers: [
+          {
+            title: "Previous Papers",
+            file: "https://drive.google.com/drive/folders/CN_PAPER_FOLDER"
+          }
+        ],
+        syllabus: [
+          {
+            title: "Syllabus",
+            file: "https://drive.google.com/drive/folders/CN_SYLLABUS_FOLDER"
+          }
+        ],
+        assignments: [
+          {
+            title: "Assignments",
+            file: "https://drive.google.com/drive/folders/CN_ASSIGNMENT_FOLDER"
+          }
+        ]
+      }
+    },
 
     {
       id: 402,
@@ -883,51 +1177,51 @@ file: "https://drive.google.com/drive/folders/1mtrt4HuVYySmg5_Yc1FesYjdNynD5s-t"
     {
       id: 403,
       code: "SE",
-      name: "Software Engineering and DevOps",
+      name: "Software Engineering",
       icon: "🛠️",
       faculty: "Faculty Name",
 
       resources: {
         notes: [
           {
-            title: "Software Engineering and DevOps Notes",
+            title: "Software Engineering Notes",
             file: "https://drive.google.com/drive/folders/SE_NOTES_FOLDER"
           }
         ],
         ppt: [
           {
-            title: "Software Engineering and DevOps PPT",
+            title: "Software Engineering PPT",
             file: "https://drive.google.com/drive/folders/SE_PPT_FOLDER"
           }
         ],
         lab: [],
         videos: [
           {
-            title: "Software Engineering and DevOps Videos",
+            title: "Software Engineering Videos",
             file: "https://drive.google.com/drive/folders/SE_VIDEO_FOLDER"
           }
         ],
         books: [
           {
-            title: "Software Engineering and DevOps Books",
+            title: "Software Engineering Books",
             file: "https://drive.google.com/drive/folders/SE_BOOK_FOLDER"
           }
         ],
         papers: [
           {
-            title: "Software Engineering and DevOps Previous Papers",
+            title: "Software Engineering Previous Papers",
             file: "https://drive.google.com/drive/folders/SE_PAPER_FOLDER"
           }
         ],
         syllabus: [
           {
-            title: "Software Engineering and DevOps Syllabus",
+            title: "Software Engineering Syllabus",
             file: "https://drive.google.com/drive/folders/SE_SYLLABUS_FOLDER"
           }
         ],
         assignments: [
           {
-            title: "Software Engineering and DevOps Assignments",
+            title: "Software Engineering Assignments",
             file: "https://drive.google.com/drive/folders/SE_ASSIGNMENT_FOLDER"
           }
         ]
@@ -936,34 +1230,34 @@ file: "https://drive.google.com/drive/folders/1mtrt4HuVYySmg5_Yc1FesYjdNynD5s-t"
 
     {
       id: 404,
-      code: "OS",
-      name: "Operating Systems",
+      code: "P&S",
+      name: "Probability and Statistics",
       icon: "📊",
       faculty: "Faculty Name",
 
       resources: {
         notes: [
           {
-            title: "Operating Systems Notes",
+            title: "Probability & Statistics Notes",
             file: "https://drive.google.com/drive/folders/PS_NOTES_FOLDER"
           }
         ],
         ppt: [
           {
-            title: "Operating Systems PPT",
+            title: "Probability & Statistics PPT",
             file: "https://drive.google.com/drive/folders/PS_PPT_FOLDER"
           }
         ],
         lab: [],
         videos: [
           {
-            title: "Operating Systems Videos",
+            title: "Probability & Statistics Videos",
             file: "https://drive.google.com/drive/folders/PS_VIDEO_FOLDER"
           }
         ],
         books: [
           {
-            title: "Operating Systems Books",
+            title: "Probability & Statistics Books",
             file: "https://drive.google.com/drive/folders/PS_BOOK_FOLDER"
           }
         ],
@@ -990,66 +1284,6 @@ file: "https://drive.google.com/drive/folders/1mtrt4HuVYySmg5_Yc1FesYjdNynD5s-t"
 
   ]
 },
-
-   {
-      id: 405,
-      code: "ADSJ",
-      name: "Advanced Data Structures through Java",
-      icon: "📊",
-      faculty: "Faculty Name",
-
-      resources: {
-        notes: [
-          {
-            title: "ADSJ Notes",
-            file: "https://drive.google.com/drive/folders/PS_NOTES_FOLDER"
-          }
-        ],
-        ppt: [
-          {
-            title: "ADSJ PPT",
-            file: "https://drive.google.com/drive/folders/PS_PPT_FOLDER"
-          }
-        ],
-        lab: [],
-        videos: [
-          {
-            title: "ADSJ Videos",
-            file: "https://drive.google.com/drive/folders/PS_VIDEO_FOLDER"
-          }
-        ],
-        books: [
-          {
-            title: "ADSJ Books",
-            file: "https://drive.google.com/drive/folders/PS_BOOK_FOLDER"
-          }
-        ],
-        papers: [
-          {
-            title: "Previous Papers",
-            file: "https://drive.google.com/drive/folders/PS_PAPER_FOLDER"
-          }
-        ],
-        syllabus: [
-          {
-            title: "Syllabus",
-            file: "https://drive.google.com/drive/folders/PS_SYLLABUS_FOLDER"
-          }
-        ],
-        assignments: [
-          {
-            title: "Assignments",
-            file: "https://drive.google.com/drive/folders/PS_ASSIGNMENT_FOLDER"
-          }
-        ]
-      }
-    }
-
-  ]
-},
-
-
-
 
 
 
@@ -1123,16 +1357,16 @@ file: "https://drive.google.com/drive/folders/1mtrt4HuVYySmg5_Yc1FesYjdNynD5s-t"
 
     {
       id: 502,
-      code: "IDA",
-      name: "Introduction to Data Analysis",
+      code: "ML",
+      name: "Machine Learning",
       icon: "🤖",
       faculty: "Faculty Name",
 
       resources: {
-        notes: [{ title: "Introduction to Data Analysis Notes", file: "https://drive.google.com/drive/folders/ML_NOTES_FOLDER" }],
-        ppt: [{ title: "Introduction to Data Analysis PPT", file: "https://drive.google.com/drive/folders/ML_PPT_FOLDER" }],
-        lab: [{ title: "R PROGRAMMING Lab", file: "https://drive.google.com/drive/folders/ML_LAB_FOLDER" }],
-        videos: [{ title: "Introduction to Data Analysis Videos", file: "https://drive.google.com/drive/folders/ML_VIDEO_FOLDER" }],
+        notes: [{ title: "Machine Learning Notes", file: "https://drive.google.com/drive/folders/ML_NOTES_FOLDER" }],
+        ppt: [{ title: "Machine Learning PPT", file: "https://drive.google.com/drive/folders/ML_PPT_FOLDER" }],
+        lab: [{ title: "Machine Learning Lab", file: "https://drive.google.com/drive/folders/ML_LAB_FOLDER" }],
+        videos: [{ title: "Machine Learning Videos", file: "https://drive.google.com/drive/folders/ML_VIDEO_FOLDER" }],
         books: [{ title: "Reference Books", file: "https://drive.google.com/drive/folders/ML_BOOK_FOLDER" }],
         papers: [{ title: "Previous Papers", file: "https://drive.google.com/drive/folders/ML_PAPER_FOLDER" }],
         syllabus: [{ title: "Syllabus", file: "https://drive.google.com/drive/folders/ML_SYLLABUS_FOLDER" }],
@@ -1142,8 +1376,8 @@ file: "https://drive.google.com/drive/folders/1mtrt4HuVYySmg5_Yc1FesYjdNynD5s-t"
 
     {
       id: 503,
-      code: "ATCD",
-      name: "Automata Theory and Compiler Design",
+      code: "CD",
+      name: "Compiler Design",
       icon: "⚙️",
       faculty: "Faculty Name",
 
