@@ -79,7 +79,7 @@ export default function HeroBanner() {
 
           <p className="mt-6 text-xl text-blue-100 max-w-3xl mx-auto">
 
-            Department of Computer Science & Engineering (Data Science)
+            Department of Computer Science and Engineering (Data Science)
 
           </p>
 
