@@ -10,10 +10,10 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import Sumathi from "../assets/Sumathi.jpg";
 import Rajeshwar from "../assets/Rajeshwar.JPG";
-import Ramesh from "../assets/Ramesh.jpeg";
+//import Ramesh from "../assets/Ramesh.jpeg";
 import Ashwini from "../assets/Ashwini.jpeg";
 import Anand from "../assets/Anand.jpeg";
-import Srikanth from "../assets/Srikanth.jpg";
+//import Srikanth from "../assets/Srikanth.jpg";
 import Yamuna from "../assets/Yamuna.jpeg";
 
 import keerthana from "../assets/keerthana.png";
@@ -82,7 +82,7 @@ const nonTeachingStaffData = [
         email: "anand.anamaina@cvr.ac.in",
         image: Anand,
       },
-      {
+     /* {
         code: "CVRETN013",
         name: "H. Srikanth",
         designation: "Lab Programmer",
@@ -91,7 +91,7 @@ const nonTeachingStaffData = [
         email: "hakeesrikanth2002@cvr.ac.in",
         image: Srikanth,
       },
-
+*/
       {
         code: "CVRETN016",
         name: "M.Sai Keerthana",
@@ -120,7 +120,7 @@ const nonTeachingStaffData = [
         email: "g.yamuna@cvr.ac.in",
         image: Yamuna,
       },
-      {
+     /* {
         code: "CVRADM229",
         name: "S. Ramesh",
         designation: "DTP Operator",
@@ -129,6 +129,8 @@ const nonTeachingStaffData = [
         email: "rameshsoma.kumar@cvr.ac.in",
         image: Ramesh,
       },
+*/
+
     ],
   },
 ];
