@@ -16,9 +16,9 @@ import newsDataJSON from "../data/departmentNews.json";
 
 const stats = [
   { title: "Professors", count: 2 },
-  { title: "Associate Professors", count: 8 },
+  { title: "Associate Professors", count: 6 },
   { title: "Sr. Assistant Professors", count: 10 },
-  { title: "Assistant Professors", count: 20 },
+  { title: "Assistant Professors", count: 21 },
   { title: "Programmers & DTP", count: 8 },
 ];
 
