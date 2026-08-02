@@ -46,6 +46,9 @@ import prasanna from "../assets/Prasanna.jpeg";
 import Suman from "../assets/Suman.jpg";
 import vijay from "../assets/vijay.jpg";
 
+import Spoorthi from "../assets/Spoorthi.png";
+import shafi from "../assets/shafi.jpg";
+
 
 
 
@@ -330,6 +333,30 @@ const facultyData = [
 	image: vijay,
         
       },
+
+
+{
+        name: "K. Spoorthi",
+	degree: "M.Tech",
+        designation: "Assistant Professor",
+                
+	image: Spoorthi,
+        
+      },
+
+{
+        name: "Mr. Shaifiuallah",
+	degree: "M.Tech",
+        designation: "Assistant Professor",
+                
+	image: shafi,
+        
+      },
+
+
+
+
+
 
       
     ]
