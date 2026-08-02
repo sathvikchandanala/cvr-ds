@@ -95,12 +95,6 @@ export default function Eresources() {
 
 
 
-
-
-
-
-
-
 /*
 import React, {useState} from "react";
 
@@ -233,25 +227,6 @@ export default function Eresources() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 import React from "react";
 import { motion } from "framer-motion";
@@ -348,15 +323,6 @@ export default function EResources() {
 }
 
 */
-
-
-
-
-
-
-
-
-
 
 
 
