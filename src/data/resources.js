@@ -123,19 +123,21 @@ const resources = [
       {
         id: 302,
         code: "Java",
-        name: "Object Oriented Programming through Java",
+        name: "Java Programming",
         icon: "☕",
         faculty: "Faculty Name",
         resources: { ...emptyResources },
       },
-    ],
-  },
 
-  {
-    id: 4,
-    semester: "II-II",
-    fullName: "Second Year - Second Semester",
-    subjects: [
+{
+        id: 404,
+        code: "COA",
+        name: "Computer Organization and Architecture",
+        icon: "📈",
+        faculty: "Faculty Name",
+        resources: { ...emptyResources },
+      },
+
       {
         id: 401,
         code: "SE",
@@ -144,6 +146,17 @@ const resources = [
         faculty: "Faculty Name",
         resources: { ...emptyResources },
       },
+
+
+
+    ],
+  },
+
+  {
+    id: 4,
+    semester: "II-II",
+    fullName: "Second Year - Second Semester",
+    subjects: [
       {
         id: 402,
         code: "DAA",
@@ -162,15 +175,6 @@ const resources = [
         resources: { ...emptyResources },
       },
 
-
-{
-        id: 404,
-        code: "COA",
-        name: "Computer Organization and Architecture",
-        icon: "📈",
-        faculty: "Faculty Name",
-        resources: { ...emptyResources },
-      },
 
 {
         id: 405,
