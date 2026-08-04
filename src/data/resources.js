@@ -130,7 +130,7 @@ const resources = [
       },
 
 {
-        id: 404,
+        id: 303,
         code: "COA",
         name: "Computer Organization and Architecture",
         icon: "📈",
@@ -139,9 +139,9 @@ const resources = [
       },
 
       {
-        id: 401,
+        id: 304,
         code: "SE",
-        name: "Software Engineering and DevOps",
+        name: "Software Engineering",
         icon: "🌐",
         faculty: "Faculty Name",
         resources: { ...emptyResources },
