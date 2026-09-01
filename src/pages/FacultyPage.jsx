@@ -82,15 +82,17 @@ const facultyData = [
       }
     ]
   },
+
+   {
+        name: "Dr. LNC Prakash K",
+        degree: "M.Tech., Ph.D.",
+        designation: "Professor",
+        image: klncprakash
+      },
+   
   {
     title: "Associate Professors",
     members: [
-      {
-        name: "Dr. LNC Prakash K",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: klncprakash
-      },
       {
         name: "Dr. A.Srinivasa Reddy",
         degree: "Ph.D., Diploma in Data Science (IIT Madras)",
@@ -204,10 +206,43 @@ const facultyData = [
         degree: "M.Tech., (Ph.D).",
         designation: "Sr. Assistant Professor",
         image: RanadheerKumarKS
-      }
+      },
+      {
+        name: "Mr. V.Praveen Kumar",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Sr.Assistant Professor",
+        image: PraveenKumarV
+      },
+     {
+        name: "Mr. V.Ramesh",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Sr.Assistant Professor",
+        image: RameshVankudoth
+      },
+      {
+        name: "Dr. Afreen Fatima Mohammed",
+        degree: "M.Tech., Ph.D.",
+        designation: "Sr.Assistant Professor",
+        image: AfreenMohammed
+      },
+      {
+        name: "Mr. Erugu Krishna",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Sr.Assistant Professor",
+        image: KrishnaErugu
+      },
+      {
+        name: "Mrs. V.Swathi",
+        degree: "M.Tech., (Ph.D).",
+        designation: "Sr.Assistant Professor",
+        image: swathi
+      },
+ 
+
     ]
   },
-  {
+  
+{
     title: "Assistant Professors",
     members: [
       {
@@ -241,12 +276,6 @@ const facultyData = [
         image: PrashanthDonda
       },
       {
-        name: "Mr. V.Ramesh",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Assistant Professor",
-        image: RameshVankudoth
-      },
-      {
         name: "Mrs. Arava Nagasri",
         degree: "M.Tech., (Ph.D).",
         designation: "Assistant Professor",
@@ -265,12 +294,6 @@ const facultyData = [
         image: RamyaT
       },
       {
-        name: "Mr. V.Praveen Kumar",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Assistant Professor",
-        image: PraveenKumarV
-      },
-      {
         name: "Mrs. B.Sabitha",
         degree: "M.Tech.",
         designation: "Assistant Professor",
@@ -278,27 +301,9 @@ const facultyData = [
       },
       {
         name: "Mr. Moghal.Yaseen Pasha",
-        degree: "M.Tech.",
+        degree: "M.Tech.,(Ph.D).",
         designation: "Assistant Professor",
         image: Yaseen_pasha
-      },
-      {
-        name: "Dr. Afreen Fatima Mohammed",
-        degree: "M.Tech., Ph.D.",
-        designation: "Assistant Professor",
-        image: AfreenMohammed
-      },
-      {
-        name: "Mr. Erugu Krishna",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Assistant Professor",
-        image: KrishnaErugu
-      },
-      {
-        name: "Mrs. V.Swathi",
-        degree: "M.Tech., (Ph.D).",
-        designation: "Assistant Professor",
-        image: swathi
       },
       /*{
         name: "Mr. K.Ravikiran Reddy",
