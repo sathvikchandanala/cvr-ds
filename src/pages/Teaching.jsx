@@ -95,15 +95,10 @@ const facultyData = [
         image: SatyanarayanaN,
         profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37439",
       },
-    ],
-  },
 
-  {
-    title: "Associate Professors",
-    members: [
       {
         name: "Dr. LNC Prakash K",
-        designation: "Associate Professor",
+        designation: "Professor",
         qualification: "M.Tech Ph.D",
         joined: "22.03.2021",
         nature: "Regular",
@@ -112,6 +107,14 @@ const facultyData = [
         image: klncprakash,
         profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37440",
       },
+
+
+    ],
+  },
+
+  {
+    title: "Associate Professors",
+    members: [
       {
         name: "Dr. A.Srinivasa Reddy",
         designation: "Associate Professor",
@@ -306,6 +309,67 @@ const facultyData = [
         image: RanadheerKumarKS,
         profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37464",
       },
+
+      {
+        name: "Mr. V. Ramesh",
+        designation: "Sr.Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "22.03.2022",
+        nature: "Regular",
+        specialization: "Block Chain Technologies",
+        email: "v.ramesh406@cvr.ac.in",
+        image: RameshVankudoth,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37455",
+      },
+   {
+        name: "Mr. V. Praveen Kumar",
+        designation: "Sr.Assistant Professor",
+        qualification: "M.Tech (Ph.D.)",
+        joined: "01.02.2023",
+        nature: "Regular",
+        specialization: "Database Management Systems",
+        email: "v.praveen@cvr.ac.in",
+        image: PraveenKumarV,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37461",
+      },
+   
+   {
+        name: "Dr. Afreen Fatima Mohammed",
+        designation: "Sr.Assistant Professor",
+        qualification: "M.Tech Ph.D",
+        joined: "05.03.2024",
+        nature: "Regular",
+        specialization: "Data Mining",
+        email: "afreen0422@cvr.ac.in",
+        image: AfreenMohammed,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37466",
+      },
+      {
+        name: "Mr. Erugu Krishna",
+        designation: "Sr.Assistant Professor",
+        qualification: "M.Tech(Ph.D)",
+        joined: "28.03.2024",
+        nature: "Regular",
+        specialization: "Cloud Computing",
+        email: "krishna.cseit@cvr.ac.in",
+        image: KrishnaErugu,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37467",
+      },
+      {
+        name: "Mrs. V. Swathi",
+        designation: "Sr.Assistant Professor",
+        qualification: "M.Tech (Ph.D)",
+        joined: "26.12.2024",
+        nature: "Regular",
+        specialization: "Cloud Computing",
+        email: "swathivelugoti@cvr.ac.in",
+        image: swathi,
+        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40110",
+      },
+   
+
+
+
     ],
   },
 
@@ -368,17 +432,6 @@ const facultyData = [
         profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37454",
       },
       {
-        name: "Mr. V. Ramesh",
-        designation: "Assistant Professor",
-        qualification: "M.Tech (Ph.D.)",
-        joined: "22.03.2022",
-        nature: "Regular",
-        specialization: "Block Chain Technologies",
-        email: "v.ramesh406@cvr.ac.in",
-        image: RameshVankudoth,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37455",
-      },
-      {
         name: "Ms. Arava Nagasri",
         designation: "Assistant Professor",
         qualification: "M.Tech (Ph.D.)",
@@ -412,17 +465,6 @@ const facultyData = [
         profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37460",
       },
       {
-        name: "Mr. V. Praveen Kumar",
-        designation: "Assistant Professor",
-        qualification: "M.Tech (Ph.D.)",
-        joined: "01.02.2023",
-        nature: "Regular",
-        specialization: "Database Management Systems",
-        email: "v.praveen@cvr.ac.in",
-        image: PraveenKumarV,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37461",
-      },
-      {
         name: "Mrs. B. Sabitha",
         designation: "Assistant Professor",
         qualification: "M.Tech",
@@ -443,39 +485,6 @@ const facultyData = [
         email: "moghal.yaseenpasha@cvr.ac.in",
         image: Yaseen_pasha,
         profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37465",
-      },
-      {
-        name: "Dr. Afreen Fatima Mohammed",
-        designation: "Assistant Professor",
-        qualification: "M.Tech Ph.D",
-        joined: "05.03.2024",
-        nature: "Regular",
-        specialization: "Data Mining",
-        email: "afreen0422@cvr.ac.in",
-        image: AfreenMohammed,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37466",
-      },
-      {
-        name: "Mr. Erugu Krishna",
-        designation: "Assistant Professor",
-        qualification: "M.Tech(Ph.D)",
-        joined: "28.03.2024",
-        nature: "Regular",
-        specialization: "Cloud Computing",
-        email: "krishna.cseit@cvr.ac.in",
-        image: KrishnaErugu,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37467",
-      },
-      {
-        name: "Mrs. V. Swathi",
-        designation: "Assistant Professor",
-        qualification: "M.Tech (Ph.D)",
-        joined: "26.12.2024",
-        nature: "Regular",
-        specialization: "Cloud Computing",
-        email: "swathivelugoti@cvr.ac.in",
-        image: swathi,
-        profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/40110",
       },
    /*   {
         name: "Mr. K. Ravikiran Reddy",
