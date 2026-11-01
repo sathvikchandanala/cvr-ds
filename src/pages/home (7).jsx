@@ -12,11 +12,11 @@ import Footer from "./Footer";
 import { ArrowUp } from "lucide-react";
 
 const stats = [
-  { title: "Professors", count: 2 },
-  { title: "Associate Professors", count: 7 },
-  { title: "Sr. Assistant Professors", count: 10 },
-  { title: "Assistant Professors", count: 17 },
-  { title: "Programmers & Admin", count: 3 },
+  { title: "Professors", count: 3 },
+  { title: "Associate Professors", count: 5 },
+  { title: "Sr. Assistant Professors", count: 15 },
+  { title: "Assistant Professors", count: 16 },
+  { title: "Programmers & Admin", count: 6 },
 ];
 
 function Counter({ target }) {
