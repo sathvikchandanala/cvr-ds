@@ -356,9 +356,9 @@ const facultyData = [
         profileLink: "https://portal.vmedulife.com/institute/Faculty/viewDetails/Cvr-Telangana/37467",
       },
       {
-        name: "Mrs. V. Swathi",
+        name: "Dr.V.Swathi",
         designation: "Sr.Assistant Professor",
-        qualification: "M.Tech (Ph.D)",
+        qualification: "M.Tech Ph.D",
         joined: "26.12.2024",
         nature: "Regular",
         specialization: "Cloud Computing",
