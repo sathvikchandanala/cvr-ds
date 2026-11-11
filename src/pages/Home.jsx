@@ -15,11 +15,11 @@ import Footer from "./Footer";
 import newsDataJSON from "../data/departmentNews.json";
 
 const stats = [
-  { title: "Professors", count: 2 },
-  { title: "Associate Professors", count: 6 },
-  { title: "Sr. Assistant Professors", count: 10 },
-  { title: "Assistant Professors", count: 21 },
-  { title: "Programmers & DTP", count: 8 },
+  { title: "Professors", count: 3 },
+  { title: "Associate Professors", count: 5 },
+  { title: "Sr. Assistant Professors", count: 15 },
+  { title: "Assistant Professors", count: 16 },
+  { title: "Programmers & DTP", count: 6 },
 ];
 
 // Counter animation for stats
