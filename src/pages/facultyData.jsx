@@ -46,18 +46,20 @@ const facultyData = [
         designation: "Professor",
         image: SatyanarayanaN,
       },
+ {
+        name: "Dr. LNC Prakash K",
+        degree: "M.Tech., Ph.D.",
+        designation: "Associate Professor",
+        image: "/faculty/prakash.jpg",
+      },
+
     ],
   },
   {
     title: "Associate Professors",
     slug: "associate-professors",
     members: [
-      {
-        name: "Dr. LNC Prakash K",
-        degree: "M.Tech., Ph.D.",
-        designation: "Associate Professor",
-        image: "/faculty/prakash.jpg",
-      },
+     
       {
         name: "Dr. A.Srinivasa Reddy",
         degree: "M.Tech., Ph.D.",
