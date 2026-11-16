@@ -220,7 +220,10 @@ const resources = [
         name: "Automata Theory and Compiler Design",
         icon: "🛠️",
         faculty: "Faculty Name",
-        resources: { ...emptyResources },
+        resources: { 
+ ppt: [{ title: "Compiler Design PPT", file: "https://drive.google.com/drive/folders/1ksssWfepx328_EjIcuEtFcYmst1z5Exe?usp=sharing" }],
+        
+},
       },
 
 
