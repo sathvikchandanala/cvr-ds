@@ -207,8 +207,9 @@ const resources = [
 ppt: [
           {
             title: "Web Technologies PPT",
-            file: "https://drive.google.com/drive/folders/1NhX6rRhLTznkk4ox_yQi5f1PVTYnGMuz?usp=sharing"
-          }
+            file: "https://drive.google.com/drive/folders/1NhX6rRhLTznkk4ox_yQi5f1PVTYnGMuz?usp=sharing"          
+
+}
         ],
         
 
