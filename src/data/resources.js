@@ -69,7 +69,7 @@ const resources = [
         code: "PSC",
         name: "Problem Solving Through C",
         icon: "💻",
-        faculty: "Faculty Name",
+        faculty: "",
         resources: { ...emptyResources },
       },
       {
@@ -77,7 +77,7 @@ const resources = [
         code: "ESWI",
         name: "Essentials of System and Web Interfacing",
         icon: "📘",
-        faculty: "Faculty Name",
+        faculty: "",
         resources: { ...emptyResources },
       },
     ],
