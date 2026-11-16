@@ -204,13 +204,7 @@ const resources = [
         icon: "🌍",
         faculty: "Faculty Name",
         resources: { 
-ppt: [
-          {
-            title: "Web Technologies PPT",
-            file: "https://drive.google.com/drive/folders/1NhX6rRhLTznkk4ox_yQi5f1PVTYnGMuz?usp=sharing"          
-
-}
-        ],
+ ppt: [{ title: "Web Technologies PPT", file: "https://drive.google.com/drive/folders/1NhX6rRhLTznkk4ox_yQi5f1PVTYnGMuz?usp=sharing" }],
         
 
  },
@@ -222,14 +216,8 @@ ppt: [
         icon: "🛠️",
         faculty: "Faculty Name",
         resources: { 
-ppt: [
-          {
-            title: "Computer Networks PPT",
-            file: "https://drive.google.com/drive/folders/1ZlqMzxxGaCfOk4wchUzRl18pyO7C45sS?usp=sharing
-"
-          }
-        ],
-        
+ppt: [{ title: "Computer Networks PPT", file: "https://drive.google.com/drive/folders/1ZlqMzxxGaCfOk4wchUzRl18pyO7C45sS?usp=sharing" }],
+         
 
  },
       },
