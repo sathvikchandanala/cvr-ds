@@ -8,7 +8,7 @@ import { ArrowUp } from "lucide-react";
 import { FaSearch, FaEnvelope, FaPhoneAlt, FaUsers } from "react-icons/fa";
 import Nav from "./Nav";
 import Footer from "./Footer";
-import Sumathi from "../assets/Sumathi.jpg";
+//import Sumathi from "../assets/Sumathi.jpg";
 import Rajeshwar from "../assets/Rajeshwar.JPG";
 //import Ramesh from "../assets/Ramesh.jpeg";
 import Ashwini from "../assets/Ashwini.jpeg";
@@ -55,7 +55,7 @@ const nonTeachingStaffData = [
         email: "rajeswarrao.2054@cvr.ac.in",
         image: Rajeshwar,
       },
-      {
+      /*{
         code: "CVRETN005",
         name: "K. Sumathi",
         designation: "Lab Programmer",
@@ -63,7 +63,7 @@ const nonTeachingStaffData = [
         joined: "15.11.2023",
         email: "kunchapu.sumathi@cvr.ac.in",
         image: Sumathi,
-      },
+      },*/
       {
         code: "CVRETN008",
         name: "Ch. Ashwini",
