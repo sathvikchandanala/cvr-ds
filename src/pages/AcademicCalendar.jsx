@@ -38,13 +38,17 @@ const AcademicCalendar = () => {
 
     // ✅ Ensure these files exist in: public/pdfs/
     const calendars = {
-        second: "/pdfs/Revised Academic Calendar for II B.Tech. I Semester 2025-26.pdf",
-        third: "/pdfs/Revised Academic Calendar for III B.Tech. I Semester 2025-26.pdf",
-        fourth: "/pdfs/Revised Academic Calendar for IV B.Tech. I Semester 2025-26.pdf",
+         first: "/pdfs/Academic Calendar for I B.Tech. I & II Semesters 2026-27.pdf",
+
+        second: "/pdfs/Revised Academic Calendar for II B.Tech. I & II Semesters 2026-27.pdf",
+        third: "/pdfs/Academic Calendar for III B.Tech. I & II Semesters 2026-27 (1).pdf",
+        fourth: "/pdfs/Academic Calendar for IV B.Tech. I & II Semesters 2026-27 (1).pdf",
     };
 
     const yearTitles = {
-        second: "B.Tech II Year - 2025-26 - R22",
+  first: "B.Tech I Year - 2026-27 - R25",
+
+        second: "B.Tech II Year - 2025-26 - R25",
         third: "B.Tech III Year - 2025-26 - R22",
         fourth: "B.Tech IV Year - 2025-26 - R22",
     };
@@ -79,6 +83,8 @@ const AcademicCalendar = () => {
                 {/* Cards Section */}
                 <section className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {[
+                        { title: "B.Tech I Year", year: "first" },
+
                         { title: "B.Tech II Year", year: "second" },
                         { title: "B.Tech III Year", year: "third" },
                         { title: "B.Tech IV Year", year: "fourth" },
