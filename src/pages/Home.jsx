@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowUp, ArrowLeft, ArrowRight } from "lucide-react";
 import hod from "../assets/hod.webp";
-import dean from "../assets/dean.jpg";
+//import dean from "../assets/dean.jpg";
 import hero1 from "../assets/CSE_DS.jpg";
 import hero2 from "../assets/ds1.jpg";
 import hero3 from "../assets/ds2.jpg";
@@ -172,6 +172,7 @@ export default function HomePage() {
       </section>
 
       {/*  Dean Message */}
+      {/*
       <motion.section className="py-24 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <motion.img
@@ -214,6 +215,8 @@ export default function HomePage() {
           </div>
         </div>
       </motion.section>
+
+*/}
 
       {/*  HOD Message */}
       <motion.section className="py-24 px-6">
