@@ -48,9 +48,9 @@ const AcademicCalendar = () => {
     const yearTitles = {
   first: "B.Tech I Year - 2026-27 - R25",
 
-        second: "B.Tech II Year - 2025-26 - R25",
-        third: "B.Tech III Year - 2025-26 - R22",
-        fourth: "B.Tech IV Year - 2025-26 - R22",
+        second: "B.Tech II Year - 2026-27 - R25",
+        third: "B.Tech III Year - 2026-27 - R22",
+        fourth: "B.Tech IV Year - 2026-27 - R22",
     };
 
     return (
@@ -66,7 +66,7 @@ const AcademicCalendar = () => {
                         animate="visible"
                         variants={fadeInUp}
                     >
-                        Academic Calendar 2025-26
+                        Academic Calendar 2026-27
                     </motion.h1>
                     <motion.p
                         className="text-lg text-gray-700"
