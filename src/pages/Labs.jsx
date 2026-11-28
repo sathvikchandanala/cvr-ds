@@ -19,10 +19,11 @@ import { ArrowUp } from "lucide-react";
 const labImages = [
   { src: CM_216_217, location: "CM-216_217" },
   { src: CM_218_220, location: "CM-218_220" },
+{ src: PG_303, location: "PG-303" },
+
 
 { src: PG_402, location: "PG-402" },
     
-{ src: PG_303, location: "PG-303" },
 ];
 
 const scrollToTop = () => {
