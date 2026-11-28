@@ -6,7 +6,7 @@ import CM_216_217 from "../assets/CM_216_217.jpg";
 import CM_218_220 from "../assets/CM_218_220.webp";
 
 import PG_303 from "../assets/7_PG_303.jpeg";
-import PG_402 from "../assets/9_PG_402.jpeg";
+import PG_402 from "../assets/9_PG_402.jpg";
 
 
 import { FaDesktop } from "react-icons/fa";
