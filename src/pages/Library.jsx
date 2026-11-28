@@ -35,7 +35,7 @@ export default function LibraryPage() {
                 className="text-center py-24 px-4 sm:px-8 lg:px-16"
             >
                 <h1 className="text-4xl sm:text-5xl font-bold text-black mb-6">
-                    College Library
+                    Department Library
                 </h1>
                 <p className="text-gray-600 max-w-3xl mx-auto text-lg">
                     A hub of knowledge with extensive print and digital resources to support academic excellence and research.
