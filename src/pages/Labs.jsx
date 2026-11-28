@@ -4,7 +4,11 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import CM_216_217 from "../assets/CM_216_217.jpg";
 import CM_218_220 from "../assets/CM_218_220.webp";
-import CM103 from "../assets/CM103.webp";
+
+import PG_303 from "../assets/7_PG_303.jpeg";
+import PG_402 from "../assets/9_PG_402.jpeg";
+
+
 import { FaDesktop } from "react-icons/fa";
 import { HiComputerDesktop } from "react-icons/hi2";
 import { FaMicrosoft } from "react-icons/fa";
@@ -13,7 +17,9 @@ import { HiArrowRight } from "react-icons/hi";
 import { ArrowUp } from "lucide-react";
 
 const labImages = [
-  { src: CM103, location: "CM-103" },
+{ src: PG_402, location: "PG-402" },
+    
+{ src: PG_303, location: "PG-303" },
   { src: CM_216_217, location: "CM-216_217" },
   { src: CM_218_220, location: "CM-218_220" },
 ];
